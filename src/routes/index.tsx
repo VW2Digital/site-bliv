@@ -329,7 +329,7 @@ function DashboardMockup() {
   return (
     <div 
       ref={containerRef}
-      className="relative mt-8 sm:mt-14 mx-auto max-w-6xl transition-all duration-300 ease-out will-change-transform"
+      className="relative mt-8 sm:mt-14 mx-auto w-full max-w-[calc(100%-2rem)] sm:max-w-6xl transition-all duration-300 ease-out will-change-transform"
       style={{ transform: transformStyle }}
     >
       <div className="w-full rounded-2xl border border-white/10 bg-[#111111] shadow-2xl overflow-hidden select-none">
@@ -342,7 +342,7 @@ function DashboardMockup() {
           <img
             src={dashboardBliv.url}
             alt="Painel da Bliv CRM com métricas de campanhas, contatos, taxa de entrega e notificações"
-            className="w-full h-full object-cover object-top select-none"
+            className="w-full h-full object-contain object-center select-none"
             draggable={false}
           />
         </div>

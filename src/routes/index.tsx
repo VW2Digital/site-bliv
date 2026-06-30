@@ -825,8 +825,8 @@ function FAQ() {
       a: "Sim. Conectamos seu número diretamente na API Oficial da Meta (Cloud API). Você envia mensagens, atende clientes e acompanha métricas com entrega garantida e zero risco de banimento.",
     },
     {
-      q: "Preciso ter equipe técnica pra implantar?",
-      a: "Não. A partir do plano Start, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento de integração.",
+      q: "Quando começa o treinamento de integração?",
+      a: "O treinamento de integração começa no plano Start. Assim que você assina, o time da Bliv agenda uma sessão ao vivo para conectar seus canais, montar o primeiro funil e capacitar sua equipe a operar o CRM.",
     },
     {
       q: "Posso testar antes de assinar?",

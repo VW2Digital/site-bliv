@@ -193,17 +193,17 @@ function SmokeTextReveal({ children, className = "" }: { children: React.ReactNo
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bliv CRM — CRM com WhatsApp para vender mais" },
+      { title: "Bliv CRM — WhatsApp, Instagram, Messenger e formulários num só CRM" },
       {
         name: "description",
         content:
-          "Bliv CRM unifica WhatsApp, Instagram e Messenger num só funil. Disparo em massa, automação e agentes de IA. Comece em minutos.",
+          "Bliv CRM unifica WhatsApp Oficial, Instagram, Messenger e formulários em um único painel. Atenda, converta e escale com a API oficial da Meta.",
       },
-      { property: "og:title", content: "Bliv CRM — CRM com WhatsApp para vender mais" },
+      { property: "og:title", content: "Bliv CRM — WhatsApp, Instagram, Messenger e formulários num só CRM" },
       {
         property: "og:description",
         content:
-          "CRM com WhatsApp Cloud API oficial, agente de IA e funil de vendas. Comece grátis por 7 dias.",
+          "Atendimento e campanhas pelo WhatsApp Oficial, leads do Instagram, Messenger integrado e formulários no CRM. Comece grátis por 7 dias.",
       },
       { property: "og:url", content: "https://pixel-perfect-clone-99477.lovable.app/" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8eb7cf1-1d54-4867-806f-07514de8d143/id-preview-2c743c09--8824d971-1cfb-4b0a-ace2-6dffd98bf840.lovable.app-1782792827332.png" },

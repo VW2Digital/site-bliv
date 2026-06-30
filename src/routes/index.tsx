@@ -884,7 +884,7 @@ function FinalCTA() {
   };
 
   return (
-    <section id="contato" className="py-14 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
+    <section id="contato" className="py-10 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
         <SmokeTextReveal>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight italic">
@@ -895,9 +895,9 @@ function FinalCTA() {
           </p>
         </SmokeTextReveal>
 
-        <form onSubmit={handleSubmit} className="mt-10 max-w-md mx-auto text-left space-y-4 bg-card/60 p-6 md:p-8 rounded-3xl border border-border/60 backdrop-blur-xl shadow-card">
+        <form onSubmit={handleSubmit} className="mt-8 max-w-md mx-auto text-left space-y-3 bg-card/60 p-5 md:p-8 rounded-3xl border border-border/60 backdrop-blur-xl shadow-card">
           <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Seu Nome</label>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">Seu Nome</label>
             <input
               type="text"
               required
@@ -908,7 +908,7 @@ function FinalCTA() {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">E-mail corporativo</label>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">E-mail corporativo</label>
             <input
               type="email"
               required
@@ -919,7 +919,7 @@ function FinalCTA() {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">WhatsApp</label>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">WhatsApp</label>
             <input
               type="tel"
               required
@@ -930,7 +930,7 @@ function FinalCTA() {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Nome da Empresa</label>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">Nome da Empresa</label>
             <input
               type="text"
               required
@@ -943,7 +943,7 @@ function FinalCTA() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-2 group inline-flex items-center justify-between rounded-xl bg-orange hover:bg-orange/90 text-background font-medium py-3.5 px-5 transition duration-200 hover:scale-105 active:scale-95"
+            className="w-full mt-2 group inline-flex items-center justify-between rounded-xl bg-orange hover:bg-orange/90 text-background font-medium py-3 px-5 transition duration-200 hover:scale-105 active:scale-95"
           >
             <span className="text-sm font-semibold">{loading ? "Processando..." : "Falar com Consultor"}</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />

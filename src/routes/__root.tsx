@@ -85,9 +85,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@blivcrm" },
-      { name: "twitter:description", content: "Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8eb7cf1-1d54-4867-806f-07514de8d143/id-preview-2c743c09--8824d971-1cfb-4b0a-ace2-6dffd98bf840.lovable.app-1782792827332.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8eb7cf1-1d54-4867-806f-07514de8d143/id-preview-2c743c09--8824d971-1cfb-4b0a-ace2-6dffd98bf840.lovable.app-1782792827332.png" },
     ],
     links: [
       {

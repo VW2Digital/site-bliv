@@ -182,19 +182,23 @@ function SmokeTextReveal({ children, className = "" }: { children: React.ReactNo
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bliv CRM — O CRM com WhatsApp que acompanha o ritmo da sua empresa" },
+      { title: "Bliv CRM — CRM com WhatsApp para vender mais" },
       {
         name: "description",
         content:
-          "Bliv CRM unifica WhatsApp, Instagram e Facebook em um só funil. Sem burocracia, sem fidelidade. Mais de 10.000 times já vendem mais com a Bliv.",
+          "Bliv CRM unifica WhatsApp, Instagram e Messenger num só funil. Disparo em massa, automação e agentes de IA. Comece em minutos.",
       },
-      { property: "og:title", content: "Bliv CRM — Venda mais sem burocracia" },
+      { property: "og:title", content: "Bliv CRM — CRM com WhatsApp para vender mais" },
       {
         property: "og:description",
         content:
           "CRM com WhatsApp Cloud API oficial, agente de IA e funil de vendas. Comece grátis por 7 dias.",
       },
+      { property: "og:url", content: "https://pixel-perfect-clone-99477.lovable.app/" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8eb7cf1-1d54-4867-806f-07514de8d143/id-preview-2c743c09--8824d971-1cfb-4b0a-ace2-6dffd98bf840.lovable.app-1782792827332.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8eb7cf1-1d54-4867-806f-07514de8d143/id-preview-2c743c09--8824d971-1cfb-4b0a-ace2-6dffd98bf840.lovable.app-1782792827332.png" },
     ],
+    links: [{ rel: "canonical", href: "https://pixel-perfect-clone-99477.lovable.app/" }],
   }),
   component: Index,
 });
@@ -320,6 +324,10 @@ function DashboardMockup() {
         src={dashboardHero}
         alt="Painel da Bliv CRM mostrando métricas de campanhas, taxa de entrega e omnichannel"
         className="w-full h-auto select-none"
+        width={1440}
+        height={900}
+        fetchPriority="high"
+        decoding="async"
         draggable={false}
       />
     </div>
@@ -990,9 +998,9 @@ export function Footer() {
               Sua operação omnichannel com WhatsApp, Instagram, Messenger e IA.
             </p>
             <div className="mt-5 flex items-center gap-3 text-muted-foreground">
-              <a href="#" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>
-              <a href="#" className="hover:text-foreground"><Facebook className="w-4 h-4" /></a>
-              <a href="#" className="hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
+            <a href="#" aria-label="Siga a Bliv CRM no Instagram" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>
+            <a href="#" aria-label="Siga a Bliv CRM no Facebook" className="hover:text-foreground"><Facebook className="w-4 h-4" /></a>
+            <a href="#" aria-label="Siga a Bliv CRM no LinkedIn" className="hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
             </div>
           </div>
           {cols.map((c) => (
@@ -1102,14 +1110,16 @@ function Index() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <Nav />
-      <Hero />
-      <StickyFeatures />
-      <Channels />
-      <Testimonials />
-      <Pricing />
-      <Media />
-      <FAQ />
-      <FinalCTA />
+      <main>
+        <Hero />
+        <StickyFeatures />
+        <Channels />
+        <Testimonials />
+        <Pricing />
+        <Media />
+        <FAQ />
+        <FinalCTA />
+      </main>
       <Footer />
     </div>
   );

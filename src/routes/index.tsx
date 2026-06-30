@@ -28,6 +28,11 @@ import clientAmazon from "@/assets/client-amazon.png.asset.json";
 import clientGranfruto from "@/assets/client-granfruto.png.asset.json";
 import clientAltamed from "@/assets/client-altamed.jpg.asset.json";
 import clientEgua from "@/assets/client-egua.jpg.asset.json";
+import metaPartner from "@/assets/meta-partner.webp.asset.json";
+import iconWhatsapp from "@/assets/icon-whatsapp.png.asset.json";
+import iconInstagram from "@/assets/icon-instagram.png.asset.json";
+import iconMessenger from "@/assets/icon-messenger.png.asset.json";
+import iconWebhook from "@/assets/icon-webhook.png.asset.json";
 
 /* ---------------- Shared CTA button ---------------- */
 function PillButton({

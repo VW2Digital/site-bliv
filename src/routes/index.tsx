@@ -782,22 +782,6 @@ function Pricing() {
   );
 }
 
-/* ---------------- MEDIA ---------------- */
-function Media() {
-  return (
-    <section className="py-10 sm:py-16 px-5 sm:px-6 bg-card/30 border-y border-border/40">
-      <div className="mx-auto max-w-5xl text-center">
-        <p className="text-sm text-muted-foreground">Bliv na mídia</p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-70">
-          <span className="text-xl font-serif">Brazil Journal</span>
-          <span className="text-2xl font-serif font-bold tracking-tight">Valor</span>
-          <span className="text-xl font-semibold">startups<span className="text-orange">.</span></span>
-          <span className="text-lg font-semibold tracking-tight">NeoFeed</span>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------------- FAQ ---------------- */
 function FAQ() {

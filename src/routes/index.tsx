@@ -1065,7 +1065,7 @@ function Index() {
         "operatingSystem": "All",
         "offers": {
           "@type": "Offer",
-          "price": "197.00",
+          "price": "147.00",
           "priceCurrency": "BRL"
         }
       },

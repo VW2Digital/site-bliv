@@ -357,20 +357,20 @@ function DashboardMockup() {
       {/* Floating: integrations (left) — desktop */}
       <div
         tabIndex={0}
-        className="hidden md:block absolute left-[-2rem] lg:left-[-3.5rem] top-1/2 -translate-y-1/2 z-10 w-[19rem] lg:w-[21rem] rounded-2xl border border-black/5 bg-white text-neutral-900 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-5 lg:p-6 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:block absolute left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[17rem] lg:w-[19rem] rounded-2xl border border-black/5 bg-white text-neutral-900 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
       >
-        <ul className="space-y-3.5 lg:space-y-4">
+        <ul className="space-y-2.5 lg:space-y-3">
           {[
             { icon: iconWhatsapp.url, title: "Atendimento e campanhas pelo WhatsApp Oficial", desc: "Envie mensagens, atenda clientes e acompanhe métricas pela API oficial." },
             { icon: iconInstagram.url, title: "Leads e conversas do Instagram no CRM", desc: "Centralize mensagens e transforme interações em oportunidades." },
             { icon: iconMessenger.url, title: "Atendimento integrado pelo Messenger", desc: "Gerencie conversas do Facebook em um só painel." },
             { icon: iconWebhook.url, title: "Conecte formulários e sistemas ao CRM", desc: "Receba leads automaticamente de sites e landing pages." },
           ].map((it) => (
-            <li key={it.title} className="flex items-start gap-3">
-              <img src={it.icon} alt="" className="w-7 h-7 shrink-0 mt-[2px]" />
+            <li key={it.title} className="flex items-start gap-2.5">
+              <img src={it.icon} alt="" className="w-6 h-6 shrink-0 mt-[2px]" />
               <div className="min-w-0">
-                <p className="text-[0.82rem] lg:text-[0.86rem] font-semibold leading-[1.3] tracking-[-0.005em]">{it.title}</p>
-                <p className="text-[0.72rem] lg:text-[0.76rem] font-normal text-neutral-600 leading-[1.4] mt-1">{it.desc}</p>
+                <p className="text-left text-[0.75rem] lg:text-[0.8rem] font-semibold leading-[1.3] tracking-[-0.005em]">{it.title}</p>
+                <p className="text-left text-[0.68rem] lg:text-[0.72rem] font-normal text-neutral-600 leading-[1.4] mt-0.5">{it.desc}</p>
               </div>
             </li>
           ))}

@@ -266,11 +266,11 @@ function Hero() {
             Sua operação
             <br className="md:hidden" /> omnichannel com{" "}
             <br className="md:hidden" />
-            <span className="text-[#25D366] italic font-bold">WhatsApp</span>,{" "}
-            <span className="text-gradient-brand italic font-bold">Instagram</span>,{" "}
+            <span className="text-[#25D366] font-bold">WhatsApp</span>,{" "}
+            <span className="text-gradient-brand font-bold">Instagram</span>,{" "}
             <br className="md:hidden" />
-            <span className="text-[#0084FF] italic font-bold">Messenger</span>{" "}
-            <span className="text-orange italic font-bold">e IA.</span>
+            <span className="text-[#0084FF] font-bold">Messenger</span>{" "}
+            <span className="text-orange font-bold">e IA.</span>
           </h1>
           <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
             Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />

@@ -798,8 +798,8 @@ function FAQ() {
       a: "Zero. É mensal e você cancela direto pelo painel quando quiser.",
     },
     {
-      q: "Funciona com Instagram e Facebook também?",
-      a: "Sim. Bliv é omnichannel: WhatsApp, Instagram Direct, Messenger e formulário do site num só inbox.",
+      q: "Funciona com Instagram, Messenger e formulários?",
+      a: "Sim. A Bliv é omnichannel: WhatsApp Oficial, Instagram Direct, Messenger e formulários via webhook num só inbox e funil de vendas.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -982,7 +982,7 @@ export function Footer() {
 
             <img src={logo} alt="Bliv logo" className="h-[42px] w-auto mb-4" />
             <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-              Sua operação omnichannel com WhatsApp, Instagram, Messenger e IA.
+              WhatsApp Oficial, Instagram, Messenger e formulários num só CRM.
             </p>
             <div className="mt-5 flex items-center gap-3 text-muted-foreground">
             <a href="#" aria-label="Siga a Bliv CRM no Instagram" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>

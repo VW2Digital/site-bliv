@@ -581,13 +581,13 @@ function Channels() {
             <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="rounded-lg border border-border/60 bg-background/40 p-3 text-center">
                 <WhatsAppIcon className="w-5 h-5 mx-auto text-emerald-400" />
-                <div className="text-xs font-semibold mt-2">Número oficial</div>
-                <div className="text-[10px] text-muted-foreground">verificação Meta</div>
+                <div className="text-xs font-semibold mt-2">WhatsApp Oficial</div>
+                <div className="text-[10px] text-muted-foreground">API Meta</div>
               </div>
               <div className="rounded-lg border border-border/60 bg-background/40 p-3 text-center">
                 <Webhook className="w-5 h-5 mx-auto text-orange" />
-                <div className="text-xs font-semibold mt-2">Virtual / API</div>
-                <div className="text-[10px] text-muted-foreground">multi-canal</div>
+                <div className="text-xs font-semibold mt-2">Formulários</div>
+                <div className="text-[10px] text-muted-foreground">Webhook / Sites</div>
               </div>
             </div>
           </div>
@@ -728,7 +728,7 @@ function Pricing() {
             <div>
               <div className="text-xs text-muted-foreground">Escolha o tamanho do time</div>
               <div className="text-sm text-muted-foreground/80">
-                Todos os planos incluem WhatsApp Cloud API oficial, funil de vendas e suporte humano.
+                Todos os planos incluem WhatsApp Oficial, Instagram, Messenger, formulários e suporte humano.
               </div>
             </div>
           </div>

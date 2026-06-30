@@ -357,7 +357,7 @@ function DashboardMockup() {
       {/* Floating: integrations (left) — desktop */}
       <div
         tabIndex={0}
-        className="hidden md:block absolute left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[17rem] lg:w-[19rem] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-foreground shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:block absolute left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[17rem] lg:w-[19rem] rounded-2xl border border-white/15 bg-white/10 backdrop-blur-2xl text-foreground shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
       >
         <ul className="space-y-2.5 lg:space-y-3">
           {[

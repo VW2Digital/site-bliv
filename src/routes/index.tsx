@@ -262,11 +262,11 @@ function Hero() {
       />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-display mt-4 sm:mt-7 text-[2.3125rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
-            <span className="block"><span style={{ color: '#28C840' }}>WhatsApp</span> Oficial,</span>
-            <span className="block"><span style={{ color: '#FF5F57' }}>Instagram</span>,</span>
-            <span className="block"><span className="text-[#0084FF] font-bold">Messenger</span>{" "}<span className="text-white font-bold">e </span><span className="text-orange font-bold">formulários</span></span>
-            <span className="block text-muted-foreground font-bold">num só CRM.</span>
+          <h1 className="font-display mt-4 sm:mt-7 text-[35px] leading-[1.1] md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
+            <span className="block text-white md:text-[#28C840]">WhatsApp</span>{" "}<span className="block text-white">Oficial,</span>
+            <span className="block text-white md:text-[#FF5F57]">Instagram,</span>
+            <span className="block text-white md:text-[#0084FF] font-bold">Messenger</span>{" "}<span className="block text-white font-bold">e</span>{" "}<span className="block text-white md:text-orange font-bold">formulários</span>
+            <span className="block text-white md:text-muted-foreground font-bold">num só CRM.</span>
           </h1>
           <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
             Atenda pelo WhatsApp, capture leads do Instagram, gerencie Messenger e receba formulários em um único funil de vendas. <br className="hidden md:block" />

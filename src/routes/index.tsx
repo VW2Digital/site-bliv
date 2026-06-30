@@ -422,16 +422,15 @@ function StickyFeatures() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.05]">
-                Menos abas abertas, <br />
-                <span className="text-gradient-brand">mais negócios fechados.</span>
+                Seus 4 canais de vendas <br />
+                <span className="text-gradient-brand">em um só funil.</span>
               </h2>
             </SmokeTextReveal>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <SmokeTextReveal>
               <p className="text-muted-foreground leading-relaxed">
-                A gente construiu a Bliv ouvindo times de vendas brasileiros que cansaram de
-                gambiarra com planilha, bot pirata e três assinaturas pra fazer uma coisa só.
+                A Bliv unifica WhatsApp Oficial, Instagram Direct, Messenger e formulários do site em um CRM completo. Sem planilhas, sem bots piratas e sem assinaturas duplicadas.
               </p>
             </SmokeTextReveal>
           </div>

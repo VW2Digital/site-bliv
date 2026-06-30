@@ -290,7 +290,7 @@ function StickyFeatures() {
               </div>
               <div className="flex md:flex-col gap-3">
                 {[
-                  { i: MessageCircle, l: "WhatsApp", c: "text-emerald-400" },
+                  { i: WhatsAppIcon, l: "WhatsApp", c: "text-emerald-400" },
                   { i: Instagram, l: "Instagram", c: "text-pink" },
                   { i: Facebook, l: "Messenger", c: "text-orange" },
                 ].map((ch) => (
@@ -335,7 +335,7 @@ function Channels() {
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="rounded-lg border border-border/60 bg-background/40 p-3 text-center">
-                <MessageCircle className="w-5 h-5 mx-auto text-orange" />
+                <WhatsAppIcon className="w-5 h-5 mx-auto text-orange" />
                 <div className="text-xs font-semibold mt-2">Número oficial</div>
                 <div className="text-[10px] text-muted-foreground">verificação Meta</div>
               </div>

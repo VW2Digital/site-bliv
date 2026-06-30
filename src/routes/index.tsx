@@ -556,15 +556,15 @@ function StickyFeatures() {
                   fio da conversa.
                 </p>
               </div>
-              <div className="flex md:flex-col gap-3">
+              <div className="grid grid-cols-3 md:flex md:flex-col gap-2 sm:gap-3 md:w-auto">
                 {[
                   { i: WhatsAppIcon, l: "WhatsApp", c: "text-emerald-400" },
                   { i: Instagram, l: "Instagram", c: "text-pink" },
                   { i: Facebook, l: "Messenger", c: "text-orange" },
                 ].map((ch) => (
-                  <div key={ch.l} className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/40 px-3 py-2">
-                    <ch.i className={`w-4 h-4 ${ch.c}`} />
-                    <span className="text-xs">{ch.l}</span>
+                  <div key={ch.l} className="flex items-center justify-center md:justify-start gap-1.5 sm:gap-2 rounded-xl border border-border/60 bg-background/40 px-2 py-2 min-w-0">
+                    <ch.i className={`w-4 h-4 shrink-0 ${ch.c}`} />
+                    <span className="text-[0.7rem] sm:text-xs truncate">{ch.l}</span>
                   </div>
                 ))}
               </div>

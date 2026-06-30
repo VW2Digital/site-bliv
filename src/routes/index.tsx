@@ -874,7 +874,6 @@ function FinalCTA() {
     nome: "",
     email: "",
     whatsapp: "",
-    empresa: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -938,17 +937,6 @@ function FinalCTA() {
               placeholder="Ex: (11) 99999-9999"
               value={formData.whatsapp}
               onChange={(e) => setFormData({ ...formData, whatsapp: formatWhatsApp(e.target.value) })}
-              className="w-full rounded-xl border border-border/60 bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-orange focus:outline-none transition"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">Nome da Empresa</label>
-            <input
-              type="text"
-              required
-              placeholder="Ex: Bliv S/A"
-              value={formData.empresa}
-              onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
               className="w-full rounded-xl border border-border/60 bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-orange focus:outline-none transition"
             />
           </div>

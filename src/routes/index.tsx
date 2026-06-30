@@ -826,7 +826,15 @@ function FAQ() {
     },
     {
       q: "Quando começa o treinamento de integração?",
-      a: "O treinamento de integração começa no plano Start. Assim que você assina, o time da Bliv agenda uma sessão ao vivo para conectar seus canais, montar o primeiro funil e capacitar sua equipe a operar o CRM.",
+      a: "O treinamento de integração começa no plano Start. Assim que você assina, o time da Bliv agenda uma sessão ao vivo para conectar seus canais, montar o primeiro funil e capacitar sua equipe a operar o CRM. No plano Start+, o treinamento é o mesmo e ainda inclui atualizações mensais de novas ferramentas.",
+    },
+    {
+      q: "O que vem no treinamento de integração?",
+      a: "Sessão ao vivo de 1h com especialista Bliv: conexão do WhatsApp Oficial, Instagram e Messenger; configuração do primeiro funil de vendas; automação de respostas rápidas; e capacitação da equipe para gerenciar leads e fechar negócios pelo painel.",
+    },
+    {
+      q: "Como funcionam as atualizações mensais no Start+?",
+      a: "No plano Start+, todo mês você recebe acesso antecipado a novos recursos e ferramentas lançadas na plataforma — como novos canais de integração, automações avançadas e melhorias no funil. Sem custo extra e sem precisar de equipe técnica.",
     },
     {
       q: "Posso testar antes de assinar?",

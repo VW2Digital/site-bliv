@@ -375,7 +375,7 @@ function StickyFeatures() {
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
-              <h2 className="font-display mt-4 text-4xl md:text-6xl font-extrabold leading-[1]">
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.05]">
                 Menos abas abertas, <br />
                 <span className="text-gradient-brand italic">mais negócios fechados.</span>
               </h2>
@@ -514,7 +514,7 @@ function Channels() {
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
-              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 Seu time <span className="text-gradient-brand italic">sempre conectado</span>
               </h2>
             </SmokeTextReveal>
@@ -617,7 +617,7 @@ function Testimonials() {
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
-              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 A gente preferia que <br/>
                 <span className="text-gradient-brand italic">eles falassem por nós.</span>
               </h2>
@@ -682,7 +682,7 @@ function Pricing() {
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
-              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 Mensal, sem multa, <br/>
                 <span className="text-gradient-brand italic">sem letra miúda.</span>
               </h2>
@@ -820,7 +820,7 @@ function FAQ() {
         <div>
           <SmokeTextReveal>
             <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
-            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+            <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
               Tudo que você <span className="text-gradient-brand italic">precisa saber</span>
             </h2>
             <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
@@ -889,7 +889,7 @@ function FinalCTA() {
     <section id="contato" className="py-14 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
         <SmokeTextReveal>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight italic">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight italic">
             <span className="text-gradient-brand">bliv</span>, bliv!
           </h2>
           <p className="mt-5 text-muted-foreground max-w-xl mx-auto">

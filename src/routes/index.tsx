@@ -265,11 +265,12 @@ function Hero() {
             <span className="xs:hidden">APIs oficiais da Meta</span>
           </span>
           <h1 className="font-display mt-4 sm:mt-7 text-[2.1875rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
-            Sua operação omnichannel com{" "}
-            <br className="hidden md:block" />
+            Sua operação
+            <br className="md:hidden" /> omnichannel com{" "}
             <br className="md:hidden" />
             <span className="text-[#25D366] italic font-bold">WhatsApp</span>,{" "}
             <span className="text-gradient-brand italic font-bold">Instagram</span>,{" "}
+            <br className="md:hidden" />
             <span className="text-[#0084FF] italic font-bold">Messenger</span>{" "}
             <span className="text-orange italic font-bold">e IA.</span>
           </h1>

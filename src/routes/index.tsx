@@ -230,10 +230,7 @@ export function Nav() {
           <a href="/#contato" className="hover:text-foreground transition">Contato</a>
         </nav>
         <div className="flex items-center gap-3 shrink-0">
-          <PillButton href="/#contato" size="sm">
-            <span className="hidden sm:inline">Falar com consultor</span>
-            <span className="sm:hidden">Falar</span>
-          </PillButton>
+          <PillButton href="/#contato" size="sm">Falar com Consultor</PillButton>
         </div>
       </div>
     </header>
@@ -269,7 +266,7 @@ function Hero() {
             monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA ilimitados.
           </p>
           <div className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
-            <PillButton href="#contato" size="lg">Falar com consultor</PillButton>
+            <PillButton href="#contato" size="lg">Falar com Consultor</PillButton>
             <a href="#planos" className="text-sm text-muted-foreground hover:text-foreground transition inline-flex items-center gap-2">
               Ver planos
               <ArrowRight className="w-3.5 h-3.5" />
@@ -580,7 +577,7 @@ function Channels() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <PillButton href="#contato">Falar com consultor</PillButton>
+          <PillButton href="#contato">Falar com Consultor</PillButton>
         </div>
       </div>
     </section>
@@ -758,7 +755,7 @@ function Pricing() {
                   ))}
                 </ul>
                 <div className="mt-5">
-                  <PillButton href="#contato" size="sm" className="w-full justify-center">Falar com consultor</PillButton>
+                  <PillButton href="#contato" size="sm" className="w-full justify-center">Falar com Consultor</PillButton>
                 </div>
               </div>
             ))}
@@ -766,7 +763,7 @@ function Pricing() {
         </div>
 
         <div className="mt-8 flex justify-center">
-          <PillButton href="#contato">Falar com consultor</PillButton>
+          <PillButton href="#contato">Falar com Consultor</PillButton>
         </div>
       </div>
     </section>
@@ -948,7 +945,7 @@ function FinalCTA() {
             disabled={loading}
             className="w-full mt-2 group inline-flex items-center justify-between rounded-xl bg-orange hover:bg-orange/90 text-background font-medium py-3.5 px-5 transition duration-200 hover:scale-105 active:scale-95"
           >
-            <span className="text-sm font-semibold">{loading ? "Processando..." : "Falar com consultor"}</span>
+            <span className="text-sm font-semibold">{loading ? "Processando..." : "Falar com Consultor"}</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
           </button>
         </form>

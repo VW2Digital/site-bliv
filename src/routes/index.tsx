@@ -326,7 +326,7 @@ function DashboardMockup() {
   return (
     <div 
       ref={containerRef}
-      className="relative mt-14 mx-auto max-w-6xl transition-all duration-300 ease-out will-change-transform"
+      className="relative mt-8 sm:mt-14 mx-auto max-w-6xl transition-all duration-300 ease-out will-change-transform"
       style={{ transform: transformStyle }}
     >
       <img
@@ -368,7 +368,7 @@ function FloatingCard({
 /* ---------------- BIG FEATURES (sticky left col) ---------------- */
 function StickyFeatures() {
   return (
-    <section id="funcionalidades" className="relative py-28 px-6">
+    <section id="funcionalidades" className="relative py-16 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         {/* Section header — editorial, assimétrico */}
         <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
@@ -508,7 +508,7 @@ function StickyFeatures() {
 /* ---------------- COLLABORATORS / CHANNELS ---------------- */
 function Channels() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-14 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-12">
           <div className="md:col-span-7">
@@ -611,7 +611,7 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="py-28 px-6">
+    <section className="py-16 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
           <div className="md:col-span-7">
@@ -676,7 +676,7 @@ function Pricing() {
   ];
 
   return (
-    <section id="planos" className="py-24 px-6">
+    <section id="planos" className="py-14 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-10">
           <div className="md:col-span-7">
@@ -775,7 +775,7 @@ function Pricing() {
 /* ---------------- MEDIA ---------------- */
 function Media() {
   return (
-    <section className="py-16 px-6 bg-card/30 border-y border-border/40">
+    <section className="py-10 sm:py-16 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-5xl text-center">
         <p className="text-sm text-muted-foreground">Bliv na mídia</p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-70">
@@ -815,7 +815,7 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-24 px-6">
+    <section id="faq" className="py-14 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-12">
         <div>
           <SmokeTextReveal>
@@ -886,7 +886,7 @@ function FinalCTA() {
   };
 
   return (
-    <section id="contato" className="py-24 px-6 bg-card/30 border-y border-border/40">
+    <section id="contato" className="py-14 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
         <SmokeTextReveal>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight italic">
@@ -998,7 +998,7 @@ export function Footer() {
     },
   ];
   return (
-    <footer className="px-6 py-16">
+    <footer className="px-5 sm:px-6 py-12 sm:py-16">
       <div className="mx-auto max-w-7xl">
         <div className="grid md:grid-cols-[1.4fr_repeat(4,1fr)] gap-10">
           <div>

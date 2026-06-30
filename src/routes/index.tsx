@@ -549,7 +549,7 @@ function StickyFeatures() {
                   <span className="eyebrow">Omnichannel de verdade</span>
                 </div>
                 <h3 className="font-display mt-5 text-2xl font-bold">
-                  WhatsApp, Instagram e Messenger no mesmo inbox.
+                  WhatsApp, Instagram, Messenger e Webhook no mesmo inbox.
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground max-w-md">
                   Histórico unificado por contato. O cliente muda de canal, o seu time não perde o

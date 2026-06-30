@@ -55,6 +55,8 @@ function PixelGridBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    // Skip heavy animation on mobile to preserve battery / fps
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -121,8 +123,9 @@ function PixelGridBackground() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-60" />;
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-60 hidden md:block" />;
 }
+
 
 function SmokeTextReveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -215,9 +218,9 @@ function WhatsAppIcon({ className }: { className?: string }) {
 export function Nav() {
   return (
     <header className="sticky top-0 inset-x-0 z-50 border-b border-border/40 backdrop-blur-xl bg-background/70">
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
-          <img src={logo} alt="Bliv logo" className="h-[42px] w-auto" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3">
+        <a href="/" className="flex items-center gap-2 shrink-0">
+          <img src={logo} alt="Bliv logo" className="h-8 sm:h-[42px] w-auto" />
         </a>
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
           <a href="/#inicio" className="hover:text-foreground transition">Início</a>
@@ -226,41 +229,46 @@ export function Nav() {
           <a href="/#faq" className="hover:text-foreground transition">FAQ</a>
           <a href="/#contato" className="hover:text-foreground transition">Contato</a>
         </nav>
-        <div className="flex items-center gap-3">
-          <PillButton href="/#contato" size="sm">Falar com consultor</PillButton>
+        <div className="flex items-center gap-3 shrink-0">
+          <PillButton href="/#contato" size="sm">
+            <span className="hidden sm:inline">Falar com consultor</span>
+            <span className="sm:hidden">Falar</span>
+          </PillButton>
         </div>
       </div>
     </header>
+
   );
 }
 
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section id="inicio" className="relative pt-24 pb-20 overflow-hidden bg-background">
+    <section id="inicio" className="relative pt-14 sm:pt-24 pb-14 sm:pb-20 overflow-hidden bg-background">
       <PixelGridBackground />
       <div className="absolute inset-0 hero-glow pointer-events-none" />
-      <div className="relative mx-auto max-w-6xl px-6 text-center">
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-[11px] sm:text-xs text-muted-foreground backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange/60 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-orange" />
             </span>
-            100% integrado às APIs oficiais da Meta
+            <span className="hidden xs:inline">100% integrado às APIs oficiais da Meta</span>
+            <span className="xs:hidden">APIs oficiais da Meta</span>
           </span>
-          <h1 className="font-display mt-7 text-4xl md:text-6xl lg:text-7.5xl font-extrabold leading-[1.05] tracking-tight">
+          <h1 className="font-display mt-5 sm:mt-7 text-[2rem] leading-[1.08] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
             Sua operação omnichannel com <br className="hidden md:block" />
             <span className="text-[#25D366] italic font-bold">WhatsApp</span>,{" "}
             <span className="text-gradient-brand italic font-bold">Instagram</span>,{" "}
             <span className="text-[#0084FF] italic font-bold">Messenger</span>{" "}
             <span className="text-orange italic font-bold">e IA.</span>
           </h1>
-          <p className="mt-7 text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
+          <p className="mt-5 sm:mt-7 text-base sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
             Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />
             monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA ilimitados.
           </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
+          <div className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
             <PillButton href="#contato" size="lg">Falar com consultor</PillButton>
             <a href="#planos" className="text-sm text-muted-foreground hover:text-foreground transition inline-flex items-center gap-2">
               Ver planos
@@ -271,6 +279,7 @@ function Hero() {
         <DashboardMockup />
       </div>
     </section>
+
   );
 }
 
@@ -317,7 +326,7 @@ function DashboardMockup() {
   return (
     <div 
       ref={containerRef}
-      className="relative mt-14 mx-auto max-w-6xl transition-all duration-300 ease-out will-change-transform"
+      className="relative mt-8 sm:mt-14 mx-auto max-w-6xl transition-all duration-300 ease-out will-change-transform"
       style={{ transform: transformStyle }}
     >
       <img
@@ -359,14 +368,14 @@ function FloatingCard({
 /* ---------------- BIG FEATURES (sticky left col) ---------------- */
 function StickyFeatures() {
   return (
-    <section id="funcionalidades" className="relative py-28 px-6">
+    <section id="funcionalidades" className="relative py-16 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         {/* Section header — editorial, assimétrico */}
-        <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
+        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-10 sm:mb-14">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
-              <h2 className="font-display mt-4 text-4xl md:text-6xl font-extrabold leading-[1]">
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.05]">
                 Menos abas abertas, <br />
                 <span className="text-gradient-brand italic">mais negócios fechados.</span>
               </h2>
@@ -385,7 +394,7 @@ function StickyFeatures() {
         {/* Bento assimétrico */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
           {/* Card grande — funil visual */}
-          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-card p-8 shadow-card">
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-card p-6 sm:p-8 shadow-card">
             <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-orange/10 blur-3xl group-hover:bg-orange/20 transition-colors" />
             <div className="relative z-10 max-w-md">
               <div className="flex items-center gap-3">
@@ -417,7 +426,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card vertical — IA */}
-          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-8 flex flex-col justify-between">
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 sm:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-pink/10 border border-pink/30 text-pink flex items-center justify-center">
@@ -445,7 +454,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card pequeno — Suporte */}
-          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-8">
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 sm:p-8">
             <div className="flex items-center gap-3">
               <span className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/30 text-orange flex items-center justify-center">
                 <Headphones className="w-5 h-5" />
@@ -459,7 +468,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card largo — Omnichannel */}
-          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-tr from-pink/[0.06] to-transparent p-8">
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-tr from-pink/[0.06] to-transparent p-6 sm:p-8">
             <div className="flex flex-col md:flex-row md:items-center gap-8">
               <div className="flex-1">
                 <div className="flex items-center gap-3">
@@ -499,13 +508,13 @@ function StickyFeatures() {
 /* ---------------- COLLABORATORS / CHANNELS ---------------- */
 function Channels() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-14 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-8 items-end mb-12">
+        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-8 sm:mb-12">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
-              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 Seu time <span className="text-gradient-brand italic">sempre conectado</span>
               </h2>
             </SmokeTextReveal>
@@ -602,13 +611,13 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="py-28 px-6">
+    <section className="py-16 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
+        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-10 sm:mb-14">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
-              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 A gente preferia que <br/>
                 <span className="text-gradient-brand italic">eles falassem por nós.</span>
               </h2>
@@ -618,7 +627,7 @@ function Testimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {reviews.map((t, idx) => (
-            <article key={t.n} className={`relative rounded-3xl border border-border/60 p-8 shadow-card overflow-hidden ${idx === 0 ? "bg-gradient-card" : "bg-card/40"}`}>
+            <article key={t.n} className={`relative rounded-3xl border border-border/60 p-6 sm:p-8 shadow-card overflow-hidden ${idx === 0 ? "bg-gradient-card" : "bg-card/40"}`}>
               {idx === 0 && <Quote className="absolute -top-2 -left-2 w-24 h-24 text-orange/10" />}
               <p className={`relative leading-relaxed text-foreground/95 ${idx === 0 ? "font-display text-lg md:text-xl font-bold" : "text-sm"}`}>
                 "{t.q}"
@@ -667,13 +676,13 @@ function Pricing() {
   ];
 
   return (
-    <section id="planos" className="py-24 px-6">
+    <section id="planos" className="py-14 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-8 items-end mb-10">
+        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-8 sm:mb-10">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
-              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 Mensal, sem multa, <br/>
                 <span className="text-gradient-brand italic">sem letra miúda.</span>
               </h2>
@@ -766,7 +775,7 @@ function Pricing() {
 /* ---------------- MEDIA ---------------- */
 function Media() {
   return (
-    <section className="py-16 px-6 bg-card/30 border-y border-border/40">
+    <section className="py-10 sm:py-16 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-5xl text-center">
         <p className="text-sm text-muted-foreground">Bliv na mídia</p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-70">
@@ -806,12 +815,12 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-24 px-6">
+    <section id="faq" className="py-14 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-12">
         <div>
           <SmokeTextReveal>
             <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
-            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+            <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
               Tudo que você <span className="text-gradient-brand italic">precisa saber</span>
             </h2>
             <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
@@ -877,10 +886,10 @@ function FinalCTA() {
   };
 
   return (
-    <section id="contato" className="py-24 px-6 bg-card/30 border-y border-border/40">
+    <section id="contato" className="py-14 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
         <SmokeTextReveal>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight italic">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight italic">
             <span className="text-gradient-brand">bliv</span>, bliv!
           </h2>
           <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
@@ -989,10 +998,11 @@ export function Footer() {
     },
   ];
   return (
-    <footer className="px-6 py-16">
+    <footer className="px-5 sm:px-6 py-12 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="grid md:grid-cols-[1.4fr_repeat(4,1fr)] gap-10">
-          <div>
+        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_repeat(4,1fr)] gap-8 sm:gap-10">
+          <div className="col-span-2 md:col-span-1">
+
             <img src={logo} alt="Bliv logo" className="h-[42px] w-auto mb-4" />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               Sua operação omnichannel com WhatsApp, Instagram, Messenger e IA.

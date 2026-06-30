@@ -241,7 +241,7 @@ export function Nav() {
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section id="inicio" className="relative pt-14 sm:pt-24 pb-14 sm:pb-20 overflow-hidden bg-background">
+    <section id="inicio" className="relative pt-10 sm:pt-24 pb-10 sm:pb-20 overflow-hidden bg-background">
       <PixelGridBackground />
       <div className="absolute inset-0 hero-glow pointer-events-none" />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
@@ -254,18 +254,18 @@ function Hero() {
             <span className="hidden xs:inline">100% integrado às APIs oficiais da Meta</span>
             <span className="xs:hidden">APIs oficiais da Meta</span>
           </span>
-          <h1 className="font-display mt-5 sm:mt-7 text-[2rem] leading-[1.08] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
+          <h1 className="font-display mt-4 sm:mt-7 text-[1.75rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
             Sua operação omnichannel com <br className="hidden md:block" />
             <span className="text-[#25D366] italic font-bold">WhatsApp</span>,{" "}
             <span className="text-gradient-brand italic font-bold">Instagram</span>,{" "}
             <span className="text-[#0084FF] italic font-bold">Messenger</span>{" "}
             <span className="text-orange italic font-bold">e IA.</span>
           </h1>
-          <p className="mt-5 sm:mt-7 text-base sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
+          <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
             Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />
             monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA ilimitados.
           </p>
-          <div className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+          <div className="mt-5 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
             <PillButton href="#contato" size="lg">Falar com Consultor</PillButton>
             <a href="#planos" className="text-sm text-muted-foreground hover:text-foreground transition inline-flex items-center gap-2">
               Ver planos
@@ -365,7 +365,7 @@ function FloatingCard({
 /* ---------------- BIG FEATURES (sticky left col) ---------------- */
 function StickyFeatures() {
   return (
-    <section id="funcionalidades" className="relative py-16 sm:py-28 px-5 sm:px-6">
+    <section id="funcionalidades" className="relative py-10 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         {/* Section header — editorial, assimétrico */}
         <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-10 sm:mb-14">
@@ -389,9 +389,9 @@ function StickyFeatures() {
         </div>
 
         {/* Bento assimétrico */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-5">
           {/* Card grande — funil visual */}
-          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-card p-6 sm:p-8 shadow-card">
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-card p-4 sm:p-8 shadow-card">
             <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-orange/10 blur-3xl group-hover:bg-orange/20 transition-colors" />
             <div className="relative z-10 max-w-md">
               <div className="flex items-center gap-3">
@@ -423,7 +423,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card vertical — IA */}
-          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 sm:p-8 flex flex-col justify-between">
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-4 sm:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-pink/10 border border-pink/30 text-pink flex items-center justify-center">
@@ -451,7 +451,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card pequeno — Suporte */}
-          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 sm:p-8">
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-4 sm:p-8">
             <div className="flex items-center gap-3">
               <span className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/30 text-orange flex items-center justify-center">
                 <Headphones className="w-5 h-5" />
@@ -465,7 +465,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card largo — Omnichannel */}
-          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-tr from-pink/[0.06] to-transparent p-6 sm:p-8">
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-tr from-pink/[0.06] to-transparent p-4 sm:p-8">
             <div className="flex flex-col md:flex-row md:items-center gap-8">
               <div className="flex-1">
                 <div className="flex items-center gap-3">
@@ -505,9 +505,9 @@ function StickyFeatures() {
 /* ---------------- COLLABORATORS / CHANNELS ---------------- */
 function Channels() {
   return (
-    <section className="py-14 sm:py-24 px-5 sm:px-6">
+    <section className="py-10 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-8 sm:mb-12">
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-8 items-end mb-6 sm:mb-12">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
@@ -526,9 +526,9 @@ function Channels() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-5">
-          <div className="rounded-2xl border border-border/60 bg-gradient-card p-7 shadow-card">
-            <h3 className="text-xl font-bold">WhatsApp oficial ou número virtual</h3>
+        <div className="grid md:grid-cols-2 gap-3 sm:gap-5">
+          <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
+            <h3 className="text-lg sm:text-xl font-bold">WhatsApp oficial ou número virtual</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Conecte o número da empresa direto na API oficial da Meta ou crie um número virtual pra cada
               vertical. Sem risco de banimento.
@@ -547,8 +547,8 @@ function Channels() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border/60 bg-gradient-card p-7 shadow-card">
-            <h3 className="text-xl font-bold">Painel de uso e cobrança</h3>
+          <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
+            <h3 className="text-lg sm:text-xl font-bold">Painel de uso e cobrança</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Acompanhe consumo de mensagens, sessões e conversões em tempo real. Tudo num painel simples.
             </p>
@@ -608,9 +608,9 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="py-16 sm:py-28 px-5 sm:px-6">
+    <section className="py-10 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-10 sm:mb-14">
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-8 items-end mb-6 sm:mb-14">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
@@ -622,9 +622,9 @@ function Testimonials() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-5">
           {reviews.map((t, idx) => (
-            <article key={t.n} className={`relative rounded-3xl border border-border/60 p-6 sm:p-8 shadow-card overflow-hidden ${idx === 0 ? "bg-gradient-card" : "bg-card/40"}`}>
+            <article key={t.n} className={`relative rounded-3xl border border-border/60 p-4 sm:p-8 shadow-card overflow-hidden ${idx === 0 ? "bg-gradient-card" : "bg-card/40"}`}>
               {idx === 0 && <Quote className="absolute -top-2 -left-2 w-24 h-24 text-orange/10" />}
               <p className={`relative leading-relaxed text-foreground/95 ${idx === 0 ? "font-display text-lg md:text-xl font-bold" : "text-sm"}`}>
                 "{t.q}"
@@ -674,9 +674,9 @@ function Pricing() {
   ];
 
   return (
-    <section id="planos" className="py-14 sm:py-24 px-5 sm:px-6">
+    <section id="planos" className="py-10 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-8 sm:mb-10">
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-8 items-end mb-6 sm:mb-10">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
@@ -713,7 +713,7 @@ function Pricing() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border/60 bg-gradient-card shadow-card p-6 md:p-8">
+        <div className="rounded-2xl border border-border/60 bg-gradient-card shadow-card p-5 md:p-8">
           <div className="flex items-end justify-between mb-6">
             <div>
               <div className="text-xs text-muted-foreground">Escolha o tamanho do time</div>
@@ -726,11 +726,11 @@ function Pricing() {
             </a>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-3">
             {tableByTab[tab].map((p) => (
               <div
                 key={p.name}
-                className={`relative rounded-xl border p-5 ${
+                className={`relative rounded-xl border p-4 ${
                   p.tag
                     ? "border-orange/50 bg-background/60 ring-1 ring-orange/30"
                     : "border-border/60 bg-background/40"
@@ -747,7 +747,7 @@ function Pricing() {
                   <span className="text-3xl font-bold">{p.price}</span>
                   <span className="text-xs text-muted-foreground">/mês</span>
                 </div>
-                <ul className="mt-4 space-y-1.5 text-sm">
+                <ul className="mt-3 space-y-1 text-sm">
                   {p.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-2 text-muted-foreground">
                       <Check className="w-3.5 h-3.5 text-orange shrink-0" /> {b}
@@ -813,8 +813,8 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-14 sm:py-24 px-5 sm:px-6">
-      <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-12">
+    <section id="faq" className="py-10 sm:py-24 px-5 sm:px-6">
+      <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-8">
         <div>
           <SmokeTextReveal>
             <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
@@ -828,14 +828,14 @@ function FAQ() {
           </SmokeTextReveal>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           {items.map((it, i) => {
             const isOpen = open === i;
             return (
               <button
                 key={it.q}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="w-full text-left rounded-xl border border-border/60 bg-card/60 px-5 py-4 hover:border-orange/40 transition"
+                className="w-full text-left rounded-xl border border-border/60 bg-card/60 px-4 py-3 hover:border-orange/40 transition"
               >
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-medium">{it.q}</span>
@@ -884,7 +884,7 @@ function FinalCTA() {
   };
 
   return (
-    <section id="contato" className="py-14 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
+    <section id="contato" className="py-10 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
         <SmokeTextReveal>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight italic">
@@ -895,9 +895,9 @@ function FinalCTA() {
           </p>
         </SmokeTextReveal>
 
-        <form onSubmit={handleSubmit} className="mt-10 max-w-md mx-auto text-left space-y-4 bg-card/60 p-6 md:p-8 rounded-3xl border border-border/60 backdrop-blur-xl shadow-card">
+        <form onSubmit={handleSubmit} className="mt-8 max-w-md mx-auto text-left space-y-3 bg-card/60 p-5 md:p-8 rounded-3xl border border-border/60 backdrop-blur-xl shadow-card">
           <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Seu Nome</label>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">Seu Nome</label>
             <input
               type="text"
               required
@@ -908,7 +908,7 @@ function FinalCTA() {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">E-mail corporativo</label>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">E-mail corporativo</label>
             <input
               type="email"
               required
@@ -919,7 +919,7 @@ function FinalCTA() {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">WhatsApp</label>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">WhatsApp</label>
             <input
               type="tel"
               required
@@ -930,7 +930,7 @@ function FinalCTA() {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Nome da Empresa</label>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">Nome da Empresa</label>
             <input
               type="text"
               required
@@ -943,7 +943,7 @@ function FinalCTA() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-2 group inline-flex items-center justify-between rounded-xl bg-orange hover:bg-orange/90 text-background font-medium py-3.5 px-5 transition duration-200 hover:scale-105 active:scale-95"
+            className="w-full mt-2 group inline-flex items-center justify-between rounded-xl bg-orange hover:bg-orange/90 text-background font-medium py-3 px-5 transition duration-200 hover:scale-105 active:scale-95"
           >
             <span className="text-sm font-semibold">{loading ? "Processando..." : "Falar com Consultor"}</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -996,13 +996,13 @@ export function Footer() {
     },
   ];
   return (
-    <footer className="px-5 sm:px-6 py-12 sm:py-16">
+    <footer className="px-5 sm:px-6 py-10 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_repeat(4,1fr)] gap-8 sm:gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_repeat(4,1fr)] gap-6 sm:gap-10">
           <div className="col-span-2 md:col-span-1">
 
             <img src={logo} alt="Bliv logo" className="h-[42px] w-auto mb-4" />
-            <p className="mt-4 text-sm text-muted-foreground max-w-xs">
+            <p className="mt-3 text-sm text-muted-foreground max-w-xs">
               Sua operação omnichannel com WhatsApp, Instagram, Messenger e IA.
             </p>
             <div className="mt-5 flex items-center gap-3 text-muted-foreground">
@@ -1024,7 +1024,7 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-12 pt-6 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
+        <div className="mt-10 pt-5 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} Bliv CRM. Um produto VW2 Digital.</span>
           <span>Feito no Brasil 🇧🇷</span>
         </div>

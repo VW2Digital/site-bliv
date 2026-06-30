@@ -730,14 +730,13 @@ function FAQ() {
     <section id="faq" className="py-24 px-6">
       <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-12">
         <div>
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            FAQ
-          </span>
-          <h2 className="mt-5 text-4xl md:text-5xl font-bold leading-tight">
-            Tudo que você <span className="text-gradient-brand">precisa saber</span>
+          <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
+          <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+            Tudo que você <span className="text-gradient-brand italic">precisa saber</span>
           </h2>
-          <p className="mt-4 text-muted-foreground text-sm">
-            Não achou sua resposta? Fala com a gente no WhatsApp.
+          <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
+            Não achou sua resposta? Chama a gente no WhatsApp — gente de verdade responde em
+            poucos minutos.
           </p>
         </div>
 

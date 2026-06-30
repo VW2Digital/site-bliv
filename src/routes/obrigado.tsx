@@ -4,6 +4,17 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
 
 export const Route = createFileRoute("/obrigado")({
+  head: () => ({
+    meta: [
+      { title: "Obrigado — Bliv CRM" },
+      { name: "description", content: "Recebemos seu contato. Fale agora com um consultor da Bliv CRM pelo WhatsApp." },
+      { property: "og:title", content: "Obrigado — Bliv CRM" },
+      { property: "og:description", content: "Fale agora com um consultor da Bliv CRM pelo WhatsApp." },
+      { property: "og:url", content: "https://pixel-perfect-clone-99477.lovable.app/obrigado" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "https://pixel-perfect-clone-99477.lovable.app/obrigado" }],
+  }),
   component: Obrigado,
 });
 

@@ -1,0 +1,12 @@
+# Bliv CRM
+
+> CRM omnichannel com WhatsApp Cloud API, Instagram, Messenger e agentes de IA para times de vendas e atendimento.
+
+A Bliv CRM unifica WhatsApp, Instagram Direct e Messenger num só inbox, com automações, disparo em massa, funil de vendas e agentes de IA ilimitados.
+
+## Pages
+
+- [Início](/): Visão geral do produto, funcionalidades, planos e FAQ.
+- [Política de Privacidade](/politica-de-privacidade): Como tratamos dados pessoais sob a LGPD.
+- [Termos de Uso](/termos-de-uso): Condições de uso da plataforma.
+- [Exclusão de Dados](/exclusao-de-dados): Como solicitar remoção de dados.

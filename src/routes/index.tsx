@@ -813,8 +813,8 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-14 sm:py-24 px-5 sm:px-6">
-      <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-12">
+    <section id="faq" className="py-10 sm:py-24 px-5 sm:px-6">
+      <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-8">
         <div>
           <SmokeTextReveal>
             <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
@@ -828,14 +828,14 @@ function FAQ() {
           </SmokeTextReveal>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           {items.map((it, i) => {
             const isOpen = open === i;
             return (
               <button
                 key={it.q}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="w-full text-left rounded-xl border border-border/60 bg-card/60 px-5 py-4 hover:border-orange/40 transition"
+                className="w-full text-left rounded-xl border border-border/60 bg-card/60 px-4 py-3 hover:border-orange/40 transition"
               >
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-medium">{it.q}</span>

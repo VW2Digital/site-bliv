@@ -591,7 +591,7 @@ function Channels() {
 function Testimonials() {
   const reviews = [
     {
-      n: "Vitor Leal",
+      n: "Diogo",
       r: "Diretor de Operações · Amazon Polpas",
       q: "Trocamos três ferramentas pela Bliv e cortamos R$ 4 mil por mês. Em duas semanas o time inteiro já estava no funil novo — sem treinamento longo, sem dor.",
       img: clientAmazon.url,

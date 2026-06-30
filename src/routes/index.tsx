@@ -168,83 +168,17 @@ function Hero() {
 
 function DashboardMockup() {
   return (
-    <div className="relative mt-14 mx-auto max-w-5xl">
-      <div className="relative rounded-2xl border border-border/60 bg-gradient-card shadow-card overflow-hidden">
-        <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border/60">
-          <span className="w-3 h-3 rounded-full bg-destructive/80" />
-          <span className="w-3 h-3 rounded-full bg-orange/80" />
-          <span className="w-3 h-3 rounded-full bg-emerald-500/70" />
-          <span className="ml-3 text-xs text-muted-foreground">app.blivcrm.com / painel</span>
-        </div>
-        <div className="grid grid-cols-12 gap-3 p-4">
-          <aside className="col-span-3 rounded-lg bg-background/60 p-3 space-y-1.5">
-            <div className="text-[10px] uppercase text-muted-foreground/60 px-2 mb-2">Conta Matriz</div>
-            {[
-              { l: "Início", a: false },
-              { l: "Conversas", a: true },
-              { l: "Funil", a: false },
-              { l: "Contatos", a: false },
-              { l: "Automações", a: false },
-              { l: "Relatórios", a: false },
-            ].map((i) => (
-              <div
-                key={i.l}
-                className={`text-xs px-2 py-1.5 rounded-md ${
-                  i.a ? "bg-gradient-cta text-white" : "text-muted-foreground"
-                }`}
-              >
-                {i.l}
-              </div>
-            ))}
-          </aside>
-          <main className="col-span-9 space-y-3">
-            <div className="grid grid-cols-3 gap-3">
-              {[
-                { l: "Leads hoje", v: "84", d: "+18%" },
-                { l: "Em conversa", v: "126", d: "+9%" },
-                { l: "Convertidos", v: "37", d: "+24%" },
-              ].map((s) => (
-                <div key={s.l} className="rounded-lg bg-background/60 p-3">
-                  <div className="text-[10px] text-muted-foreground">{s.l}</div>
-                  <div className="text-2xl font-bold mt-1">{s.v}</div>
-                  <div className="text-[10px] text-orange mt-0.5">{s.d}</div>
-                </div>
-              ))}
-            </div>
-            <div className="rounded-lg bg-background/60 p-4 h-32 flex items-end gap-2">
-              {[40, 65, 50, 80, 55, 90, 70, 95, 60, 88, 72, 100].map((h, i) => (
-                <div
-                  key={i}
-                  className="flex-1 rounded-sm bg-gradient-cta opacity-80"
-                  style={{ height: `${h}%` }}
-                />
-              ))}
-            </div>
-          </main>
-        </div>
-      </div>
-
-      <FloatingCard className="hidden md:flex absolute -top-4 -left-10" icon={<Bell className="w-4 h-4" />}>
-        <div>
-          <div className="text-xs font-semibold">8 novas conversas</div>
-          <div className="text-[10px] text-muted-foreground">aguardando resposta</div>
-        </div>
-      </FloatingCard>
-      <FloatingCard className="hidden md:flex absolute top-20 -left-12" icon={<Users className="w-4 h-4" />}>
-        <div>
-          <div className="text-xs font-semibold">+312 leads</div>
-          <div className="text-[10px] text-muted-foreground">qualificados pela IA</div>
-        </div>
-      </FloatingCard>
-      <FloatingCard className="hidden md:flex absolute -bottom-4 -left-6" icon={<BarChart3 className="w-4 h-4" />}>
-        <div>
-          <div className="text-xs font-semibold">R$ 84k em pipeline</div>
-          <div className="text-[10px] text-muted-foreground">+24% no mês</div>
-        </div>
-      </FloatingCard>
+    <div className="relative mt-14 mx-auto max-w-6xl">
+      <img
+        src={dashboardHero.url}
+        alt="Painel da Bliv CRM mostrando métricas de campanhas, taxa de entrega e omnichannel"
+        className="w-full h-auto select-none"
+        draggable={false}
+      />
     </div>
   );
 }
+
 
 function FloatingCard({
   children,

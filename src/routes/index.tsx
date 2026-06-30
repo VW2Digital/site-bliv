@@ -386,26 +386,26 @@ function DashboardMockup() {
       </div>
 
       {/* Mobile: stacked below mockup, same alignment, no overlap */}
-      <div className="md:hidden mt-5 grid gap-4">
-        <div className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-2xl text-foreground shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-5 transition-all duration-300 ease-out active:scale-[0.99]">
-          <ul className="space-y-3.5">
+      <div className="md:hidden mt-4 grid gap-3 px-1">
+        <div className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-2xl text-foreground shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-4 transition-all duration-300 ease-out active:scale-[0.99]">
+          <ul className="space-y-3">
             {[
               { icon: iconWhatsapp.url, title: "Atendimento e campanhas pelo WhatsApp Oficial", desc: "Envie mensagens, atenda clientes e acompanhe métricas pela API oficial." },
               { icon: iconInstagram.url, title: "Leads e conversas do Instagram no CRM", desc: "Centralize mensagens e transforme interações em oportunidades." },
               { icon: iconMessenger.url, title: "Atendimento integrado pelo Messenger", desc: "Gerencie conversas do Facebook em um só painel." },
               { icon: iconWebhook.url, title: "Conecte formulários e sistemas ao CRM", desc: "Receba leads automaticamente de sites e landing pages." },
             ].map((it) => (
-              <li key={it.title} className="flex items-start gap-3">
-                <img src={it.icon} alt="" className="w-6 h-6 shrink-0 mt-[2px]" />
+              <li key={it.title} className="flex items-start gap-2.5">
+                <img src={it.icon} alt="" className="w-5 h-5 shrink-0 mt-[2px]" />
                 <div className="min-w-0">
-                  <p className="text-[0.8rem] font-semibold leading-[1.3] tracking-[-0.005em]">{it.title}</p>
-                  <p className="text-[0.72rem] text-muted-foreground leading-[1.4] mt-1">{it.desc}</p>
+                  <p className="text-[0.78rem] font-semibold leading-[1.3] tracking-[-0.005em]">{it.title}</p>
+                  <p className="text-[0.7rem] text-muted-foreground leading-[1.4] mt-0.5">{it.desc}</p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
+        <div className="flex items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5.5rem] transition-all duration-300 ease-out active:scale-[0.99]">
           <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
         </div>
       </div>

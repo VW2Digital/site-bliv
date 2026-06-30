@@ -59,8 +59,6 @@ function PixelGridBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    // Skip heavy animation on mobile to preserve battery / fps
-    if (typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -127,7 +125,7 @@ function PixelGridBackground() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-60 hidden md:block" />;
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-60" />;
 }
 
 

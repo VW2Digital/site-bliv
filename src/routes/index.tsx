@@ -996,13 +996,13 @@ export function Footer() {
     },
   ];
   return (
-    <footer className="px-5 sm:px-6 py-12 sm:py-16">
+    <footer className="px-5 sm:px-6 py-10 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_repeat(4,1fr)] gap-8 sm:gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_repeat(4,1fr)] gap-6 sm:gap-10">
           <div className="col-span-2 md:col-span-1">
 
             <img src={logo} alt="Bliv logo" className="h-[42px] w-auto mb-4" />
-            <p className="mt-4 text-sm text-muted-foreground max-w-xs">
+            <p className="mt-3 text-sm text-muted-foreground max-w-xs">
               Sua operação omnichannel com WhatsApp, Instagram, Messenger e IA.
             </p>
             <div className="mt-5 flex items-center gap-3 text-muted-foreground">
@@ -1024,7 +1024,7 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-12 pt-6 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
+        <div className="mt-10 pt-5 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} Bliv CRM. Um produto VW2 Digital.</span>
           <span>Feito no Brasil 🇧🇷</span>
         </div>

@@ -49,7 +49,7 @@ function PillButton({
   return (
     <a
       href={href}
-      className={`group inline-flex items-center rounded-xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 hover:scale-105 active:scale-95 transition-[background-color,border-color,transform] duration-200 pl-4 pr-1 py-1 gap-3 text-xs ${className}`}
+      className={`group inline-flex items-center rounded-xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 hover:scale-105 active:scale-95 transition-[background-color,border-color,transform] duration-200 pl-4 pr-1 py-1 gap-3 text-[15px] ${className}`}
     >
       <span className="transition-colors duration-200 group-hover:text-orange">{children}</span>
       <span className="flex items-center justify-center rounded-lg bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] p-1.5 transition-transform duration-300">

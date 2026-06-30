@@ -653,21 +653,22 @@ function Pricing() {
 
   const tableByTab: Record<string, { name: string; price: string; bullets: string[]; tag?: string }[]> = {
     start: [
-      { name: "Solo", price: "97", bullets: ["1 atendente", "1 número WhatsApp", "500 contatos", "Funil básico"] },
-      { name: "Start", price: "197", tag: "popular", bullets: ["3 atendentes", "1 número WhatsApp", "3k contatos", "Funil + tags"] },
-      { name: "Start +", price: "297", bullets: ["5 atendentes", "2 números", "10k contatos", "Webhooks"] },
+      { name: "Solo", price: "49", bullets: ["1 atendente", "1 número WhatsApp", "500 contatos", "Funil básico"] },
+      { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "1 número WhatsApp", "3k contatos", "Funil + tags"] },
+      { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "2 números", "10k contatos", "Webhooks"] },
     ],
     team: [
-      { name: "Growth", price: "397", bullets: ["10 atendentes", "Funil avançado", "Bot de fluxo", "Integrações"] },
-      { name: "Growth +", price: "597", tag: "popular", bullets: ["15 atendentes", "Agente de IA", "API pública", "Onboarding"] },
-      { name: "Pro", price: "897", bullets: ["25 atendentes", "Multi-conta", "SLA garantido", "Relatórios avançados"] },
+      { name: "Growth", price: "490", bullets: ["10 atendentes (R$49/usuário)", "Funil avançado", "Bot de fluxo", "Integrações"] },
+      { name: "Growth +", price: "735", tag: "popular", bullets: ["15 atendentes (R$49/usuário)", "Agente de IA", "API pública", "Onboarding"] },
+      { name: "Pro", price: "1.225", bullets: ["25 atendentes (R$49/usuário)", "Multi-conta", "SLA garantido", "Relatórios avançados"] },
     ],
     scale: [
-      { name: "Scale", price: "1.297", bullets: ["50 atendentes", "Multi-marca", "IA dedicada", "CSM dedicado"] },
-      { name: "Enterprise", price: "1.997", tag: "popular", bullets: ["Ilimitado", "SSO + auditoria", "SLA 99,9%", "Onboarding white-glove"] },
+      { name: "Scale", price: "2.450", bullets: ["50 atendentes (R$49/usuário)", "Multi-marca", "IA dedicada", "CSM dedicado"] },
+      { name: "Enterprise", price: "sob consulta", tag: "popular", bullets: ["Atendentes ilimitados", "SSO + auditoria", "SLA 99,9%", "Onboarding white-glove"] },
       { name: "Custom", price: "sob consulta", bullets: ["Sob medida", "Infra dedicada", "Compliance", "Contrato anual"] },
     ],
   };
+
 
   const tabs: { id: typeof tab; label: string }[] = [
     { id: "start", label: "Começando" },

@@ -813,7 +813,7 @@ function Media() {
       <div className="mx-auto max-w-5xl text-center">
         <p className="text-sm text-muted-foreground">Bliv na mídia</p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-70">
-          <span className="text-xl font-serif italic">Brazil Journal</span>
+          <span className="text-xl font-serif">Brazil Journal</span>
           <span className="text-2xl font-serif font-bold tracking-tight">Valor</span>
           <span className="text-xl font-semibold">startups<span className="text-orange">.</span></span>
           <span className="text-lg font-semibold tracking-tight">NeoFeed</span>
@@ -855,7 +855,7 @@ function FAQ() {
           <SmokeTextReveal>
             <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
             <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-              Tudo que você <span className="text-gradient-brand italic">precisa saber</span>
+              Tudo que você <span className="text-gradient-brand">precisa saber</span>
             </h2>
             <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
               Não achou sua resposta? Chama a gente no WhatsApp — gente de verdade responde em
@@ -923,7 +923,7 @@ function FinalCTA() {
     <section id="contato" className="py-10 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
         <SmokeTextReveal>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight italic">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight">
             <span className="text-gradient-brand">bliv</span>, bliv!
           </h2>
           <p className="mt-5 text-muted-foreground max-w-xl mx-auto">

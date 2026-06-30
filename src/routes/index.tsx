@@ -744,7 +744,7 @@ function Footer() {
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <TopBar />
+      
       <Nav />
       <Hero />
       <TrustedBy />

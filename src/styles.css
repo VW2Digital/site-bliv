@@ -88,6 +88,21 @@
   h1, h2, h3, h4 { letter-spacing: -0.02em; }
 }
 
+@keyframes dashboardZoom {
+  0%   { transform: scale(0.92); }
+  45%  { transform: scale(1.06); }
+  55%  { transform: scale(1.06); }
+  100% { transform: scale(0.92); }
+}
+
+.scroll-zoom-image {
+  animation-name: dashboardZoom;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: view(block);
+  animation-range: entry 0% exit 100%;
+}
+
 @utility text-gradient-brand {
   background-image: var(--gradient-brand);
   -webkit-background-clip: text;

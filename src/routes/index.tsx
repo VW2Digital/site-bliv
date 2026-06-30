@@ -244,30 +244,31 @@ export function Nav() {
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section id="inicio" className="relative pt-24 pb-20 overflow-hidden bg-background">
+    <section id="inicio" className="relative pt-14 sm:pt-24 pb-14 sm:pb-20 overflow-hidden bg-background">
       <PixelGridBackground />
       <div className="absolute inset-0 hero-glow pointer-events-none" />
-      <div className="relative mx-auto max-w-6xl px-6 text-center">
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-[11px] sm:text-xs text-muted-foreground backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange/60 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-orange" />
             </span>
-            100% integrado às APIs oficiais da Meta
+            <span className="hidden xs:inline">100% integrado às APIs oficiais da Meta</span>
+            <span className="xs:hidden">APIs oficiais da Meta</span>
           </span>
-          <h1 className="font-display mt-7 text-4xl md:text-6xl lg:text-7.5xl font-extrabold leading-[1.05] tracking-tight">
+          <h1 className="font-display mt-5 sm:mt-7 text-[2rem] leading-[1.08] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
             Sua operação omnichannel com <br className="hidden md:block" />
             <span className="text-[#25D366] italic font-bold">WhatsApp</span>,{" "}
             <span className="text-gradient-brand italic font-bold">Instagram</span>,{" "}
             <span className="text-[#0084FF] italic font-bold">Messenger</span>{" "}
             <span className="text-orange italic font-bold">e IA.</span>
           </h1>
-          <p className="mt-7 text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
+          <p className="mt-5 sm:mt-7 text-base sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
             Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />
             monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA ilimitados.
           </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
+          <div className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
             <PillButton href="#contato" size="lg">Falar com consultor</PillButton>
             <a href="#planos" className="text-sm text-muted-foreground hover:text-foreground transition inline-flex items-center gap-2">
               Ver planos
@@ -278,6 +279,7 @@ function Hero() {
         <DashboardMockup />
       </div>
     </section>
+
   );
 }
 

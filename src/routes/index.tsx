@@ -1000,8 +1000,9 @@ export function Footer() {
   return (
     <footer className="px-5 sm:px-6 py-12 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="grid md:grid-cols-[1.4fr_repeat(4,1fr)] gap-10">
-          <div>
+        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_repeat(4,1fr)] gap-8 sm:gap-10">
+          <div className="col-span-2 md:col-span-1">
+
             <img src={logo} alt="Bliv logo" className="h-[42px] w-auto mb-4" />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               Sua operação omnichannel com WhatsApp, Instagram, Messenger e IA.

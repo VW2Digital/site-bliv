@@ -342,7 +342,7 @@ function DashboardMockup() {
           <img
             src={dashboardBliv.url}
             alt="Painel da Bliv CRM com métricas de campanhas, contatos, taxa de entrega e notificações"
-            className="w-full h-full object-cover object-top select-none"
+            className="w-full h-full object-contain object-center select-none"
             draggable={false}
           />
         </div>

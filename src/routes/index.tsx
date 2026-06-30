@@ -247,7 +247,15 @@ function Hero() {
   return (
     <section id="inicio" className="relative pt-10 sm:pt-24 pb-10 sm:pb-20 overflow-hidden bg-background">
       <PixelGridBackground />
-      <div className="absolute inset-0 hero-glow pointer-events-none" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(70% 90% at 10% 50%, oklch(0.6 0.28 340 / 30%), transparent 65%),
+            radial-gradient(70% 90% at 90% 50%, oklch(0.65 0.22 30 / 30%), transparent 65%)
+          `,
+        }}
+      />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-[11px] sm:text-xs text-muted-foreground backdrop-blur">

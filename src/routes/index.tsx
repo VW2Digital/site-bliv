@@ -638,7 +638,7 @@ function Testimonials() {
                 "{t.q}"
               </p>
               <div className="relative mt-6 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-full bg-gradient-cta" />
+                <img src={t.img} alt={t.r} loading="lazy" className="w-10 h-10 rounded-full object-cover bg-white ring-1 ring-border/60" />
                 <div>
                   <div className="text-sm font-semibold">{t.n}</div>
                   <div className="text-xs text-muted-foreground">{t.r}</div>

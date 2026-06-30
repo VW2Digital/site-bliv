@@ -42,10 +42,10 @@ function PillButton({
   return (
     <a
       href={href}
-      className={`group inline-flex items-center gap-3 rounded-full bg-foreground/95 text-background ${sizes.pad} ${sizes.text} font-semibold shadow-card hover:bg-foreground transition ${className}`}
+      className={`group inline-flex items-center gap-3 rounded-full bg-[oklch(0.18_0.02_295)] text-foreground border border-border/60 ${sizes.pad} ${sizes.text} font-semibold shadow-card hover:bg-[oklch(0.22_0.02_295)] transition ${className}`}
     >
-      <span className={`${sizes.icon} rounded-full bg-background/15 flex items-center justify-center group-hover:bg-background/25 transition`}>
-        <ArrowRight className={`${sizes.arrow} -rotate-180`} />
+      <span className={`${sizes.icon} rounded-full bg-[oklch(0.32_0.02_295)] text-foreground flex items-center justify-center group-hover:bg-[oklch(0.4_0.02_295)] transition`}>
+        <ArrowRight className={sizes.arrow} />
       </span>
       {children}
     </a>

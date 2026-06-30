@@ -262,7 +262,7 @@ function Hero() {
       />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-display mt-4 sm:mt-7 text-[30px] leading-[1.1] md:text-6xl lg:text-7.5xl font-extrabold tracking-tight text-white">
+          <h1 className="font-display mt-4 sm:mt-7 text-[28px] leading-[1.1] md:text-6xl lg:text-7.5xl font-extrabold tracking-tight text-white">
             <span className="block">WhatsApp Oficial, Instagram,</span>
             <span className="block">Messenger e formulários</span>
             <span className="block">num só CRM.</span>

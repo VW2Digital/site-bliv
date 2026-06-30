@@ -338,7 +338,7 @@ function DashboardMockup() {
           <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
           <span className="w-3 h-3 rounded-full bg-[#28C840]" />
         </div>
-        <div className="aspect-[16/9] bg-[#1a1a1a]">
+        <div className="aspect-[1134/686] bg-[#111111]">
           <img
             src={dashboardBliv.url}
             alt="Painel da Bliv CRM com métricas de campanhas, contatos, taxa de entrega e notificações"

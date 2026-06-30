@@ -357,7 +357,7 @@ function DashboardMockup() {
       {/* Floating: integrations (left) — desktop */}
       <div
         tabIndex={0}
-        className="hidden md:block absolute left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[17rem] lg:w-[19rem] rounded-2xl border border-black/5 bg-white text-neutral-900 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:block absolute left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[17rem] lg:w-[19rem] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-foreground shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
       >
         <ul className="space-y-2.5 lg:space-y-3">
           {[
@@ -370,7 +370,7 @@ function DashboardMockup() {
               <img src={it.icon} alt="" className="w-6 h-6 shrink-0 mt-[2px]" />
               <div className="min-w-0">
                 <p className="text-left text-[0.75rem] lg:text-[0.8rem] font-semibold leading-[1.3] tracking-[-0.005em]">{it.title}</p>
-                <p className="text-left text-[0.68rem] lg:text-[0.72rem] font-normal text-neutral-600 leading-[1.4] mt-0.5">{it.desc}</p>
+                <p className="text-left text-[0.68rem] lg:text-[0.72rem] font-normal text-muted-foreground leading-[1.4] mt-0.5">{it.desc}</p>
               </div>
             </li>
           ))}

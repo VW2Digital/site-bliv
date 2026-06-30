@@ -603,7 +603,7 @@ function Testimonials() {
       img: clientGranfruto.url,
     },
     {
-      n: "Bruno Gu",
+      n: "Bruno Guimarães",
       r: "Gestora de Atendimento · Altamed",
       q: "Suporte rápido, painel simples e WhatsApp oficial funcionando perfeitamente. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
       img: clientAltamed.url,

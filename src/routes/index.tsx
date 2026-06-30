@@ -505,9 +505,9 @@ function StickyFeatures() {
 /* ---------------- COLLABORATORS / CHANNELS ---------------- */
 function Channels() {
   return (
-    <section className="py-14 sm:py-24 px-5 sm:px-6">
+    <section className="py-10 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-8 sm:mb-12">
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-8 items-end mb-6 sm:mb-12">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
@@ -526,9 +526,9 @@ function Channels() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-5">
-          <div className="rounded-2xl border border-border/60 bg-gradient-card p-7 shadow-card">
-            <h3 className="text-xl font-bold">WhatsApp oficial ou número virtual</h3>
+        <div className="grid md:grid-cols-2 gap-3 sm:gap-5">
+          <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
+            <h3 className="text-lg sm:text-xl font-bold">WhatsApp oficial ou número virtual</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Conecte o número da empresa direto na API oficial da Meta ou crie um número virtual pra cada
               vertical. Sem risco de banimento.
@@ -547,8 +547,8 @@ function Channels() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border/60 bg-gradient-card p-7 shadow-card">
-            <h3 className="text-xl font-bold">Painel de uso e cobrança</h3>
+          <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
+            <h3 className="text-lg sm:text-xl font-bold">Painel de uso e cobrança</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Acompanhe consumo de mensagens, sessões e conversões em tempo real. Tudo num painel simples.
             </p>
@@ -608,9 +608,9 @@ function Testimonials() {
     },
   ];
   return (
-    <section className="py-16 sm:py-28 px-5 sm:px-6">
+    <section className="py-10 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-10 sm:mb-14">
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-8 items-end mb-6 sm:mb-14">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
@@ -622,9 +622,9 @@ function Testimonials() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-5">
           {reviews.map((t, idx) => (
-            <article key={t.n} className={`relative rounded-3xl border border-border/60 p-6 sm:p-8 shadow-card overflow-hidden ${idx === 0 ? "bg-gradient-card" : "bg-card/40"}`}>
+            <article key={t.n} className={`relative rounded-3xl border border-border/60 p-4 sm:p-8 shadow-card overflow-hidden ${idx === 0 ? "bg-gradient-card" : "bg-card/40"}`}>
               {idx === 0 && <Quote className="absolute -top-2 -left-2 w-24 h-24 text-orange/10" />}
               <p className={`relative leading-relaxed text-foreground/95 ${idx === 0 ? "font-display text-lg md:text-xl font-bold" : "text-sm"}`}>
                 "{t.q}"

@@ -1108,7 +1108,7 @@ function Index() {
         <Channels />
         <Testimonials />
         <Pricing />
-        <Media />
+        
         <FAQ />
         <FinalCTA />
       </main>

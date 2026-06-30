@@ -4,8 +4,6 @@ import {
   ArrowRight,
   Check,
   Sparkles,
-  TrendingUp,
-  Settings2,
   LayoutGrid,
   Headphones,
   MessageCircle,
@@ -13,13 +11,13 @@ import {
   Webhook,
   Plus,
   Minus,
-  Star,
   Instagram,
   Facebook,
   Linkedin,
   BarChart3,
   Users,
   Bell,
+  Quote,
 } from "lucide-react";
 
 /* ---------------- Shared CTA button ---------------- */
@@ -130,20 +128,37 @@ function Nav() {
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section id="inicio" className="relative pt-20 pb-16 overflow-hidden">
+    <section id="inicio" className="relative pt-24 pb-20 overflow-hidden">
       <div className="absolute inset-0 hero-glow pointer-events-none" />
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight">
-          CRM com WhatsApp para empresas:
-          <br />
-          <span className="text-gradient-brand">sem burocracia</span> e sem complicação
-        </h1>
-        <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-          Centralize WhatsApp, Instagram e Facebook num só funil. A Bliv responde, qualifica e vende
-          enquanto seu time foca no que importa.
-        </p>
-        <div className="mt-8 flex justify-center">
-          <PillButton href="#contato" size="lg">Comece agora</PillButton>
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="max-w-3xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange/60 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-orange" />
+            </span>
+            Lote fundador aberto · até 40% off no 1º ano
+          </span>
+          <h1 className="font-display mt-7 text-5xl md:text-7xl font-extrabold leading-[0.95]">
+            O CRM com WhatsApp <br className="hidden md:block" />
+            que <span className="text-gradient-brand italic font-bold">vende enquanto você dorme.</span>
+          </h1>
+          <p className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed">
+            Unifique WhatsApp, Instagram e Facebook num funil só. A Bliv qualifica, responde e
+            agenda — seu time só entra na hora de fechar.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-5">
+            <PillButton href="#contato" size="lg">Começar grátis</PillButton>
+            <a href="#planos" className="text-sm text-muted-foreground hover:text-foreground transition inline-flex items-center gap-2">
+              Ver planos
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+            <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> 7 dias grátis</span>
+            <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> Sem cartão</span>
+            <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> Setup em 5 min</span>
+          </div>
         </div>
         <DashboardMockup />
       </div>
@@ -271,145 +286,134 @@ function TrustedBy() {
 
 /* ---------------- BIG FEATURES (sticky left col) ---------------- */
 function StickyFeatures() {
-  const cards = [
-    {
-      tag: "Reduza custos",
-      icon: TrendingUp,
-      title: "Reduza custos",
-      desc:
-        "Pare de pagar 3 ferramentas (CRM, chatbot, atendimento). Com a Bliv, tudo num só lugar — e por uma fração do preço.",
-      visual: (
-        <div className="grid grid-cols-3 gap-2 mt-5">
-          {["−42%", "−28%", "1 só"].map((t, i) => (
-            <div
-              key={i}
-              className="rounded-lg border border-border/60 bg-background/40 py-3 text-center"
-            >
-              <div className="text-lg font-bold text-gradient-brand">{t}</div>
-              <div className="text-[10px] text-muted-foreground">
-                {i === 0 ? "no CAC" : i === 1 ? "no churn" : "ferramenta"}
-              </div>
-            </div>
-          ))}
-        </div>
-      ),
-    },
-    {
-      tag: "Gestão simples",
-      icon: Settings2,
-      title: "Gestão simples",
-      desc:
-        "Painel claro, funil visual e relatórios que qualquer gestor entende. Sem planilha, sem retrabalho.",
-      visual: (
-        <div className="mt-5 space-y-2">
-          {[
-            { n: "Maria S.", c: "Atendendo agora", t: "online" },
-            { n: "João P.", c: "Qualificando lead", t: "online" },
-            { n: "Ana R.", c: "Em pausa", t: "away" },
-          ].map((u) => (
-            <div
-              key={u.n}
-              className="flex items-center justify-between rounded-lg border border-border/60 bg-background/40 px-3 py-2"
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-7 h-7 rounded-full bg-gradient-cta" />
-                <div>
-                  <div className="text-xs font-semibold">{u.n}</div>
-                  <div className="text-[10px] text-muted-foreground">{u.c}</div>
-                </div>
-              </div>
-              <span
-                className={`text-[10px] px-2 py-0.5 rounded-full ${
-                  u.t === "online" ? "bg-emerald-500/15 text-emerald-400" : "bg-orange/15 text-orange"
-                }`}
-              >
-                {u.t}
-              </span>
-            </div>
-          ))}
-        </div>
-      ),
-    },
-    {
-      tag: "Tudo no mesmo lugar",
-      icon: LayoutGrid,
-      title: "Tudo no mesmo lugar",
-      desc:
-        "WhatsApp, Instagram, Facebook e formulário do site num único inbox. Seu time responde sem trocar de aba.",
-      visual: (
-        <div className="mt-5 rounded-lg border border-border/60 bg-background/40 p-3 space-y-2">
-          {[
-            { i: MessageCircle, c: "WhatsApp · Maria", m: "Oi, recebi o orçamento…" },
-            { i: Instagram, c: "Instagram · João", m: "Tem desconto pra anual?" },
-            { i: Facebook, c: "Messenger · Ana", m: "Quero falar com um humano." },
-          ].map((m) => (
-            <div key={m.c} className="flex items-center gap-2 text-xs">
-              <span className="w-7 h-7 rounded-md bg-gradient-cta text-white flex items-center justify-center">
-                <m.i className="w-3.5 h-3.5" />
-              </span>
-              <div className="flex-1">
-                <div className="font-semibold">{m.c}</div>
-                <div className="text-[11px] text-muted-foreground truncate">{m.m}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ),
-    },
-    {
-      tag: "Suporte de verdade",
-      icon: Headphones,
-      title: "Suporte de verdade",
-      desc:
-        "Gente real, em português, no WhatsApp. Resposta em minutos — não em dias. Sem chat-bot da concorrência.",
-      visual: (
-        <div className="mt-5 space-y-2">
-          <div className="rounded-2xl rounded-tl-sm bg-background/60 border border-border/60 px-3 py-2 text-xs max-w-[80%]">
-            Oi! Travou minha automação, consegue dar uma olhada?
-          </div>
-          <div className="rounded-2xl rounded-tr-sm bg-gradient-cta text-white px-3 py-2 text-xs max-w-[80%] ml-auto">
-            Já tô olhando! Resolvido em 3 min ✨
-          </div>
-        </div>
-      ),
-    },
-  ];
-
   return (
-    <section className="py-24 px-6 bg-card/30 border-y border-border/40">
-      <div className="mx-auto max-w-6xl grid md:grid-cols-[1fr_1.4fr] gap-12">
-        <div className="md:sticky md:top-24 self-start">
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            Por que a Bliv
-          </span>
-          <h2 className="mt-5 text-4xl md:text-5xl font-bold leading-tight">
-            O CRM que acompanha o <span className="text-gradient-brand">ritmo da sua empresa</span>
-          </h2>
-          <p className="mt-5 text-muted-foreground">
-            Construído pra times brasileiros que vendem por WhatsApp e cansaram de gambiarra.
-          </p>
-          <div className="mt-7">
-            <PillButton href="#contato">Começar agora</PillButton>
+    <section id="funcionalidades" className="relative py-28 px-6">
+      <div className="mx-auto max-w-6xl">
+        {/* Section header — editorial, assimétrico */}
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
+          <div className="md:col-span-7">
+            <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
+            <h2 className="font-display mt-4 text-4xl md:text-6xl font-extrabold leading-[1]">
+              Menos abas abertas, <br />
+              <span className="text-gradient-brand italic">mais negócios fechados.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-4 md:col-start-9">
+            <p className="text-muted-foreground leading-relaxed">
+              A gente construiu a Bliv ouvindo times de vendas brasileiros que cansaram de
+              gambiarra com planilha, bot pirata e três assinaturas pra fazer uma coisa só.
+            </p>
           </div>
         </div>
 
-        <div className="space-y-5">
-          {cards.map((c) => (
-            <div
-              key={c.title}
-              className="rounded-2xl border border-border/60 bg-gradient-card p-7 shadow-card"
-            >
+        {/* Bento assimétrico */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+          {/* Card grande — funil visual */}
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-card p-8 shadow-card">
+            <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-orange/10 blur-3xl group-hover:bg-orange/20 transition-colors" />
+            <div className="relative z-10 max-w-md">
               <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-lg bg-gradient-cta text-white flex items-center justify-center">
-                  <c.icon className="w-4 h-4" />
+                <span className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/30 text-orange flex items-center justify-center">
+                  <LayoutGrid className="w-5 h-5" />
                 </span>
-                <span className="text-xs uppercase tracking-wide text-muted-foreground">{c.tag}</span>
+                <span className="eyebrow">Funil visual</span>
               </div>
-              <h3 className="mt-4 text-2xl font-bold">{c.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
-              {c.visual}
+              <h3 className="font-display mt-5 text-2xl font-bold">
+                Arraste, solte, feche. Sem treinar ninguém.
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Um kanban honesto, com etapas que o seu time entende no primeiro dia. Sem 47
+                campos obrigatórios, sem onboarding de 3 semanas.
+              </p>
             </div>
-          ))}
+            <div className="relative z-10 mt-7 grid grid-cols-4 gap-2">
+              {["Novo", "Qualificado", "Proposta", "Fechado"].map((s, i) => (
+                <div key={s} className="rounded-xl border border-border/60 bg-background/40 p-3">
+                  <div className="text-[10px] text-muted-foreground">{s}</div>
+                  <div className="mt-2 space-y-1.5">
+                    {Array.from({ length: 3 - (i % 2) }).map((_, k) => (
+                      <div key={k} className={`h-6 rounded-md ${i === 1 ? "bg-orange/15 border border-orange/30" : "bg-card/80 border border-border/60"}`} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          {/* Card vertical — IA */}
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-8 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="w-10 h-10 rounded-xl bg-pink/10 border border-pink/30 text-pink flex items-center justify-center">
+                  <Bot className="w-5 h-5" />
+                </span>
+                <span className="eyebrow">Agente de IA</span>
+              </div>
+              <h3 className="font-display mt-5 text-2xl font-bold">
+                Qualifica enquanto o time dorme.
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Responde, faz perguntas, agenda na agenda real do vendedor. Em português de gente,
+                não de bot.
+              </p>
+            </div>
+            <div className="mt-8">
+              <div className="flex items-center justify-between text-[10px] text-muted-foreground mb-2">
+                <span>Leads qualificados sem humano</span>
+                <span className="text-foreground font-semibold">73%</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-background/80 overflow-hidden">
+                <div className="h-full w-[73%] bg-gradient-cta" />
+              </div>
+            </div>
+          </article>
+
+          {/* Card pequeno — Suporte */}
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-8">
+            <div className="flex items-center gap-3">
+              <span className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/30 text-orange flex items-center justify-center">
+                <Headphones className="w-5 h-5" />
+              </span>
+              <span className="eyebrow">Suporte humano</span>
+            </div>
+            <h3 className="font-display mt-5 text-xl font-bold">Gente real, no WhatsApp.</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Resposta em minutos, não em tickets. Sem fila gringa, sem bot da própria empresa.
+            </p>
+          </article>
+
+          {/* Card largo — Omnichannel */}
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-tr from-pink/[0.06] to-transparent p-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-8">
+              <div className="flex-1">
+                <div className="flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-xl bg-pink/10 border border-pink/30 text-pink flex items-center justify-center">
+                    <MessageCircle className="w-5 h-5" />
+                  </span>
+                  <span className="eyebrow">Omnichannel de verdade</span>
+                </div>
+                <h3 className="font-display mt-5 text-2xl font-bold">
+                  WhatsApp, Instagram e Messenger no mesmo inbox.
+                </h3>
+                <p className="mt-3 text-sm text-muted-foreground max-w-md">
+                  Histórico unificado por contato. O cliente muda de canal, o seu time não perde o
+                  fio da conversa.
+                </p>
+              </div>
+              <div className="flex md:flex-col gap-3">
+                {[
+                  { i: MessageCircle, l: "WhatsApp", c: "text-emerald-400" },
+                  { i: Instagram, l: "Instagram", c: "text-pink" },
+                  { i: Facebook, l: "Messenger", c: "text-orange" },
+                ].map((ch) => (
+                  <div key={ch.l} className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/40 px-3 py-2">
+                    <ch.i className={`w-4 h-4 ${ch.c}`} />
+                    <span className="text-xs">{ch.l}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -421,15 +425,16 @@ function Channels() {
   return (
     <section className="py-24 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            Canais & API
-          </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Times <span className="text-gradient-brand">sempre conectados</span>
-          </h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Conecte WhatsApp Cloud API oficial ou número virtual via integração. Sua operação não para.
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-12">
+          <div className="md:col-span-7">
+            <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              Seu time <span className="text-gradient-brand italic">sempre conectado</span>
+            </h2>
+          </div>
+          <p className="md:col-span-4 md:col-start-9 text-muted-foreground leading-relaxed">
+            WhatsApp Cloud API oficial da Meta, número virtual ou as duas coisas. Sua operação
+            não cai porque um canal cair.
           </p>
         </div>
 
@@ -493,57 +498,67 @@ function Channels() {
 
 /* ---------------- TESTIMONIALS ---------------- */
 function Testimonials() {
-  const items = [
-    {
-      n: "Vitor Leal",
-      r: "CMO · Holos",
-      q: "Trocamos 3 ferramentas pela Bliv e cortamos R$ 4k/mês. Em duas semanas o time já tava no funil novo.",
-    },
+  const featured = {
+    n: "Vitor Leal",
+    r: "CMO · Holos",
+    q: "Trocamos três ferramentas pela Bliv e cortamos R$ 4 mil por mês. Em duas semanas o time inteiro já estava no funil novo — sem treinamento longo, sem dor.",
+  };
+  const others = [
     {
       n: "Guilherme Azevedo",
       r: "Head de Vendas · Nexa",
-      q: "A IA da Bliv qualifica os leads antes do humano. Nosso tempo médio de resposta caiu de 6h pra 4min.",
+      q: "O agente de IA qualifica antes do humano. Tempo médio de resposta caiu de 6h pra 4min.",
     },
     {
       n: "Luana Góes",
       r: "Sócia · BPM",
-      q: "Suporte rápido, painel simples e o WhatsApp oficial funcionando. Era exatamente isso que faltava.",
+      q: "Suporte rápido, painel simples, WhatsApp oficial funcionando. Era exatamente isso que faltava.",
     },
   ];
   return (
-    <section className="py-24 px-6 bg-card/30 border-y border-border/40">
+    <section className="py-28 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            Clientes
-          </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Um <span className="text-gradient-brand">bliv</span> dos nossos clientes
-          </h2>
-          <p className="mt-3 text-muted-foreground">A gente preferia que eles falassem por nós.</p>
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
+          <div className="md:col-span-7">
+            <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              A gente preferia que <br/>
+              <span className="text-gradient-brand italic">eles falassem por nós.</span>
+            </h2>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
-          {items.map((t) => (
-            <div
-              key={t.n}
-              className="rounded-2xl border border-border/60 bg-gradient-card p-6 shadow-card"
-            >
-              <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-full bg-gradient-cta" />
-                <div>
-                  <div className="text-sm font-semibold">{t.n}</div>
-                  <div className="text-[11px] text-muted-foreground">{t.r}</div>
-                </div>
+        <div className="grid md:grid-cols-12 gap-5">
+          {/* Depoimento principal — editorial */}
+          <article className="md:col-span-7 relative rounded-3xl border border-border/60 bg-gradient-card p-10 shadow-card overflow-hidden">
+            <Quote className="absolute -top-2 -left-2 w-28 h-28 text-orange/10" />
+            <p className="font-display relative text-2xl md:text-3xl leading-snug font-bold text-foreground/95">
+              {featured.q}
+            </p>
+            <div className="relative mt-8 flex items-center gap-3">
+              <span className="w-11 h-11 rounded-full bg-gradient-cta" />
+              <div>
+                <div className="text-sm font-semibold">{featured.n}</div>
+                <div className="text-xs text-muted-foreground">{featured.r}</div>
               </div>
-              <div className="flex gap-0.5 mt-4 text-orange">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                ))}
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">"{t.q}"</p>
             </div>
-          ))}
+          </article>
+
+          {/* Coluna lateral — dois depoimentos curtos + métrica */}
+          <div className="md:col-span-5 grid gap-5">
+            {others.map((t) => (
+              <article key={t.n} className="rounded-3xl border border-border/60 bg-card/40 p-6">
+                <p className="text-sm text-foreground/90 leading-relaxed">{t.q}</p>
+                <div className="mt-5 flex items-center gap-3">
+                  <span className="w-9 h-9 rounded-full bg-gradient-cta" />
+                  <div>
+                    <div className="text-xs font-semibold">{t.n}</div>
+                    <div className="text-[11px] text-muted-foreground">{t.r}</div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -581,14 +596,17 @@ function Pricing() {
   return (
     <section id="planos" className="py-24 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-10">
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            Planos & Preços
-          </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Planos sem <span className="text-gradient-brand">burocracia</span> e sem fidelidade
-          </h2>
-          <p className="mt-3 text-muted-foreground">Cancele quando quiser. Sem taxa de adesão.</p>
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-10">
+          <div className="md:col-span-7">
+            <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              Mensal, sem multa, <br/>
+              <span className="text-gradient-brand italic">sem letra miúda.</span>
+            </h2>
+          </div>
+          <p className="md:col-span-4 md:col-start-9 text-muted-foreground leading-relaxed">
+            Cancele direto pelo painel quando quiser. Sem taxa de adesão, sem contrato anual.
+          </p>
         </div>
 
         <div className="flex justify-center mb-8">
@@ -712,14 +730,13 @@ function FAQ() {
     <section id="faq" className="py-24 px-6">
       <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-12">
         <div>
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            FAQ
-          </span>
-          <h2 className="mt-5 text-4xl md:text-5xl font-bold leading-tight">
-            Tudo que você <span className="text-gradient-brand">precisa saber</span>
+          <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
+          <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+            Tudo que você <span className="text-gradient-brand italic">precisa saber</span>
           </h2>
-          <p className="mt-4 text-muted-foreground text-sm">
-            Não achou sua resposta? Fala com a gente no WhatsApp.
+          <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
+            Não achou sua resposta? Chama a gente no WhatsApp — gente de verdade responde em
+            poucos minutos.
           </p>
         </div>
 

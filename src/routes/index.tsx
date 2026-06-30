@@ -597,7 +597,7 @@ function Testimonials() {
       img: clientAmazon.url,
     },
     {
-      n: "Guilherme Azevedo",
+      n: "Adriane",
       r: "Fundador · Granfruto",
       q: "O agente de IA qualifica os leads antes de chegarem ao time comercial. Nosso tempo médio de resposta no WhatsApp despencou de 6h para menos de 4 minutos.",
       img: clientGranfruto.url,

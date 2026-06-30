@@ -288,145 +288,134 @@ function TrustedBy() {
 
 /* ---------------- BIG FEATURES (sticky left col) ---------------- */
 function StickyFeatures() {
-  const cards = [
-    {
-      tag: "Reduza custos",
-      icon: TrendingUp,
-      title: "Reduza custos",
-      desc:
-        "Pare de pagar 3 ferramentas (CRM, chatbot, atendimento). Com a Bliv, tudo num só lugar — e por uma fração do preço.",
-      visual: (
-        <div className="grid grid-cols-3 gap-2 mt-5">
-          {["−42%", "−28%", "1 só"].map((t, i) => (
-            <div
-              key={i}
-              className="rounded-lg border border-border/60 bg-background/40 py-3 text-center"
-            >
-              <div className="text-lg font-bold text-gradient-brand">{t}</div>
-              <div className="text-[10px] text-muted-foreground">
-                {i === 0 ? "no CAC" : i === 1 ? "no churn" : "ferramenta"}
-              </div>
-            </div>
-          ))}
-        </div>
-      ),
-    },
-    {
-      tag: "Gestão simples",
-      icon: Settings2,
-      title: "Gestão simples",
-      desc:
-        "Painel claro, funil visual e relatórios que qualquer gestor entende. Sem planilha, sem retrabalho.",
-      visual: (
-        <div className="mt-5 space-y-2">
-          {[
-            { n: "Maria S.", c: "Atendendo agora", t: "online" },
-            { n: "João P.", c: "Qualificando lead", t: "online" },
-            { n: "Ana R.", c: "Em pausa", t: "away" },
-          ].map((u) => (
-            <div
-              key={u.n}
-              className="flex items-center justify-between rounded-lg border border-border/60 bg-background/40 px-3 py-2"
-            >
-              <div className="flex items-center gap-2">
-                <span className="w-7 h-7 rounded-full bg-gradient-cta" />
-                <div>
-                  <div className="text-xs font-semibold">{u.n}</div>
-                  <div className="text-[10px] text-muted-foreground">{u.c}</div>
-                </div>
-              </div>
-              <span
-                className={`text-[10px] px-2 py-0.5 rounded-full ${
-                  u.t === "online" ? "bg-emerald-500/15 text-emerald-400" : "bg-orange/15 text-orange"
-                }`}
-              >
-                {u.t}
-              </span>
-            </div>
-          ))}
-        </div>
-      ),
-    },
-    {
-      tag: "Tudo no mesmo lugar",
-      icon: LayoutGrid,
-      title: "Tudo no mesmo lugar",
-      desc:
-        "WhatsApp, Instagram, Facebook e formulário do site num único inbox. Seu time responde sem trocar de aba.",
-      visual: (
-        <div className="mt-5 rounded-lg border border-border/60 bg-background/40 p-3 space-y-2">
-          {[
-            { i: MessageCircle, c: "WhatsApp · Maria", m: "Oi, recebi o orçamento…" },
-            { i: Instagram, c: "Instagram · João", m: "Tem desconto pra anual?" },
-            { i: Facebook, c: "Messenger · Ana", m: "Quero falar com um humano." },
-          ].map((m) => (
-            <div key={m.c} className="flex items-center gap-2 text-xs">
-              <span className="w-7 h-7 rounded-md bg-gradient-cta text-white flex items-center justify-center">
-                <m.i className="w-3.5 h-3.5" />
-              </span>
-              <div className="flex-1">
-                <div className="font-semibold">{m.c}</div>
-                <div className="text-[11px] text-muted-foreground truncate">{m.m}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ),
-    },
-    {
-      tag: "Suporte de verdade",
-      icon: Headphones,
-      title: "Suporte de verdade",
-      desc:
-        "Gente real, em português, no WhatsApp. Resposta em minutos — não em dias. Sem chat-bot da concorrência.",
-      visual: (
-        <div className="mt-5 space-y-2">
-          <div className="rounded-2xl rounded-tl-sm bg-background/60 border border-border/60 px-3 py-2 text-xs max-w-[80%]">
-            Oi! Travou minha automação, consegue dar uma olhada?
-          </div>
-          <div className="rounded-2xl rounded-tr-sm bg-gradient-cta text-white px-3 py-2 text-xs max-w-[80%] ml-auto">
-            Já tô olhando! Resolvido em 3 min ✨
-          </div>
-        </div>
-      ),
-    },
-  ];
-
   return (
-    <section className="py-24 px-6 bg-card/30 border-y border-border/40">
-      <div className="mx-auto max-w-6xl grid md:grid-cols-[1fr_1.4fr] gap-12">
-        <div className="md:sticky md:top-24 self-start">
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            Por que a Bliv
-          </span>
-          <h2 className="mt-5 text-4xl md:text-5xl font-bold leading-tight">
-            O CRM que acompanha o <span className="text-gradient-brand">ritmo da sua empresa</span>
-          </h2>
-          <p className="mt-5 text-muted-foreground">
-            Construído pra times brasileiros que vendem por WhatsApp e cansaram de gambiarra.
-          </p>
-          <div className="mt-7">
-            <PillButton href="#contato">Começar agora</PillButton>
+    <section id="funcionalidades" className="relative py-28 px-6">
+      <div className="mx-auto max-w-6xl">
+        {/* Section header — editorial, assimétrico */}
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
+          <div className="md:col-span-7">
+            <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
+            <h2 className="font-display mt-4 text-4xl md:text-6xl font-extrabold leading-[1]">
+              Menos abas abertas, <br />
+              <span className="text-gradient-brand italic">mais negócios fechados.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-4 md:col-start-9">
+            <p className="text-muted-foreground leading-relaxed">
+              A gente construiu a Bliv ouvindo times de vendas brasileiros que cansaram de
+              gambiarra com planilha, bot pirata e três assinaturas pra fazer uma coisa só.
+            </p>
           </div>
         </div>
 
-        <div className="space-y-5">
-          {cards.map((c) => (
-            <div
-              key={c.title}
-              className="rounded-2xl border border-border/60 bg-gradient-card p-7 shadow-card"
-            >
+        {/* Bento assimétrico */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+          {/* Card grande — funil visual */}
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-card p-8 shadow-card">
+            <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-orange/10 blur-3xl group-hover:bg-orange/20 transition-colors" />
+            <div className="relative z-10 max-w-md">
               <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-lg bg-gradient-cta text-white flex items-center justify-center">
-                  <c.icon className="w-4 h-4" />
+                <span className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/30 text-orange flex items-center justify-center">
+                  <LayoutGrid className="w-5 h-5" />
                 </span>
-                <span className="text-xs uppercase tracking-wide text-muted-foreground">{c.tag}</span>
+                <span className="eyebrow">Funil visual</span>
               </div>
-              <h3 className="mt-4 text-2xl font-bold">{c.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
-              {c.visual}
+              <h3 className="font-display mt-5 text-2xl font-bold">
+                Arraste, solte, feche. Sem treinar ninguém.
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Um kanban honesto, com etapas que o seu time entende no primeiro dia. Sem 47
+                campos obrigatórios, sem onboarding de 3 semanas.
+              </p>
             </div>
-          ))}
+            <div className="relative z-10 mt-7 grid grid-cols-4 gap-2">
+              {["Novo", "Qualificado", "Proposta", "Fechado"].map((s, i) => (
+                <div key={s} className="rounded-xl border border-border/60 bg-background/40 p-3">
+                  <div className="text-[10px] text-muted-foreground">{s}</div>
+                  <div className="mt-2 space-y-1.5">
+                    {Array.from({ length: 3 - (i % 2) }).map((_, k) => (
+                      <div key={k} className={`h-6 rounded-md ${i === 1 ? "bg-orange/15 border border-orange/30" : "bg-card/80 border border-border/60"}`} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          {/* Card vertical — IA */}
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-8 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="w-10 h-10 rounded-xl bg-pink/10 border border-pink/30 text-pink flex items-center justify-center">
+                  <Bot className="w-5 h-5" />
+                </span>
+                <span className="eyebrow">Agente de IA</span>
+              </div>
+              <h3 className="font-display mt-5 text-2xl font-bold">
+                Qualifica enquanto o time dorme.
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                Responde, faz perguntas, agenda na agenda real do vendedor. Em português de gente,
+                não de bot.
+              </p>
+            </div>
+            <div className="mt-8">
+              <div className="flex items-center justify-between text-[10px] text-muted-foreground mb-2">
+                <span>Leads qualificados sem humano</span>
+                <span className="text-foreground font-semibold">73%</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-background/80 overflow-hidden">
+                <div className="h-full w-[73%] bg-gradient-cta" />
+              </div>
+            </div>
+          </article>
+
+          {/* Card pequeno — Suporte */}
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-8">
+            <div className="flex items-center gap-3">
+              <span className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/30 text-orange flex items-center justify-center">
+                <Headphones className="w-5 h-5" />
+              </span>
+              <span className="eyebrow">Suporte humano</span>
+            </div>
+            <h3 className="font-display mt-5 text-xl font-bold">Gente real, no WhatsApp.</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Resposta em minutos, não em tickets. Sem fila gringa, sem bot da própria empresa.
+            </p>
+          </article>
+
+          {/* Card largo — Omnichannel */}
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-tr from-pink/[0.06] to-transparent p-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-8">
+              <div className="flex-1">
+                <div className="flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-xl bg-pink/10 border border-pink/30 text-pink flex items-center justify-center">
+                    <MessageCircle className="w-5 h-5" />
+                  </span>
+                  <span className="eyebrow">Omnichannel de verdade</span>
+                </div>
+                <h3 className="font-display mt-5 text-2xl font-bold">
+                  WhatsApp, Instagram e Messenger no mesmo inbox.
+                </h3>
+                <p className="mt-3 text-sm text-muted-foreground max-w-md">
+                  Histórico unificado por contato. O cliente muda de canal, o seu time não perde o
+                  fio da conversa.
+                </p>
+              </div>
+              <div className="flex md:flex-col gap-3">
+                {[
+                  { i: MessageCircle, l: "WhatsApp", c: "text-emerald-400" },
+                  { i: Instagram, l: "Instagram", c: "text-pink" },
+                  { i: Facebook, l: "Messenger", c: "text-orange" },
+                ].map((ch) => (
+                  <div key={ch.l} className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/40 px-3 py-2">
+                    <ch.i className={`w-4 h-4 ${ch.c}`} />
+                    <span className="text-xs">{ch.l}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

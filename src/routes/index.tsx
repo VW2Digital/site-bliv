@@ -405,7 +405,7 @@ function DashboardMockup() {
             ))}
           </ul>
         </div>
-        <div className="flex items-center justify-center rounded-xl border border-white/15 bg-white/10 backdrop-blur-2xl shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
+        <div className="flex items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
           <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
         </div>
       </div>

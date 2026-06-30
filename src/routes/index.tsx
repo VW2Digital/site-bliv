@@ -497,57 +497,67 @@ function Channels() {
 
 /* ---------------- TESTIMONIALS ---------------- */
 function Testimonials() {
-  const items = [
-    {
-      n: "Vitor Leal",
-      r: "CMO · Holos",
-      q: "Trocamos 3 ferramentas pela Bliv e cortamos R$ 4k/mês. Em duas semanas o time já tava no funil novo.",
-    },
+  const featured = {
+    n: "Vitor Leal",
+    r: "CMO · Holos",
+    q: "Trocamos três ferramentas pela Bliv e cortamos R$ 4 mil por mês. Em duas semanas o time inteiro já estava no funil novo — sem treinamento longo, sem dor.",
+  };
+  const others = [
     {
       n: "Guilherme Azevedo",
       r: "Head de Vendas · Nexa",
-      q: "A IA da Bliv qualifica os leads antes do humano. Nosso tempo médio de resposta caiu de 6h pra 4min.",
+      q: "O agente de IA qualifica antes do humano. Tempo médio de resposta caiu de 6h pra 4min.",
     },
     {
       n: "Luana Góes",
       r: "Sócia · BPM",
-      q: "Suporte rápido, painel simples e o WhatsApp oficial funcionando. Era exatamente isso que faltava.",
+      q: "Suporte rápido, painel simples, WhatsApp oficial funcionando. Era exatamente isso que faltava.",
     },
   ];
   return (
-    <section className="py-24 px-6 bg-card/30 border-y border-border/40">
+    <section className="py-28 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            Clientes
-          </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Um <span className="text-gradient-brand">bliv</span> dos nossos clientes
-          </h2>
-          <p className="mt-3 text-muted-foreground">A gente preferia que eles falassem por nós.</p>
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
+          <div className="md:col-span-7">
+            <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              A gente preferia que <br/>
+              <span className="text-gradient-brand italic">eles falassem por nós.</span>
+            </h2>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
-          {items.map((t) => (
-            <div
-              key={t.n}
-              className="rounded-2xl border border-border/60 bg-gradient-card p-6 shadow-card"
-            >
-              <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-full bg-gradient-cta" />
-                <div>
-                  <div className="text-sm font-semibold">{t.n}</div>
-                  <div className="text-[11px] text-muted-foreground">{t.r}</div>
-                </div>
+        <div className="grid md:grid-cols-12 gap-5">
+          {/* Depoimento principal — editorial */}
+          <article className="md:col-span-7 relative rounded-3xl border border-border/60 bg-gradient-card p-10 shadow-card overflow-hidden">
+            <Quote className="absolute -top-2 -left-2 w-28 h-28 text-orange/10" />
+            <p className="font-display relative text-2xl md:text-3xl leading-snug font-bold text-foreground/95">
+              {featured.q}
+            </p>
+            <div className="relative mt-8 flex items-center gap-3">
+              <span className="w-11 h-11 rounded-full bg-gradient-cta" />
+              <div>
+                <div className="text-sm font-semibold">{featured.n}</div>
+                <div className="text-xs text-muted-foreground">{featured.r}</div>
               </div>
-              <div className="flex gap-0.5 mt-4 text-orange">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                ))}
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">"{t.q}"</p>
             </div>
-          ))}
+          </article>
+
+          {/* Coluna lateral — dois depoimentos curtos + métrica */}
+          <div className="md:col-span-5 grid gap-5">
+            {others.map((t) => (
+              <article key={t.n} className="rounded-3xl border border-border/60 bg-card/40 p-6">
+                <p className="text-sm text-foreground/90 leading-relaxed">{t.q}</p>
+                <div className="mt-5 flex items-center gap-3">
+                  <span className="w-9 h-9 rounded-full bg-gradient-cta" />
+                  <div>
+                    <div className="text-xs font-semibold">{t.n}</div>
+                    <div className="text-[11px] text-muted-foreground">{t.r}</div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

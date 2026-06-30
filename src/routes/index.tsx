@@ -22,6 +22,36 @@ import {
   Bell,
 } from "lucide-react";
 
+/* ---------------- Shared CTA button ---------------- */
+function PillButton({
+  children,
+  href = "#",
+  size = "md",
+  className = "",
+}: {
+  children: React.ReactNode;
+  href?: string;
+  size?: "sm" | "md" | "lg";
+  className?: string;
+}) {
+  const sizes = {
+    sm: { pad: "pl-1.5 pr-4 py-1.5", text: "text-xs", icon: "w-6 h-6", arrow: "w-3 h-3" },
+    md: { pad: "pl-2 pr-5 py-2", text: "text-sm", icon: "w-7 h-7", arrow: "w-3.5 h-3.5" },
+    lg: { pad: "pl-2 pr-6 py-2.5", text: "text-base", icon: "w-9 h-9", arrow: "w-4 h-4" },
+  }[size];
+  return (
+    <a
+      href={href}
+      className={`group inline-flex items-center gap-3 rounded-full bg-[oklch(0.18_0.02_295)] text-foreground border border-border/60 ${sizes.pad} ${sizes.text} font-semibold shadow-card hover:bg-[oklch(0.22_0.02_295)] transition ${className}`}
+    >
+      <span className={`${sizes.icon} rounded-full bg-[oklch(0.32_0.02_295)] text-foreground flex items-center justify-center group-hover:bg-[oklch(0.4_0.02_295)] transition`}>
+        <ArrowRight className={sizes.arrow} />
+      </span>
+      {children}
+    </a>
+  );
+}
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -80,12 +110,7 @@ function Nav() {
           <a href="#" className="text-sm text-muted-foreground hover:text-foreground hidden sm:block">
             Entrar
           </a>
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-sm font-semibold px-4 py-2 shadow-glow hover:opacity-95 transition"
-          >
-            Comece agora
-          </a>
+          <PillButton href="#contato" size="sm">Comece agora</PillButton>
         </div>
       </div>
     </header>
@@ -108,12 +133,7 @@ function Hero() {
           enquanto seu time foca no que importa.
         </p>
         <div className="mt-8 flex justify-center">
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-base font-semibold px-7 py-4 shadow-glow hover:opacity-95 transition"
-          >
-            Comece agora <ArrowRight className="w-4 h-4" />
-          </a>
+          <PillButton href="#contato" size="lg">Comece agora</PillButton>
         </div>
         <DashboardMockup />
       </div>
@@ -358,12 +378,9 @@ function StickyFeatures() {
           <p className="mt-5 text-muted-foreground">
             Construído pra times brasileiros que vendem por WhatsApp e cansaram de gambiarra.
           </p>
-          <a
-            href="#contato"
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-sm font-semibold px-5 py-3 shadow-glow hover:opacity-95 transition"
-          >
-            Começar agora <ArrowRight className="w-4 h-4" />
-          </a>
+          <div className="mt-7">
+            <PillButton href="#contato">Começar agora</PillButton>
+          </div>
         </div>
 
         <div className="space-y-5">
@@ -457,12 +474,7 @@ function Channels() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-sm font-semibold px-5 py-3 shadow-glow hover:opacity-95 transition"
-          >
-            Conectar agora <ArrowRight className="w-4 h-4" />
-          </a>
+          <PillButton href="#contato">Conectar agora</PillButton>
         </div>
       </div>
     </section>
@@ -628,24 +640,16 @@ function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contato"
-                  className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gradient-cta text-white text-xs font-semibold px-4 py-2.5 hover:opacity-95"
-                >
-                  Quero o {p.name}
-                </a>
+                <div className="mt-5">
+                  <PillButton href="#contato" size="sm" className="w-full justify-center">Quero o {p.name}</PillButton>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <div className="mt-8 flex justify-center">
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-sm font-semibold px-5 py-3 shadow-glow hover:opacity-95 transition"
-          >
-            Falar com vendas <ArrowRight className="w-4 h-4" />
-          </a>
+          <PillButton href="#contato">Falar com vendas</PillButton>
         </div>
       </div>
     </section>
@@ -749,12 +753,7 @@ function FinalCTA() {
           menos de 5 minutos.
         </p>
         <div className="mt-8 flex justify-center">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-base font-semibold px-7 py-4 shadow-glow hover:opacity-95 transition"
-          >
-            Comece agora <ArrowRight className="w-4 h-4" />
-          </a>
+          <PillButton href="#" size="lg">Comece agora</PillButton>
         </div>
         <div className="mt-4 flex items-center justify-center gap-6 text-xs text-muted-foreground">
           <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> Sem cartão</span>

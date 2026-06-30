@@ -193,17 +193,17 @@ function SmokeTextReveal({ children, className = "" }: { children: React.ReactNo
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bliv CRM — CRM com WhatsApp para vender mais" },
+      { title: "Bliv CRM — WhatsApp, Instagram, Messenger e formulários num só CRM" },
       {
         name: "description",
         content:
-          "Bliv CRM unifica WhatsApp, Instagram e Messenger num só funil. Disparo em massa, automação e agentes de IA. Comece em minutos.",
+          "Bliv CRM unifica WhatsApp Oficial, Instagram, Messenger e formulários em um único painel. Atenda, converta e escale com a API oficial da Meta.",
       },
-      { property: "og:title", content: "Bliv CRM — CRM com WhatsApp para vender mais" },
+      { property: "og:title", content: "Bliv CRM — WhatsApp, Instagram, Messenger e formulários num só CRM" },
       {
         property: "og:description",
         content:
-          "CRM com WhatsApp Cloud API oficial, agente de IA e funil de vendas. Comece grátis por 7 dias.",
+          "Atendimento e campanhas pelo WhatsApp Oficial, leads do Instagram, Messenger integrado e formulários no CRM. Comece grátis por 7 dias.",
       },
       { property: "og:url", content: "https://pixel-perfect-clone-99477.lovable.app/" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8eb7cf1-1d54-4867-806f-07514de8d143/id-preview-2c743c09--8824d971-1cfb-4b0a-ace2-6dffd98bf840.lovable.app-1782792827332.png" },
@@ -263,18 +263,17 @@ function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-display mt-4 sm:mt-7 text-[2.3125rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
-            Sua operação
-            <br className="md:hidden" /> omnichannel com{" "}
-            <br className="md:hidden" />
-            <span className="text-[#25D366] font-bold">WhatsApp</span>,{" "}
-            <span className="text-gradient-brand font-bold">Instagram</span>,{" "}
+            WhatsApp Oficial,
+            <br className="md:hidden" /> Instagram,{" "}
             <br className="md:hidden" />
             <span className="text-[#0084FF] font-bold">Messenger</span>{" "}
-            <span className="text-orange font-bold">e IA.</span>
+            <span className="text-orange font-bold">e formulários</span>
+            <br className="md:hidden" />
+            <span className="text-muted-foreground font-bold">num só CRM.</span>
           </h1>
           <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
-            Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />
-            monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA ilimitados.
+            Atenda pelo WhatsApp, capture leads do Instagram, gerencie Messenger e receba formulários em um único funil de vendas. <br className="hidden md:block" />
+            Tudo pela API oficial da Meta, com métricas reais e sem risco de banimento.
           </p>
           <div className="mt-5 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
             <PillButton href="#contato" size="lg">Falar com Consultor</PillButton>
@@ -423,16 +422,15 @@ function StickyFeatures() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.05]">
-                Menos abas abertas, <br />
-                <span className="text-gradient-brand">mais negócios fechados.</span>
+                Seus 4 canais de vendas <br />
+                <span className="text-gradient-brand">em um só funil.</span>
               </h2>
             </SmokeTextReveal>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <SmokeTextReveal>
               <p className="text-muted-foreground leading-relaxed">
-                A gente construiu a Bliv ouvindo times de vendas brasileiros que cansaram de
-                gambiarra com planilha, bot pirata e três assinaturas pra fazer uma coisa só.
+                A Bliv unifica WhatsApp Oficial, Instagram Direct, Messenger e formulários do site em um CRM completo. Sem planilhas, sem bots piratas e sem assinaturas duplicadas.
               </p>
             </SmokeTextReveal>
           </div>
@@ -525,11 +523,10 @@ function StickyFeatures() {
                   <span className="eyebrow">Omnichannel de verdade</span>
                 </div>
                 <h3 className="font-display mt-5 text-2xl font-bold">
-                  WhatsApp, Instagram, Messenger e Webhook&nbsp; no mesmo inbox.
+                  WhatsApp, Instagram, Messenger e formulários num só inbox.
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground max-w-md">
-                  Histórico unificado por contato. O cliente muda de canal, o seu time não perde o
-                  fio da conversa.
+                  Todo lead entra no mesmo funil, independente do canal. Seu time atende e converte sem perder o contexto de nenhuma conversa.
                 </p>
               </div>
               <div className="grid grid-cols-3 md:flex md:flex-col gap-2 sm:gap-3 md:w-auto">
@@ -562,15 +559,14 @@ function Channels() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-                Seu time <span className="text-gradient-brand">sempre conectado</span>
+                Os 4 canais que <span className="text-gradient-brand">trazem resultado</span>
               </h2>
             </SmokeTextReveal>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <SmokeTextReveal>
               <p className="text-muted-foreground leading-relaxed">
-                WhatsApp Cloud API oficial da Meta, número virtual ou as duas coisas. Sua operação
-                não cai porque um canal cair.
+                WhatsApp Oficial, Instagram Direct, Messenger e formulários via webhook. Tudo integrado num CRM único, com API oficial da Meta e zero risco de banimento.
               </p>
             </SmokeTextReveal>
           </div>
@@ -578,29 +574,28 @@ function Channels() {
 
         <div className="grid md:grid-cols-2 gap-3 sm:gap-5">
           <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
-            <h3 className="text-lg sm:text-xl font-bold">WhatsApp oficial ou número virtual</h3>
+            <h3 className="text-lg sm:text-xl font-bold">Atendimento e campanhas pelo WhatsApp Oficial</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Conecte o número da empresa direto na API oficial da Meta ou crie um número virtual pra cada
-              vertical. Sem risco de banimento.
+              Envie mensagens, atenda clientes e acompanhe métricas pela API oficial da Meta. Sem risco de banimento, com entrega garantida.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="rounded-lg border border-border/60 bg-background/40 p-3 text-center">
                 <WhatsAppIcon className="w-5 h-5 mx-auto text-emerald-400" />
-                <div className="text-xs font-semibold mt-2">Número oficial</div>
-                <div className="text-[10px] text-muted-foreground">verificação Meta</div>
+                <div className="text-xs font-semibold mt-2">WhatsApp Oficial</div>
+                <div className="text-[10px] text-muted-foreground">API Meta</div>
               </div>
               <div className="rounded-lg border border-border/60 bg-background/40 p-3 text-center">
                 <Webhook className="w-5 h-5 mx-auto text-orange" />
-                <div className="text-xs font-semibold mt-2">Virtual / API</div>
-                <div className="text-[10px] text-muted-foreground">multi-canal</div>
+                <div className="text-xs font-semibold mt-2">Formulários</div>
+                <div className="text-[10px] text-muted-foreground">Webhook / Sites</div>
               </div>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
-            <h3 className="text-lg sm:text-xl font-bold">Painel de uso e cobrança</h3>
+            <h3 className="text-lg sm:text-xl font-bold">Leads e conversas do Instagram no CRM</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Acompanhe consumo de mensagens, sessões e conversões em tempo real. Tudo num painel simples.
+              Centralize mensagens do Instagram Direct e transforme interações em oportunidades de venda no mesmo funil.
             </p>
             <div className="mt-6 rounded-lg border border-border/60 bg-background/40 p-3">
               <div className="flex items-center justify-between text-[10px] text-muted-foreground mb-2">
@@ -639,25 +634,25 @@ function Testimonials() {
     {
       n: "Diogo",
       r: "Diretor de Operações · Amazon Polpas",
-      q: "Trocamos três ferramentas pela Bliv e cortamos R$ 4 mil por mês. Em duas semanas o time inteiro já estava no funil novo — sem treinamento longo, sem dor.",
+      q: "Trocamos três ferramentas pela Bliv e centralizamos WhatsApp, Instagram e formulários em um só CRM. Em duas semanas o time já estava no funil novo — sem treinamento longo, sem dor.",
       img: clientAmazon.url,
     },
     {
       n: "Adriane",
       r: "Fundador · Granfruto",
-      q: "O agente de IA qualifica os leads antes de chegarem ao time comercial. Nosso tempo médio de resposta no WhatsApp despencou de 6h para menos de 4 minutos.",
+      q: "Qualificamos leads do Instagram e WhatsApp automaticamente antes de chegarem ao time comercial. Nosso tempo médio de resposta despencou de 6h para menos de 4 minutos.",
       img: clientGranfruto.url,
     },
     {
       n: "Bruno Guimarães",
       r: "Gestora de Atendimento · Altamed",
-      q: "Suporte rápido, painel simples e WhatsApp oficial funcionando perfeitamente. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
+      q: "WhatsApp Oficial, Instagram e Messenger funcionando perfeitamente num painel só. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
       img: clientAltamed.url,
     },
     {
       n: "Carla Luz",
       r: "CEO · Égua do Celular",
-      q: "Disparos de campanhas em massa e fluxos de bots integrados mudaram nosso jogo. Escalar o atendimento com a IA da Bliv foi a melhor decisão do ano.",
+      q: "Campanhas pelo WhatsApp Oficial e leads do Instagram caindo direto no funil mudaram nosso jogo. Escalar os 4 canais num só CRM foi a melhor decisão do ano.",
       img: clientEgua.url,
     },
   ];
@@ -701,9 +696,9 @@ function Testimonials() {
 /* ---------------- PRICING ---------------- */
 function Pricing() {
   const plans = [
-    { name: "Solo", price: "49", bullets: ["1 atendente", "1 número WhatsApp", "500 contatos", "Funil básico"] },
-    { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "1 número WhatsApp", "3k contatos", "Funil + tags"] },
-    { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "2 números", "10k contatos", "Webhooks"] },
+    { name: "Solo", price: "49", bullets: ["1 atendente", "WhatsApp + Instagram + Messenger", "500 contatos", "Funil básico"] },
+    { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "WhatsApp + Instagram + Messenger + Formulários", "3k contatos", "Funil + tags"] },
+    { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "Todos os canais + Webhooks", "10k contatos", "API oficial da Meta"] },
   ];
 
   return (
@@ -733,7 +728,7 @@ function Pricing() {
             <div>
               <div className="text-xs text-muted-foreground">Escolha o tamanho do time</div>
               <div className="text-sm text-muted-foreground/80">
-                Todos os planos incluem WhatsApp Cloud API oficial, funil de vendas e suporte humano.
+                Todos os planos incluem WhatsApp Oficial, Instagram, Messenger, formulários e suporte humano.
               </div>
             </div>
           </div>
@@ -787,8 +782,8 @@ function Pricing() {
 function FAQ() {
   const items = [
     {
-      q: "A Bliv usa WhatsApp oficial?",
-      a: "Sim. Conectamos seu número diretamente na API Oficial da Meta (Cloud API), sem risco de banimento.",
+      q: "A Bliv usa WhatsApp Oficial?",
+      a: "Sim. Conectamos seu número diretamente na API Oficial da Meta (Cloud API). Você envia mensagens, atende clientes e acompanha métricas com entrega garantida e zero risco de banimento.",
     },
     {
       q: "Preciso ter equipe técnica pra implantar?",
@@ -803,8 +798,8 @@ function FAQ() {
       a: "Zero. É mensal e você cancela direto pelo painel quando quiser.",
     },
     {
-      q: "Funciona com Instagram e Facebook também?",
-      a: "Sim. Bliv é omnichannel: WhatsApp, Instagram Direct, Messenger e formulário do site num só inbox.",
+      q: "Funciona com Instagram, Messenger e formulários?",
+      a: "Sim. A Bliv é omnichannel: WhatsApp Oficial, Instagram Direct, Messenger e formulários via webhook num só inbox e funil de vendas.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -987,7 +982,7 @@ export function Footer() {
 
             <img src={logo} alt="Bliv logo" className="h-[42px] w-auto mb-4" />
             <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-              Sua operação omnichannel com WhatsApp, Instagram, Messenger e IA.
+              WhatsApp Oficial, Instagram, Messenger e formulários num só CRM.
             </p>
             <div className="mt-5 flex items-center gap-3 text-muted-foreground">
             <a href="#" aria-label="Siga a Bliv CRM no Instagram" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>

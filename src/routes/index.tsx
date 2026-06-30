@@ -23,6 +23,10 @@ import {
 } from "lucide-react";
 import dashboardHero from "@/assets/dashboard-hero.png";
 import logo from "@/assets/logo.png";
+import clientAmazon from "@/assets/client-amazon.png.asset.json";
+import clientGranfruto from "@/assets/client-granfruto.png.asset.json";
+import clientAltamed from "@/assets/client-altamed.jpg.asset.json";
+import clientEgua from "@/assets/client-egua.jpg.asset.json";
 
 /* ---------------- Shared CTA button ---------------- */
 function PillButton({
@@ -590,21 +594,25 @@ function Testimonials() {
       n: "Vitor Leal",
       r: "Diretor de Operações · Amazon Polpas",
       q: "Trocamos três ferramentas pela Bliv e cortamos R$ 4 mil por mês. Em duas semanas o time inteiro já estava no funil novo — sem treinamento longo, sem dor.",
+      img: clientAmazon.url,
     },
     {
       n: "Guilherme Azevedo",
       r: "Fundador · Granfruto",
       q: "O agente de IA qualifica os leads antes de chegarem ao time comercial. Nosso tempo médio de resposta no WhatsApp despencou de 6h para menos de 4 minutos.",
+      img: clientGranfruto.url,
     },
     {
       n: "Luana Góes",
       r: "Gestora de Atendimento · Altamed",
       q: "Suporte rápido, painel simples e WhatsApp oficial funcionando perfeitamente. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
+      img: clientAltamed.url,
     },
     {
       n: "Alexandre Silva",
       r: "CEO · Égua do Celular",
       q: "Disparos de campanhas em massa e fluxos de bots integrados mudaram nosso jogo. Escalar o atendimento com a IA da Bliv foi a melhor decisão do ano.",
+      img: clientEgua.url,
     },
   ];
   return (
@@ -630,7 +638,7 @@ function Testimonials() {
                 "{t.q}"
               </p>
               <div className="relative mt-6 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-full bg-gradient-cta" />
+                <img src={t.img} alt={t.r} loading="lazy" className="w-10 h-10 rounded-full object-cover bg-white ring-1 ring-border/60" />
                 <div>
                   <div className="text-sm font-semibold">{t.n}</div>
                   <div className="text-xs text-muted-foreground">{t.r}</div>

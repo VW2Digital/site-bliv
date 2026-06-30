@@ -523,11 +523,10 @@ function StickyFeatures() {
                   <span className="eyebrow">Omnichannel de verdade</span>
                 </div>
                 <h3 className="font-display mt-5 text-2xl font-bold">
-                  WhatsApp, Instagram, Messenger e Webhook&nbsp; no mesmo inbox.
+                  WhatsApp, Instagram, Messenger e formulários num só inbox.
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground max-w-md">
-                  Histórico unificado por contato. O cliente muda de canal, o seu time não perde o
-                  fio da conversa.
+                  Todo lead entra no mesmo funil, independente do canal. Seu time atende e converte sem perder o contexto de nenhuma conversa.
                 </p>
               </div>
               <div className="grid grid-cols-3 md:flex md:flex-col gap-2 sm:gap-3 md:w-auto">

@@ -559,15 +559,14 @@ function Channels() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-                Seu time <span className="text-gradient-brand">sempre conectado</span>
+                Os 4 canais que <span className="text-gradient-brand">trazem resultado</span>
               </h2>
             </SmokeTextReveal>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <SmokeTextReveal>
               <p className="text-muted-foreground leading-relaxed">
-                WhatsApp Cloud API oficial da Meta, número virtual ou as duas coisas. Sua operação
-                não cai porque um canal cair.
+                WhatsApp Oficial, Instagram Direct, Messenger e formulários via webhook. Tudo integrado num CRM único, com API oficial da Meta e zero risco de banimento.
               </p>
             </SmokeTextReveal>
           </div>
@@ -575,10 +574,9 @@ function Channels() {
 
         <div className="grid md:grid-cols-2 gap-3 sm:gap-5">
           <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
-            <h3 className="text-lg sm:text-xl font-bold">WhatsApp oficial ou número virtual</h3>
+            <h3 className="text-lg sm:text-xl font-bold">Atendimento e campanhas pelo WhatsApp Oficial</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Conecte o número da empresa direto na API oficial da Meta ou crie um número virtual pra cada
-              vertical. Sem risco de banimento.
+              Envie mensagens, atenda clientes e acompanhe métricas pela API oficial da Meta. Sem risco de banimento, com entrega garantida.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="rounded-lg border border-border/60 bg-background/40 p-3 text-center">
@@ -595,9 +593,9 @@ function Channels() {
           </div>
 
           <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
-            <h3 className="text-lg sm:text-xl font-bold">Painel de uso e cobrança</h3>
+            <h3 className="text-lg sm:text-xl font-bold">Leads e conversas do Instagram no CRM</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Acompanhe consumo de mensagens, sessões e conversões em tempo real. Tudo num painel simples.
+              Centralize mensagens do Instagram Direct e transforme interações em oportunidades de venda no mesmo funil.
             </p>
             <div className="mt-6 rounded-lg border border-border/60 bg-background/40 p-3">
               <div className="flex items-center justify-between text-[10px] text-muted-foreground mb-2">

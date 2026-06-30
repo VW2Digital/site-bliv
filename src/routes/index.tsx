@@ -264,11 +264,11 @@ function Hero() {
         <div className="max-w-4xl mx-auto">
           <h1 className="font-display mt-4 sm:mt-7 text-[2.3125rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
             <span style={{ color: '#28C840' }}>WhatsApp</span> Oficial,
-            <br className="md:hidden" /> <span style={{ color: '#FF5F57' }}>Instagram</span>,{" "}
-            <br className="md:hidden" />
+            <br /> <span style={{ color: '#FF5F57' }}>Instagram</span>,{" "}
+            <br />
             <span className="text-[#0084FF] font-bold">Messenger</span>{" "}
             <span className="text-white font-bold">e </span><span className="text-orange font-bold">formulários&nbsp;</span>
-            <br className="md:hidden" />
+            <br />
             <span className="text-muted-foreground font-bold">num só CRM.</span>
           </h1>
           <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">

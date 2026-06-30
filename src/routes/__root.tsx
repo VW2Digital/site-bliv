@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import favicon from "../assets/favicon.png";
@@ -78,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Bliv CRM — Sua operação omnichannel com WhatsApp, Instagram e IA" },
+      { name: "description", content: "Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA." },
+      { name: "author", content: "Bliv CRM" },
+      { property: "og:title", content: "Bliv CRM — Sua operação omnichannel com WhatsApp, Instagram e IA" },
+      { property: "og:description", content: "Integre WhatsApp, Instagram e Messenger em um único painel e escale atendimentos com agentes de IA." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@blivcrm" },
     ],
     links: [
       {
@@ -119,13 +119,55 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function CookiesPopup() {
+  const [accepted, setAccepted] = useState(true);
+
+  useEffect(() => {
+    const consent = localStorage.getItem("cookie-consent");
+    if (!consent) {
+      setAccepted(false);
+    }
+  }, []);
+
+  const handleAccept = () => {
+    localStorage.setItem("cookie-consent", "true");
+    setAccepted(true);
+  };
+
+  if (accepted) return null;
+
+  return (
+    <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-md z-[9999] bg-card/95 border border-border/80 p-5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-xl animate-in fade-in slide-in-from-bottom-10 duration-500">
+      <h3 className="text-sm font-semibold text-foreground">🍪 Nós valorizamos sua privacidade</h3>
+      <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+        Usamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo de acordo com nossa{" "}
+        <a href="/politica-de-privacidade" className="text-orange hover:underline font-medium">
+          Política de Privacidade
+        </a>
+        .
+      </p>
+      <div className="mt-4 flex items-center justify-end gap-4">
+        <a href="/politica-de-privacidade" className="text-xs text-muted-foreground hover:text-foreground transition">
+          Saber mais
+        </a>
+        <button
+          onClick={handleAccept}
+          className="rounded-lg bg-orange hover:bg-orange/90 text-background px-4 py-2 text-xs font-semibold transition"
+        >
+          Aceitar todos
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <CookiesPopup />
     </QueryClientProvider>
   );
 }

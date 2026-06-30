@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
@@ -39,10 +39,10 @@ function PillButton({
   return (
     <a
       href={href}
-      className={`group inline-flex items-center rounded-xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 active:scale-95 transition-[background-color,border-color,transform] duration-200 pl-4 pr-1 py-1 gap-3 text-xs ${className}`}
+      className={`group inline-flex items-center rounded-xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 hover:scale-105 active:scale-95 transition-[background-color,border-color,transform] duration-200 pl-4 pr-1 py-1 gap-3 text-xs ${className}`}
     >
       <span className="transition-colors duration-200 group-hover:text-orange">{children}</span>
-      <span className="flex items-center justify-center rounded-lg bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] p-1.5 transition-transform duration-300 group-hover:rotate-45">
+      <span className="flex items-center justify-center rounded-lg bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] p-1.5 transition-transform duration-300">
         <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-45" />
       </span>
     </a>
@@ -208,22 +208,22 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-function Nav() {
+export function Nav() {
   return (
     <header className="sticky top-0 inset-x-0 z-50 border-b border-border/40 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <img src={logo} alt="Bliv logo" className="h-[42px] w-auto" />
         </a>
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-          <a href="#inicio" className="hover:text-foreground transition">Início</a>
-          <a href="#funcionalidades" className="hover:text-foreground transition">Funcionalidades</a>
-          <a href="#planos" className="hover:text-foreground transition">Planos</a>
-          <a href="#faq" className="hover:text-foreground transition">FAQ</a>
-          <a href="#contato" className="hover:text-foreground transition">Contato</a>
+          <a href="/#inicio" className="hover:text-foreground transition">Início</a>
+          <a href="/#funcionalidades" className="hover:text-foreground transition">Funcionalidades</a>
+          <a href="/#planos" className="hover:text-foreground transition">Planos</a>
+          <a href="/#faq" className="hover:text-foreground transition">FAQ</a>
+          <a href="/#contato" className="hover:text-foreground transition">Contato</a>
         </nav>
         <div className="flex items-center gap-3">
-          <PillButton href="#contato" size="sm">Falar com consultor</PillButton>
+          <PillButton href="/#contato" size="sm">Falar com consultor</PillButton>
         </div>
       </div>
     </header>
@@ -842,6 +842,32 @@ function FAQ() {
 
 /* ---------------- FINAL CTA ---------------- */
 function FinalCTA() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    whatsapp: "",
+    empresa: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const formatWhatsApp = (value: string) => {
+    const numbers = value.replace(/\D/g, "");
+    if (numbers.length <= 2) return numbers;
+    if (numbers.length <= 6) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    if (numbers.length <= 10) return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 6)}-${numbers.slice(6)}`;
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      navigate({ to: "/obrigado" });
+    }, 1000);
+  };
+
   return (
     <section id="contato" className="py-24 px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
@@ -850,28 +876,109 @@ function FinalCTA() {
             <span className="text-gradient-brand">bliv</span>, bliv!
           </h2>
           <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
-            Junte-se a milhares de times que pararam de perder leads no WhatsApp. Comece grátis em
-            menos de 5 minutos.
+            Deixe seus dados abaixo para que um consultor de inteligência e processos comerciais entre em contato.
           </p>
         </SmokeTextReveal>
-        <div className="mt-8 flex justify-center">
-          <PillButton href="#" size="lg">Falar com consultor</PillButton>
-        </div>
+
+        <form onSubmit={handleSubmit} className="mt-10 max-w-md mx-auto text-left space-y-4 bg-card/60 p-6 md:p-8 rounded-3xl border border-border/60 backdrop-blur-xl shadow-card">
+          <div>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Seu Nome</label>
+            <input
+              type="text"
+              required
+              placeholder="Ex: João Silva"
+              value={formData.nome}
+              onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+              className="w-full rounded-xl border border-border/60 bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-orange focus:outline-none transition"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">E-mail corporativo</label>
+            <input
+              type="email"
+              required
+              placeholder="Ex: joao@empresa.com"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="w-full rounded-xl border border-border/60 bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-orange focus:outline-none transition"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">WhatsApp</label>
+            <input
+              type="tel"
+              required
+              placeholder="Ex: (11) 99999-9999"
+              value={formData.whatsapp}
+              onChange={(e) => setFormData({ ...formData, whatsapp: formatWhatsApp(e.target.value) })}
+              className="w-full rounded-xl border border-border/60 bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-orange focus:outline-none transition"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Nome da Empresa</label>
+            <input
+              type="text"
+              required
+              placeholder="Ex: Bliv S/A"
+              value={formData.empresa}
+              onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
+              className="w-full rounded-xl border border-border/60 bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-orange focus:outline-none transition"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full mt-2 group inline-flex items-center justify-between rounded-xl bg-orange hover:bg-orange/90 text-background font-medium py-3.5 px-5 transition duration-200 hover:scale-105 active:scale-95"
+          >
+            <span className="text-sm font-semibold">{loading ? "Processando..." : "Falar com consultor"}</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+          </button>
+        </form>
       </div>
     </section>
   );
 }
 
 /* ---------------- FOOTER ---------------- */
-function Footer() {
+export function Footer() {
   const cols = [
     {
       t: "Produto",
-      l: ["Funcionalidades", "Planos", "WhatsApp Cloud API", "Agente de IA", "Integrações"],
+      l: [
+        { n: "Funcionalidades", h: "#funcionalidades" },
+        { n: "Planos", h: "#planos" },
+        { n: "WhatsApp Cloud API", h: "#" },
+        { n: "Agente de IA", h: "#" },
+        { n: "Integrações", h: "#" },
+      ],
     },
-    { t: "Empresa", l: ["Sobre", "Carreiras", "Blog", "Imprensa"] },
-    { t: "Recursos", l: ["Documentação", "Status", "Central de ajuda", "Comparativo"] },
-    { t: "Legal", l: ["Termos de uso", "Política de privacidade", "LGPD", "Contato"] },
+    {
+      t: "Empresa",
+      l: [
+        { n: "Sobre", h: "#" },
+        { n: "Carreiras", h: "#" },
+        { n: "Blog", h: "#" },
+        { n: "Imprensa", h: "#" },
+      ],
+    },
+    {
+      t: "Recursos",
+      l: [
+        { n: "Documentação", h: "#" },
+        { n: "Status", h: "#" },
+        { n: "Central de ajuda", h: "#" },
+        { n: "Comparativo", h: "#" },
+      ],
+    },
+    {
+      t: "Legal",
+      l: [
+        { n: "Termos de uso", h: "/termos-de-uso" },
+        { n: "Política de privacidade", h: "/politica-de-privacidade" },
+        { n: "Exclusão de dados", h: "/exclusao-de-dados" },
+        { n: "Contato", h: "#contato" },
+      ],
+    },
   ];
   return (
     <footer className="px-6 py-16">
@@ -892,9 +999,9 @@ function Footer() {
             <div key={c.t}>
               <div className="text-sm font-semibold mb-3">{c.t}</div>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                {c.l.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="hover:text-foreground transition">{l}</a>
+                {c.l.map((item) => (
+                  <li key={item.n}>
+                    <a href={item.h} className="hover:text-foreground transition">{item.n}</a>
                   </li>
                 ))}
               </ul>

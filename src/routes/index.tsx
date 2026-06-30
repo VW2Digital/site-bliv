@@ -102,9 +102,6 @@ function Nav() {
           <a href="#contato" className="hover:text-foreground transition">Contato</a>
         </nav>
         <div className="flex items-center gap-3">
-          <a href="#" className="text-sm text-muted-foreground hover:text-foreground hidden sm:block">
-            Entrar
-          </a>
           <PillButton href="#contato" size="sm">Comece agora</PillButton>
         </div>
       </div>

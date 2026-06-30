@@ -414,7 +414,7 @@ function StickyFeatures() {
                 campos obrigatórios, sem onboarding de 3 semanas.
               </p>
             </div>
-            <div className="relative z-10 mt-7 grid grid-cols-4 gap-[0.45rem]">
+            <div className="relative z-10 mt-7 grid grid-cols-2 gap-[0.45rem]">
               {["Novo", "Qualificado", "Proposta", "Fechado"].map((s, i) => (
                 <div key={s} className="rounded-xl border border-border/60 bg-background/40 p-3">
                   <div className="text-[10px] text-muted-foreground">{s}</div>

@@ -25,8 +25,6 @@ import dashboardHero from "@/assets/dashboard-hero.png.asset.json";
 function PillButton({
   children,
   href = "#",
-  size = "md",
-  variant = "primary",
   className = "",
 }: {
   children: React.ReactNode;
@@ -35,31 +33,19 @@ function PillButton({
   variant?: "primary" | "ghost";
   className?: string;
 }) {
-  const sizes = {
-    sm: { pad: "pl-4 pr-1.5 py-1.5 gap-3", text: "text-xs", icon: "p-1.5", arrow: "w-3.5 h-3.5" },
-    md: { pad: "pl-5 pr-2 py-2 gap-4", text: "text-sm", icon: "p-2", arrow: "w-4 h-4" },
-    lg: { pad: "pl-6 pr-2 py-2 gap-5", text: "text-base", icon: "p-2.5", arrow: "w-5 h-5" },
-  }[size];
-
-  const base =
-    variant === "primary"
-      ? "border-orange/40 text-foreground hover:border-orange hover:bg-orange/10"
-      : "border-border text-foreground hover:border-foreground/40 hover:bg-foreground/5";
-
   return (
     <a
       href={href}
-      className={`group inline-flex items-center rounded-2xl border bg-transparent font-medium active:scale-95 transition-[background-color,border-color,transform] duration-200 ${base} ${sizes.pad} ${sizes.text} ${className}`}
+      className={`group inline-flex items-center rounded-2xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 active:scale-95 transition-[background-color,border-color,transform] duration-200 pl-5 pr-2 py-2 gap-4 text-sm ${className}`}
     >
       <span className="transition-colors duration-200 group-hover:text-orange">{children}</span>
-      <span
-        className={`flex items-center justify-center rounded-xl bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] ${sizes.icon} transition-transform duration-300 group-hover:rotate-45`}
-      >
-        <ArrowRight className={`${sizes.arrow} transition-transform duration-300 group-hover:-rotate-45`} />
+      <span className="flex items-center justify-center rounded-xl bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] p-2 transition-transform duration-300 group-hover:rotate-45">
+        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-45" />
       </span>
     </a>
   );
 }
+
 
 export const Route = createFileRoute("/")({
   head: () => ({

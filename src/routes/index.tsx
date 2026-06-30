@@ -730,7 +730,6 @@ function Index() {
       
       <Nav />
       <Hero />
-      <TrustedBy />
       <StickyFeatures />
       <Channels />
       <Testimonials />

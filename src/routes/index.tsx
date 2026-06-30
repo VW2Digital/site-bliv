@@ -163,23 +163,6 @@ function FloatingCard({
 }
 
 /* ---------------- TRUSTED ---------------- */
-function TrustedBy() {
-  const brands = ["Loovi", "Husky", "Beep", "OmniBonus", "Mailus", "Avante", "Pres.", "Tinga", "Lika"];
-  return (
-    <section className="py-14 px-6">
-      <p className="text-center text-sm text-muted-foreground">
-        Mais de 10.000 times de vendas já operam com a Bliv
-      </p>
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-60">
-        {brands.map((b) => (
-          <span key={b} className="text-lg font-semibold tracking-tight text-foreground/70">
-            {b}
-          </span>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 /* ---------------- BIG FEATURES (sticky left col) ---------------- */
 function StickyFeatures() {
@@ -747,7 +730,6 @@ function Index() {
       
       <Nav />
       <Hero />
-      <TrustedBy />
       <StickyFeatures />
       <Channels />
       <Testimonials />

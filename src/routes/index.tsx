@@ -704,6 +704,7 @@ function Pricing() {
         "WhatsApp + Instagram + Messenger",
         "Funil básico",
         "Suporte por e-mail",
+        "Sem treinamento de integração",
       ],
     },
     {
@@ -713,8 +714,15 @@ function Pricing() {
       bullets: [
         "Sem limite de usuários",
         "WhatsApp + Instagram + Messenger + Formulários",
-        "Treinamento de integração",
+        "Treinamento de integração ao vivo",
         "Suporte prioritário",
+      ],
+      details: [
+        "Sessão de 1h com especialista Bliv",
+        "Conexão de canais (WhatsApp, Instagram, Messenger)",
+        "Montagem do primeiro funil de vendas",
+        "Automação de respostas rápidas",
+        "Capacitação da equipe no painel",
       ],
     },
     {
@@ -723,8 +731,15 @@ function Pricing() {
       bullets: [
         "Sem limite de usuários",
         "Todos os canais + Webhooks",
-        "Treinamento de integração",
+        "Treinamento de integração ao vivo",
         "Atualizações mensais de novas ferramentas",
+      ],
+      details: [
+        "Tudo do plano Start",
+        "Acesso antecipado a novos recursos todo mês",
+        "Novos canais de integração liberados automaticamente",
+        "Automações avançadas sem custo extra",
+        "Melhorias contínuas no funil de vendas",
       ],
     },
   ];

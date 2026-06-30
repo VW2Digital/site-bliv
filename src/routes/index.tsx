@@ -754,9 +754,9 @@ function Pricing() {
         <div className="rounded-2xl border border-border/60 bg-gradient-card shadow-card p-5 md:p-8">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <div className="text-xs text-muted-foreground">Escolha o tamanho do time</div>
+              <div className="text-xs text-muted-foreground">Escolha a opção ideal</div>
               <div className="text-sm text-muted-foreground/80">
-                Todos os planos incluem WhatsApp Oficial, Instagram, Messenger, formulários e suporte humano.
+                Todos os planos incluem WhatsApp Oficial, Instagram, Messenger, formulários e suporte humano. Sem limite de usuários.
               </div>
             </div>
           </div>

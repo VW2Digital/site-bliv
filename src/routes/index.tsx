@@ -696,9 +696,37 @@ function Testimonials() {
 /* ---------------- PRICING ---------------- */
 function Pricing() {
   const plans = [
-    { name: "Solo", price: "49", bullets: ["1 atendente", "WhatsApp + Instagram + Messenger", "500 contatos", "Funil básico"] },
-    { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "WhatsApp + Instagram + Messenger + Formulários", "3k contatos", "Funil + tags"] },
-    { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "Todos os canais + Webhooks", "10k contatos", "API oficial da Meta"] },
+    {
+      name: "Solo",
+      price: "87",
+      bullets: [
+        "Sem limite de usuários",
+        "WhatsApp + Instagram + Messenger",
+        "Funil básico",
+        "Suporte por e-mail",
+      ],
+    },
+    {
+      name: "Start",
+      price: "147",
+      tag: "popular",
+      bullets: [
+        "Sem limite de usuários",
+        "WhatsApp + Instagram + Messenger + Formulários",
+        "Treinamento de integração",
+        "Suporte prioritário",
+      ],
+    },
+    {
+      name: "Start +",
+      price: "245",
+      bullets: [
+        "Sem limite de usuários",
+        "Todos os canais + Webhooks",
+        "Treinamento de integração",
+        "Atualizações mensais de novas ferramentas",
+      ],
+    },
   ];
 
   return (

@@ -241,7 +241,7 @@ export function Nav() {
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section id="inicio" className="relative pt-14 sm:pt-24 pb-14 sm:pb-20 overflow-hidden bg-background">
+    <section id="inicio" className="relative pt-10 sm:pt-24 pb-10 sm:pb-20 overflow-hidden bg-background">
       <PixelGridBackground />
       <div className="absolute inset-0 hero-glow pointer-events-none" />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
@@ -254,18 +254,18 @@ function Hero() {
             <span className="hidden xs:inline">100% integrado às APIs oficiais da Meta</span>
             <span className="xs:hidden">APIs oficiais da Meta</span>
           </span>
-          <h1 className="font-display mt-5 sm:mt-7 text-[2rem] leading-[1.08] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
+          <h1 className="font-display mt-4 sm:mt-7 text-[1.75rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
             Sua operação omnichannel com <br className="hidden md:block" />
             <span className="text-[#25D366] italic font-bold">WhatsApp</span>,{" "}
             <span className="text-gradient-brand italic font-bold">Instagram</span>,{" "}
             <span className="text-[#0084FF] italic font-bold">Messenger</span>{" "}
             <span className="text-orange italic font-bold">e IA.</span>
           </h1>
-          <p className="mt-5 sm:mt-7 text-base sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
+          <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
             Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />
             monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA ilimitados.
           </p>
-          <div className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+          <div className="mt-5 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
             <PillButton href="#contato" size="lg">Falar com Consultor</PillButton>
             <a href="#planos" className="text-sm text-muted-foreground hover:text-foreground transition inline-flex items-center gap-2">
               Ver planos
@@ -365,7 +365,7 @@ function FloatingCard({
 /* ---------------- BIG FEATURES (sticky left col) ---------------- */
 function StickyFeatures() {
   return (
-    <section id="funcionalidades" className="relative py-16 sm:py-28 px-5 sm:px-6">
+    <section id="funcionalidades" className="relative py-10 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
         {/* Section header — editorial, assimétrico */}
         <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-10 sm:mb-14">

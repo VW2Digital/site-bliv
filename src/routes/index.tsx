@@ -4,8 +4,6 @@ import {
   ArrowRight,
   Check,
   Sparkles,
-  TrendingUp,
-  Settings2,
   LayoutGrid,
   Headphones,
   MessageCircle,
@@ -13,13 +11,13 @@ import {
   Webhook,
   Plus,
   Minus,
-  Star,
   Instagram,
   Facebook,
   Linkedin,
   BarChart3,
   Users,
   Bell,
+  Quote,
 } from "lucide-react";
 
 /* ---------------- Shared CTA button ---------------- */

@@ -331,16 +331,17 @@ function DashboardMockup() {
       className="relative mt-8 sm:mt-14 mx-auto max-w-6xl transition-all duration-300 ease-out will-change-transform"
       style={{ transform: transformStyle }}
     >
-      <img
-        src={dashboardHero}
-        alt="Painel da Bliv CRM mostrando métricas de campanhas, taxa de entrega e omnichannel"
-        className="w-full h-auto select-none"
-        width={1440}
-        height={900}
-        fetchPriority="high"
-        decoding="async"
-        draggable={false}
-      />
+      <div className="w-full rounded-2xl border border-white/10 bg-[#111111] shadow-2xl overflow-hidden select-none">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+          <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+          <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
+          <span className="w-3 h-3 rounded-full bg-[#28C840]" />
+        </div>
+        <div className="aspect-[16/9] flex items-center justify-center bg-[#1a1a1a]">
+          <span className="text-muted-foreground/60 text-sm sm:text-base">conteúdo entra aqui</span>
+        </div>
+      </div>
+
     </div>
   );
 }

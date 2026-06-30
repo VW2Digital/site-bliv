@@ -332,7 +332,7 @@ function DashboardMockup() {
       className="relative mt-8 sm:mt-14 mx-auto w-full transition-all duration-300 ease-out will-change-transform"
       style={{ transform: transformStyle }}
     >
-      <div className="w-full rounded-2xl border border-white/10 bg-[#111111] shadow-2xl overflow-hidden select-none">
+      <div className="w-full rounded-xl sm:rounded-2xl border border-white/10 bg-[#111111] shadow-2xl overflow-hidden select-none">
         <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
           <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
           <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />

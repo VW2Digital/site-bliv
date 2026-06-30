@@ -380,7 +380,7 @@ function DashboardMockup() {
       {/* Floating: Meta Business Partner (right) */}
       <div
         tabIndex={0}
-        className="absolute right-[-0.5rem] sm:right-[-1rem] md:right-[-1.5rem] lg:right-[-3rem] bottom-[-0.75rem] md:bottom-[-1.25rem] z-10 flex items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-1.5 sm:p-2 lg:p-2.5 w-[3.25rem] sm:w-[4.25rem] md:w-[5rem] lg:w-[6rem] outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:flex absolute right-[-0.5rem] sm:right-[-1rem] md:right-[-1.5rem] lg:right-[-3rem] bottom-[-0.75rem] md:bottom-[-1.25rem] z-10 flex items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-1.5 sm:p-2 lg:p-2.5 w-[3.25rem] sm:w-[4.25rem] md:w-[5rem] lg:w-[6rem] outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:ring-orange/60"
       >
         <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
       </div>

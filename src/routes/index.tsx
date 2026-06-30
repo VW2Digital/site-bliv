@@ -448,7 +448,7 @@ function StickyFeatures() {
               <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.05]">
                 Menos abas abertas, <br />
-                <span className="text-gradient-brand italic">mais negócios fechados.</span>
+                <span className="text-gradient-brand">mais negócios fechados.</span>
               </h2>
             </SmokeTextReveal>
           </div>
@@ -586,7 +586,7 @@ function Channels() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-                Seu time <span className="text-gradient-brand italic">sempre conectado</span>
+                Seu time <span className="text-gradient-brand">sempre conectado</span>
               </h2>
             </SmokeTextReveal>
           </div>
@@ -694,7 +694,7 @@ function Testimonials() {
               <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 A gente preferia que <br/>
-                <span className="text-gradient-brand italic">eles falassem por nós.</span>
+                <span className="text-gradient-brand">eles falassem por nós.</span>
               </h2>
             </SmokeTextReveal>
           </div>
@@ -739,7 +739,7 @@ function Pricing() {
               <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 Mensal, sem multa, <br/>
-                <span className="text-gradient-brand italic">sem letra miúda.</span>
+                <span className="text-gradient-brand">sem letra miúda.</span>
               </h2>
             </SmokeTextReveal>
           </div>

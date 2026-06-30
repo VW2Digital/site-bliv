@@ -389,9 +389,9 @@ function StickyFeatures() {
         </div>
 
         {/* Bento assimétrico */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-5">
           {/* Card grande — funil visual */}
-          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-card p-6 sm:p-8 shadow-card">
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-card p-4 sm:p-8 shadow-card">
             <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-orange/10 blur-3xl group-hover:bg-orange/20 transition-colors" />
             <div className="relative z-10 max-w-md">
               <div className="flex items-center gap-3">
@@ -423,7 +423,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card vertical — IA */}
-          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 sm:p-8 flex flex-col justify-between">
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-4 sm:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-pink/10 border border-pink/30 text-pink flex items-center justify-center">
@@ -451,7 +451,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card pequeno — Suporte */}
-          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 sm:p-8">
+          <article className="md:col-span-4 group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-4 sm:p-8">
             <div className="flex items-center gap-3">
               <span className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/30 text-orange flex items-center justify-center">
                 <Headphones className="w-5 h-5" />
@@ -465,7 +465,7 @@ function StickyFeatures() {
           </article>
 
           {/* Card largo — Omnichannel */}
-          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-tr from-pink/[0.06] to-transparent p-6 sm:p-8">
+          <article className="md:col-span-8 group relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-tr from-pink/[0.06] to-transparent p-4 sm:p-8">
             <div className="flex flex-col md:flex-row md:items-center gap-8">
               <div className="flex-1">
                 <div className="flex items-center gap-3">

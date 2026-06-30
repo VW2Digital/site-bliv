@@ -256,14 +256,6 @@ function Hero() {
       />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-[11px] sm:text-xs text-muted-foreground backdrop-blur">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange/60 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-orange" />
-            </span>
-            <span className="hidden xs:inline">100% integrado às APIs oficiais da Meta</span>
-            <span className="xs:hidden">APIs oficiais da Meta</span>
-          </span>
           <h1 className="font-display mt-4 sm:mt-7 text-[1.65rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
             Sua operação
             <br className="md:hidden" /> omnichannel com{" "}

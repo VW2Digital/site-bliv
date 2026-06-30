@@ -22,6 +22,36 @@ import {
   Bell,
 } from "lucide-react";
 
+/* ---------------- Shared CTA button ---------------- */
+function PillButton({
+  children,
+  href = "#",
+  size = "md",
+  className = "",
+}: {
+  children: React.ReactNode;
+  href?: string;
+  size?: "sm" | "md" | "lg";
+  className?: string;
+}) {
+  const sizes = {
+    sm: { pad: "pl-1.5 pr-4 py-1.5", text: "text-xs", icon: "w-6 h-6", arrow: "w-3 h-3" },
+    md: { pad: "pl-2 pr-5 py-2", text: "text-sm", icon: "w-7 h-7", arrow: "w-3.5 h-3.5" },
+    lg: { pad: "pl-2 pr-6 py-2.5", text: "text-base", icon: "w-9 h-9", arrow: "w-4 h-4" },
+  }[size];
+  return (
+    <a
+      href={href}
+      className={`group inline-flex items-center gap-3 rounded-full bg-foreground/95 text-background ${sizes.pad} ${sizes.text} font-semibold shadow-card hover:bg-foreground transition ${className}`}
+    >
+      <span className={`${sizes.icon} rounded-full bg-background/15 flex items-center justify-center group-hover:bg-background/25 transition`}>
+        <ArrowRight className={`${sizes.arrow} -rotate-180`} />
+      </span>
+      {children}
+    </a>
+  );
+}
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [

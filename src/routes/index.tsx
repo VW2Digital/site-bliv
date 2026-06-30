@@ -357,7 +357,7 @@ function DashboardMockup() {
       {/* Floating: integrations (left) */}
       <div
         tabIndex={0}
-        className="absolute left-[-0.75rem] sm:left-[-2rem] md:left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[10.5rem] sm:w-[14rem] md:w-[17rem] lg:w-[19rem] rounded-2xl border border-white/15 bg-white/10 backdrop-blur-2xl text-foreground shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-2.5 sm:p-3.5 md:p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:block absolute left-[-0.75rem] sm:left-[-2rem] md:left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[10.5rem] sm:w-[14rem] md:w-[17rem] lg:w-[19rem] rounded-2xl border border-white/15 bg-white/10 backdrop-blur-2xl text-foreground shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-2.5 sm:p-3.5 md:p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
       >
         <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5 lg:space-y-3">
           {[
@@ -380,7 +380,7 @@ function DashboardMockup() {
       {/* Floating: Meta Business Partner (right) */}
       <div
         tabIndex={0}
-        className="absolute right-[-0.5rem] sm:right-[-1rem] md:right-[-1.5rem] lg:right-[-3rem] bottom-[-0.75rem] md:bottom-[-1.25rem] z-10 flex items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-1.5 sm:p-2 lg:p-2.5 w-[3.25rem] sm:w-[4.25rem] md:w-[5rem] lg:w-[6rem] outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:flex absolute right-[-0.5rem] sm:right-[-1rem] md:right-[-1.5rem] lg:right-[-3rem] bottom-[-0.75rem] md:bottom-[-1.25rem] z-10 flex items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-1.5 sm:p-2 lg:p-2.5 w-[3.25rem] sm:w-[4.25rem] md:w-[5rem] lg:w-[6rem] outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:ring-orange/60"
       >
         <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
       </div>

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
   Check,
@@ -18,8 +18,11 @@ import {
   Users,
   Bell,
   Quote,
+  Kanban,
+  Inbox,
 } from "lucide-react";
-import dashboardHero from "@/assets/dashboard-hero.png.asset.json";
+import dashboardHero from "@/assets/dashboard-hero.png";
+import logo from "@/assets/logo.png";
 
 /* ---------------- Shared CTA button ---------------- */
 function PillButton({
@@ -36,16 +39,145 @@ function PillButton({
   return (
     <a
       href={href}
-      className={`group inline-flex items-center rounded-2xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 active:scale-95 transition-[background-color,border-color,transform] duration-200 pl-5 pr-2 py-2 gap-4 text-sm ${className}`}
+      className={`group inline-flex items-center rounded-xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 active:scale-95 transition-[background-color,border-color,transform] duration-200 pl-4 pr-1 py-1 gap-3 text-xs ${className}`}
     >
       <span className="transition-colors duration-200 group-hover:text-orange">{children}</span>
-      <span className="flex items-center justify-center rounded-xl bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] p-2 transition-transform duration-300 group-hover:rotate-45">
-        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-45" />
+      <span className="flex items-center justify-center rounded-lg bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] p-1.5 transition-transform duration-300 group-hover:rotate-45">
+        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-45" />
       </span>
     </a>
   );
 }
 
+function PixelGridBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const handleResize = () => {
+      if (!canvas) return;
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener("resize", handleResize);
+
+    const tileSize = 12;
+    const gap = 6;
+    
+    // We update columns and rows dynamically during resize or draw
+    const draw = () => {
+      const cols = Math.ceil(width / (tileSize + gap));
+      const rows = Math.ceil(height / (tileSize + gap));
+      ctx.clearRect(0, 0, width, height);
+
+      const time = Date.now() * 0.001;
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const x = c * (tileSize + gap);
+          const y = r * (tileSize + gap);
+
+          // Distance-based vignette from top-center of hero
+          const dx = x - width / 2;
+          const dy = y - 100; // bias towards hero text
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const maxDist = Math.sqrt((width / 2) * (width / 2) + height * height);
+          
+          // Steeper vignette for localized center glow
+          const vignette = Math.max(0, 1 - dist / (maxDist * 0.5));
+          
+          if (vignette <= 0) continue;
+
+          // Pseudo-random blinking based on coordinates and time
+          const noise = Math.sin(c * 12.9898 + r * 78.233 + time * (1.5 + Math.sin(c * r))) * 0.5 + 0.5;
+          
+          // Max opacity scale
+          const opacity = 0.12 * noise * vignette;
+
+          if (opacity > 0.01) {
+            // Mix orange and pink tones
+            ctx.fillStyle = `rgba(249, 115, 22, ${opacity})`;
+            ctx.fillRect(x, y, tileSize, tileSize);
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(draw);
+    };
+
+    draw();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-60" />;
+}
+
+function SmokeTextReveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [style, setStyle] = useState({
+    filter: "blur(20px)",
+    opacity: 0,
+    transform: "translateY(30px) scale(0.92)",
+    letterSpacing: "14px",
+    textShadow: "0 0 20px rgba(255, 255, 255, 0)",
+    transition: "filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), letter-spacing 0.6s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+    willChange: "filter, opacity, transform, letter-spacing, text-shadow"
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      const entryPoint = viewportHeight * 0.95;
+      const fullyInViewPoint = viewportHeight * 0.65;
+      
+      let progress = (entryPoint - rect.top) / (entryPoint - fullyInViewPoint);
+      progress = Math.max(0, Math.min(1, progress));
+      
+      const blurVal = 20 * (1 - progress);
+      const opacityVal = progress;
+      const scaleVal = 0.92 + 0.08 * progress;
+      const translateYVal = 30 * (1 - progress);
+      const letterSpacingVal = 14 * (1 - progress);
+      const shadowAlpha = 0.5 * (1 - progress);
+      
+      setStyle({
+        filter: `blur(${blurVal}px)`,
+        opacity: opacityVal,
+        transform: `translateY(${translateYVal}px) scale(${scaleVal})`,
+        letterSpacing: `${letterSpacingVal}px`,
+        textShadow: `0 0 10px rgba(255, 255, 255, ${shadowAlpha}), 0 0 20px rgba(255, 255, 255, ${shadowAlpha * 0.5})`,
+        transition: "filter 0.2s ease-out, opacity 0.2s ease-out, transform 0.2s ease-out, letter-spacing 0.2s ease-out, text-shadow 0.2s ease-out",
+        willChange: "filter, opacity, transform, letter-spacing, text-shadow"
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div ref={ref} className={className} style={style}>
+      {children}
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -81,10 +213,7 @@ function Nav() {
     <header className="sticky top-0 inset-x-0 z-50 border-b border-border/40 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <span className="text-2xl font-bold tracking-tight italic">
-            <span className="text-gradient-brand">bliv</span>
-            <span className="text-foreground/70">.</span>
-          </span>
+          <img src={logo} alt="Bliv logo" className="h-[42px] w-auto" />
         </a>
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
           <a href="#inicio" className="hover:text-foreground transition">Início</a>
@@ -94,7 +223,7 @@ function Nav() {
           <a href="#contato" className="hover:text-foreground transition">Contato</a>
         </nav>
         <div className="flex items-center gap-3">
-          <PillButton href="#contato" size="sm">Comece agora</PillButton>
+          <PillButton href="#contato" size="sm">Falar com consultor</PillButton>
         </div>
       </div>
     </header>
@@ -104,27 +233,31 @@ function Nav() {
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section id="inicio" className="relative pt-24 pb-20 overflow-hidden">
+    <section id="inicio" className="relative pt-24 pb-20 overflow-hidden bg-background">
+      <PixelGridBackground />
       <div className="absolute inset-0 hero-glow pointer-events-none" />
       <div className="relative mx-auto max-w-6xl px-6 text-center">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange/60 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-orange" />
             </span>
-            Lote fundador aberto · até 40% off no 1º ano
+            100% integrado às APIs oficiais da Meta
           </span>
-          <h1 className="font-display mt-7 text-5xl md:text-7xl font-extrabold leading-[0.95]">
-            O CRM com WhatsApp <br className="hidden md:block" />
-            que <span className="text-gradient-brand italic font-bold">vende enquanto você dorme.</span>
+          <h1 className="font-display mt-7 text-4xl md:text-6xl lg:text-7.5xl font-extrabold leading-[1.05] tracking-tight">
+            Sua operação omnichannel com <br className="hidden md:block" />
+            <span className="text-[#25D366] italic font-bold">WhatsApp</span>,{" "}
+            <span className="text-gradient-brand italic font-bold">Instagram</span>,{" "}
+            <span className="text-[#0084FF] italic font-bold">Messenger</span>{" "}
+            <span className="text-orange italic font-bold">e IA.</span>
           </h1>
-          <p className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed mx-auto">
-            Unifique WhatsApp, Instagram e Facebook num funil só. A Bliv qualifica, responde e
-            agenda — seu time só entra na hora de fechar.
+          <p className="mt-7 text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
+            Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />
+            monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA ilimitados.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
-            <PillButton href="#contato" size="lg">Começar grátis</PillButton>
+            <PillButton href="#contato" size="lg">Falar com consultor</PillButton>
             <a href="#planos" className="text-sm text-muted-foreground hover:text-foreground transition inline-flex items-center gap-2">
               Ver planos
               <ArrowRight className="w-3.5 h-3.5" />
@@ -138,10 +271,53 @@ function Hero() {
 }
 
 function DashboardMockup() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [transformStyle, setTransformStyle] = useState("perspective(1200px) rotateX(15deg) scale(0.95) translateY(30px)");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      // Position of element relative to viewport
+      const elementTop = rect.top;
+      const elementHeight = rect.height;
+      
+      // Calculate scroll progress (0 when entering from bottom, 1 when leaving from top)
+      const start = viewportHeight;
+      const end = -elementHeight;
+      const progress = Math.max(0, Math.min(1, (start - elementTop) / (start - end)));
+      
+      // We map the entry phase (from progress 0 to 0.4) to animate the entrance
+      const entryProgress = Math.min(1, progress / 0.4);
+      
+      // Calculate values based on scroll entry progress
+      const rotateX = 15 * (1 - entryProgress); // 15deg down to 0deg
+      const scale = 0.95 + (0.05 * entryProgress); // 0.95 up to 1.0
+      const translateY = 30 * (1 - entryProgress); // 30px up to 0px
+      const opacity = 0.6 + (0.4 * entryProgress); // fade in slightly
+
+      setTransformStyle(
+        `perspective(1200px) rotateX(${rotateX}deg) scale(${scale}) translateY(${translateY}px)`
+      );
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Initial calculate
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="relative mt-14 mx-auto max-w-6xl">
+    <div 
+      ref={containerRef}
+      className="relative mt-14 mx-auto max-w-6xl transition-all duration-300 ease-out will-change-transform"
+      style={{ transform: transformStyle }}
+    >
       <img
-        src={dashboardHero.url}
+        src={dashboardHero}
         alt="Painel da Bliv CRM mostrando métricas de campanhas, taxa de entrega e omnichannel"
         className="w-full h-auto select-none"
         draggable={false}
@@ -180,17 +356,21 @@ function StickyFeatures() {
         {/* Section header — editorial, assimétrico */}
         <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
           <div className="md:col-span-7">
-            <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
-            <h2 className="font-display mt-4 text-4xl md:text-6xl font-extrabold leading-[1]">
-              Menos abas abertas, <br />
-              <span className="text-gradient-brand italic">mais negócios fechados.</span>
-            </h2>
+            <SmokeTextReveal>
+              <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
+              <h2 className="font-display mt-4 text-4xl md:text-6xl font-extrabold leading-[1]">
+                Menos abas abertas, <br />
+                <span className="text-gradient-brand italic">mais negócios fechados.</span>
+              </h2>
+            </SmokeTextReveal>
           </div>
           <div className="md:col-span-4 md:col-start-9">
-            <p className="text-muted-foreground leading-relaxed">
-              A gente construiu a Bliv ouvindo times de vendas brasileiros que cansaram de
-              gambiarra com planilha, bot pirata e três assinaturas pra fazer uma coisa só.
-            </p>
+            <SmokeTextReveal>
+              <p className="text-muted-foreground leading-relaxed">
+                A gente construiu a Bliv ouvindo times de vendas brasileiros que cansaram de
+                gambiarra com planilha, bot pirata e três assinaturas pra fazer uma coisa só.
+              </p>
+            </SmokeTextReveal>
           </div>
         </div>
 
@@ -202,7 +382,7 @@ function StickyFeatures() {
             <div className="relative z-10 max-w-md">
               <div className="flex items-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/30 text-orange flex items-center justify-center">
-                  <LayoutGrid className="w-5 h-5" />
+                  <Kanban className="w-5 h-5" />
                 </span>
                 <span className="eyebrow">Funil visual</span>
               </div>
@@ -276,7 +456,7 @@ function StickyFeatures() {
               <div className="flex-1">
                 <div className="flex items-center gap-3">
                   <span className="w-10 h-10 rounded-xl bg-pink/10 border border-pink/30 text-pink flex items-center justify-center">
-                    <MessageCircle className="w-5 h-5" />
+                    <Inbox className="w-5 h-5" />
                   </span>
                   <span className="eyebrow">Omnichannel de verdade</span>
                 </div>
@@ -315,15 +495,21 @@ function Channels() {
       <div className="mx-auto max-w-6xl">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-12">
           <div className="md:col-span-7">
-            <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
-            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
-              Seu time <span className="text-gradient-brand italic">sempre conectado</span>
-            </h2>
+            <SmokeTextReveal>
+              <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
+              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+                Seu time <span className="text-gradient-brand italic">sempre conectado</span>
+              </h2>
+            </SmokeTextReveal>
           </div>
-          <p className="md:col-span-4 md:col-start-9 text-muted-foreground leading-relaxed">
-            WhatsApp Cloud API oficial da Meta, número virtual ou as duas coisas. Sua operação
-            não cai porque um canal cair.
-          </p>
+          <div className="md:col-span-4 md:col-start-9">
+            <SmokeTextReveal>
+              <p className="text-muted-foreground leading-relaxed">
+                WhatsApp Cloud API oficial da Meta, número virtual ou as duas coisas. Sua operação
+                não cai porque um canal cair.
+              </p>
+            </SmokeTextReveal>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-5">
@@ -335,7 +521,7 @@ function Channels() {
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="rounded-lg border border-border/60 bg-background/40 p-3 text-center">
-                <WhatsAppIcon className="w-5 h-5 mx-auto text-orange" />
+                <WhatsAppIcon className="w-5 h-5 mx-auto text-emerald-400" />
                 <div className="text-xs font-semibold mt-2">Número oficial</div>
                 <div className="text-[10px] text-muted-foreground">verificação Meta</div>
               </div>
@@ -377,30 +563,34 @@ function Channels() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <PillButton href="#contato">Conectar agora</PillButton>
+          <PillButton href="#contato">Falar com consultor</PillButton>
         </div>
       </div>
     </section>
   );
 }
 
-/* ---------------- TESTIMONIALS ---------------- */
 function Testimonials() {
-  const featured = {
-    n: "Vitor Leal",
-    r: "CMO · Holos",
-    q: "Trocamos três ferramentas pela Bliv e cortamos R$ 4 mil por mês. Em duas semanas o time inteiro já estava no funil novo — sem treinamento longo, sem dor.",
-  };
-  const others = [
+  const reviews = [
+    {
+      n: "Vitor Leal",
+      r: "Diretor de Operações · Amazon Polpas",
+      q: "Trocamos três ferramentas pela Bliv e cortamos R$ 4 mil por mês. Em duas semanas o time inteiro já estava no funil novo — sem treinamento longo, sem dor.",
+    },
     {
       n: "Guilherme Azevedo",
-      r: "Head de Vendas · Nexa",
-      q: "O agente de IA qualifica antes do humano. Tempo médio de resposta caiu de 6h pra 4min.",
+      r: "Fundador · Granfruto",
+      q: "O agente de IA qualifica os leads antes de chegarem ao time comercial. Nosso tempo médio de resposta no WhatsApp despencou de 6h para menos de 4 minutos.",
     },
     {
       n: "Luana Góes",
-      r: "Sócia · BPM",
-      q: "Suporte rápido, painel simples, WhatsApp oficial funcionando. Era exatamente isso que faltava.",
+      r: "Gestora de Atendimento · Altamed",
+      q: "Suporte rápido, painel simples e WhatsApp oficial funcionando perfeitamente. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
+    },
+    {
+      n: "Alexandre Silva",
+      r: "CEO · Égua do Celular",
+      q: "Disparos de campanhas em massa e fluxos de bots integrados mudaram nosso jogo. Escalar o atendimento com a IA da Bliv foi a melhor decisão do ano.",
     },
   ];
   return (
@@ -408,45 +598,32 @@ function Testimonials() {
       <div className="mx-auto max-w-6xl">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-14">
           <div className="md:col-span-7">
-            <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
-            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
-              A gente preferia que <br/>
-              <span className="text-gradient-brand italic">eles falassem por nós.</span>
-            </h2>
+            <SmokeTextReveal>
+              <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
+              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+                A gente preferia que <br/>
+                <span className="text-gradient-brand italic">eles falassem por nós.</span>
+              </h2>
+            </SmokeTextReveal>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-5">
-          {/* Depoimento principal — editorial */}
-          <article className="md:col-span-7 relative rounded-3xl border border-border/60 bg-gradient-card p-10 shadow-card overflow-hidden">
-            <Quote className="absolute -top-2 -left-2 w-28 h-28 text-orange/10" />
-            <p className="font-display relative text-2xl md:text-3xl leading-snug font-bold text-foreground/95">
-              {featured.q}
-            </p>
-            <div className="relative mt-8 flex items-center gap-3">
-              <span className="w-11 h-11 rounded-full bg-gradient-cta" />
-              <div>
-                <div className="text-sm font-semibold">{featured.n}</div>
-                <div className="text-xs text-muted-foreground">{featured.r}</div>
-              </div>
-            </div>
-          </article>
-
-          {/* Coluna lateral — dois depoimentos curtos + métrica */}
-          <div className="md:col-span-5 grid gap-5">
-            {others.map((t) => (
-              <article key={t.n} className="rounded-3xl border border-border/60 bg-card/40 p-6">
-                <p className="text-sm text-foreground/90 leading-relaxed">{t.q}</p>
-                <div className="mt-5 flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full bg-gradient-cta" />
-                  <div>
-                    <div className="text-xs font-semibold">{t.n}</div>
-                    <div className="text-[11px] text-muted-foreground">{t.r}</div>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {reviews.map((t, idx) => (
+            <article key={t.n} className={`relative rounded-3xl border border-border/60 p-8 shadow-card overflow-hidden ${idx === 0 ? "bg-gradient-card" : "bg-card/40"}`}>
+              {idx === 0 && <Quote className="absolute -top-2 -left-2 w-24 h-24 text-orange/10" />}
+              <p className={`relative leading-relaxed text-foreground/95 ${idx === 0 ? "font-display text-lg md:text-xl font-bold" : "text-sm"}`}>
+                "{t.q}"
+              </p>
+              <div className="relative mt-6 flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-gradient-cta" />
+                <div>
+                  <div className="text-sm font-semibold">{t.n}</div>
+                  <div className="text-xs text-muted-foreground">{t.r}</div>
                 </div>
-              </article>
-            ))}
-          </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -486,15 +663,21 @@ function Pricing() {
       <div className="mx-auto max-w-6xl">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-10">
           <div className="md:col-span-7">
-            <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
-            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
-              Mensal, sem multa, <br/>
-              <span className="text-gradient-brand italic">sem letra miúda.</span>
-            </h2>
+            <SmokeTextReveal>
+              <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
+              <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+                Mensal, sem multa, <br/>
+                <span className="text-gradient-brand italic">sem letra miúda.</span>
+              </h2>
+            </SmokeTextReveal>
           </div>
-          <p className="md:col-span-4 md:col-start-9 text-muted-foreground leading-relaxed">
-            Cancele direto pelo painel quando quiser. Sem taxa de adesão, sem contrato anual.
-          </p>
+          <div className="md:col-span-4 md:col-start-9">
+            <SmokeTextReveal>
+              <p className="text-muted-foreground leading-relaxed">
+                Cancele direto pelo painel quando quiser. Sem taxa de adesão, sem contrato anual.
+              </p>
+            </SmokeTextReveal>
+          </div>
         </div>
 
         <div className="flex justify-center mb-8">
@@ -557,7 +740,7 @@ function Pricing() {
                   ))}
                 </ul>
                 <div className="mt-5">
-                  <PillButton href="#contato" size="sm" className="w-full justify-center">Quero o {p.name}</PillButton>
+                  <PillButton href="#contato" size="sm" className="w-full justify-center">Falar com consultor</PillButton>
                 </div>
               </div>
             ))}
@@ -565,7 +748,7 @@ function Pricing() {
         </div>
 
         <div className="mt-8 flex justify-center">
-          <PillButton href="#contato">Falar com vendas</PillButton>
+          <PillButton href="#contato">Falar com consultor</PillButton>
         </div>
       </div>
     </section>
@@ -618,14 +801,16 @@ function FAQ() {
     <section id="faq" className="py-24 px-6">
       <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_1.6fr] gap-12">
         <div>
-          <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
-          <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
-            Tudo que você <span className="text-gradient-brand italic">precisa saber</span>
-          </h2>
-          <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
-            Não achou sua resposta? Chama a gente no WhatsApp — gente de verdade responde em
-            poucos minutos.
-          </p>
+          <SmokeTextReveal>
+            <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              Tudo que você <span className="text-gradient-brand italic">precisa saber</span>
+            </h2>
+            <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
+              Não achou sua resposta? Chama a gente no WhatsApp — gente de verdade responde em
+              poucos minutos.
+            </p>
+          </SmokeTextReveal>
         </div>
 
         <div className="space-y-2">
@@ -660,20 +845,17 @@ function FinalCTA() {
   return (
     <section id="contato" className="py-24 px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight italic">
-          <span className="text-gradient-brand">bliv</span>, bliv!
-        </h2>
-        <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
-          Junte-se a milhares de times que pararam de perder leads no WhatsApp. Comece grátis em
-          menos de 5 minutos.
-        </p>
+        <SmokeTextReveal>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight italic">
+            <span className="text-gradient-brand">bliv</span>, bliv!
+          </h2>
+          <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
+            Junte-se a milhares de times que pararam de perder leads no WhatsApp. Comece grátis em
+            menos de 5 minutos.
+          </p>
+        </SmokeTextReveal>
         <div className="mt-8 flex justify-center">
-          <PillButton href="#" size="lg">Comece agora</PillButton>
-        </div>
-        <div className="mt-4 flex items-center justify-center gap-6 text-xs text-muted-foreground">
-          <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> Sem cartão</span>
-          <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> 7 dias grátis</span>
-          <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> Cancele quando quiser</span>
+          <PillButton href="#" size="lg">Falar com consultor</PillButton>
         </div>
       </div>
     </section>
@@ -696,12 +878,9 @@ function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid md:grid-cols-[1.4fr_repeat(4,1fr)] gap-10">
           <div>
-            <span className="text-2xl font-bold tracking-tight italic">
-              <span className="text-gradient-brand">bliv</span>
-              <span className="text-foreground/70">.</span>
-            </span>
+            <img src={logo} alt="Bliv logo" className="h-[42px] w-auto mb-4" />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
-              O CRM com WhatsApp que acompanha o ritmo da sua empresa.
+              Sua operação omnichannel com WhatsApp, Instagram, Messenger e IA.
             </p>
             <div className="mt-5 flex items-center gap-3 text-muted-foreground">
               <a href="#" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>
@@ -733,9 +912,88 @@ function Footer() {
 
 /* ---------------- ROOT ---------------- */
 function Index() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://bliv.com.br/#organization",
+        "name": "Bliv CRM",
+        "url": "https://bliv.com.br",
+        "logo": "https://bliv.com.br/assets/logo.png",
+        "sameAs": [
+          "https://www.instagram.com",
+          "https://www.facebook.com",
+          "https://www.linkedin.com"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://bliv.com.br/#software",
+        "name": "Bliv CRM",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "197.00",
+          "priceCurrency": "BRL"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://bliv.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "A Bliv usa WhatsApp oficial?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Conectamos seu número diretamente na API Oficial da Meta (Cloud API), sem risco de banimento."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso ter equipe técnica pra implantar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Em qualquer plano pago, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Posso testar antes de assinar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim — 7 dias grátis, sem cartão de crédito. Você só paga se decidir continuar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tem fidelidade ou multa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zero. É mensal e você cancela direto pelo painel quando quiser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Funciona com Instagram e Facebook também?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Bliv é omnichannel: WhatsApp, Instagram Direct, Messenger e formulário do site num só inbox."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <Nav />
       <Hero />
       <StickyFeatures />

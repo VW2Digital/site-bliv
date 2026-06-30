@@ -38,22 +38,40 @@ import iconWebhook from "@/assets/icon-webhook.png.asset.json";
 function PillButton({
   children,
   href = "#",
+  size = "md",
   className = "",
 }: {
   children: React.ReactNode;
   href?: string;
   size?: "sm" | "md" | "lg";
-  variant?: "primary" | "ghost";
   className?: string;
 }) {
+  const sizeClasses = {
+    sm: "pl-3.5 pr-1 py-1.5 gap-2 text-[13px] md:text-[14px]",
+    md: "pl-4 pr-1 py-2 gap-2.5 text-[14px] md:text-[15px]",
+    lg: "pl-5 pr-1 py-2.5 gap-3 text-[15px] md:text-[16px]",
+  };
+
+  const iconPadding = {
+    sm: "p-1",
+    md: "p-1.5",
+    lg: "p-2",
+  };
+
+  const iconSize = {
+    sm: "w-3 h-3",
+    md: "w-3.5 h-3.5",
+    lg: "w-4 h-4",
+  };
+
   return (
     <a
       href={href}
-      className={`group inline-flex items-center rounded-xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 hover:scale-105 active:scale-95 transition-[background-color,border-color,transform] duration-200 pl-4 pr-1 py-1 gap-3 text-[15px] ${className}`}
+      className={`group inline-flex items-center rounded-xl border border-orange/40 bg-transparent font-medium text-foreground hover:border-orange hover:bg-orange/10 hover:scale-105 active:scale-95 transition-[background-color,border-color,transform] duration-200 ${sizeClasses[size]} ${className}`}
     >
       <span className="transition-colors duration-200 group-hover:text-orange">{children}</span>
-      <span className="flex items-center justify-center rounded-lg bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] p-1.5 transition-transform duration-300">
-        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-45" />
+      <span className={`flex items-center justify-center rounded-lg bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] transition-transform duration-300 ${iconPadding[size]}`}>
+        <ArrowRight className={`transition-transform duration-300 group-hover:-rotate-45 ${iconSize[size]}`} />
       </span>
     </a>
   );

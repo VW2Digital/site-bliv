@@ -634,25 +634,25 @@ function Testimonials() {
     {
       n: "Diogo",
       r: "Diretor de Operações · Amazon Polpas",
-      q: "Trocamos três ferramentas pela Bliv e cortamos R$ 4 mil por mês. Em duas semanas o time inteiro já estava no funil novo — sem treinamento longo, sem dor.",
+      q: "Trocamos três ferramentas pela Bliv e centralizamos WhatsApp, Instagram e formulários em um só CRM. Em duas semanas o time já estava no funil novo — sem treinamento longo, sem dor.",
       img: clientAmazon.url,
     },
     {
       n: "Adriane",
       r: "Fundador · Granfruto",
-      q: "O agente de IA qualifica os leads antes de chegarem ao time comercial. Nosso tempo médio de resposta no WhatsApp despencou de 6h para menos de 4 minutos.",
+      q: "Qualificamos leads do Instagram e WhatsApp automaticamente antes de chegarem ao time comercial. Nosso tempo médio de resposta despencou de 6h para menos de 4 minutos.",
       img: clientGranfruto.url,
     },
     {
       n: "Bruno Guimarães",
       r: "Gestora de Atendimento · Altamed",
-      q: "Suporte rápido, painel simples e WhatsApp oficial funcionando perfeitamente. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
+      q: "WhatsApp Oficial, Instagram e Messenger funcionando perfeitamente num painel só. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
       img: clientAltamed.url,
     },
     {
       n: "Carla Luz",
       r: "CEO · Égua do Celular",
-      q: "Disparos de campanhas em massa e fluxos de bots integrados mudaram nosso jogo. Escalar o atendimento com a IA da Bliv foi a melhor decisão do ano.",
+      q: "Campanhas pelo WhatsApp Oficial e leads do Instagram caindo direto no funil mudaram nosso jogo. Escalar os 4 canais num só CRM foi a melhor decisão do ano.",
       img: clientEgua.url,
     },
   ];
@@ -696,9 +696,9 @@ function Testimonials() {
 /* ---------------- PRICING ---------------- */
 function Pricing() {
   const plans = [
-    { name: "Solo", price: "49", bullets: ["1 atendente", "1 número WhatsApp", "500 contatos", "Funil básico"] },
-    { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "1 número WhatsApp", "3k contatos", "Funil + tags"] },
-    { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "2 números", "10k contatos", "Webhooks"] },
+    { name: "Solo", price: "49", bullets: ["1 atendente", "WhatsApp + Instagram + Messenger", "500 contatos", "Funil básico"] },
+    { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "WhatsApp + Instagram + Messenger + Formulários", "3k contatos", "Funil + tags"] },
+    { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "Todos os canais + Webhooks", "10k contatos", "API oficial da Meta"] },
   ];
 
   return (
@@ -782,8 +782,8 @@ function Pricing() {
 function FAQ() {
   const items = [
     {
-      q: "A Bliv usa WhatsApp oficial?",
-      a: "Sim. Conectamos seu número diretamente na API Oficial da Meta (Cloud API), sem risco de banimento.",
+      q: "A Bliv usa WhatsApp Oficial?",
+      a: "Sim. Conectamos seu número diretamente na API Oficial da Meta (Cloud API). Você envia mensagens, atende clientes e acompanha métricas com entrega garantida e zero risco de banimento.",
     },
     {
       q: "Preciso ter equipe técnica pra implantar?",

@@ -357,7 +357,7 @@ function DashboardMockup() {
       {/* Floating: integrations (left) — desktop */}
       <div
         tabIndex={0}
-        className="hidden md:block absolute left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[17rem] lg:w-[19rem] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-foreground shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:block absolute left-[-3.5rem] lg:left-[-5.5rem] top-1/2 -translate-y-1/2 z-10 w-[17rem] lg:w-[19rem] rounded-2xl border border-white/15 bg-white/10 backdrop-blur-2xl text-foreground shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-4 lg:p-5 outline-none transition-all duration-300 ease-out hover:-translate-y-[calc(50%+4px)] hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-[calc(50%+4px)] focus-visible:ring-2 focus-visible:ring-orange/60"
       >
         <ul className="space-y-2.5 lg:space-y-3">
           {[
@@ -380,14 +380,14 @@ function DashboardMockup() {
       {/* Floating: Meta Business Partner (right) — desktop */}
       <div
         tabIndex={0}
-        className="hidden md:flex absolute right-[-1.5rem] lg:right-[-3rem] bottom-[-1.25rem] z-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-2 lg:p-2.5 w-[5rem] lg:w-[6rem] outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:flex absolute right-[-1.5rem] lg:right-[-3rem] bottom-[-1.25rem] z-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 backdrop-blur-2xl shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-2 lg:p-2.5 w-[5rem] lg:w-[6rem] outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:ring-orange/60"
       >
         <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
       </div>
 
       {/* Mobile: stacked below mockup, same alignment, no overlap */}
       <div className="md:hidden mt-5 grid gap-4">
-        <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-foreground shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-5 transition-all duration-300 ease-out active:scale-[0.99]">
+        <div className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-2xl text-foreground shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-5 transition-all duration-300 ease-out active:scale-[0.99]">
           <ul className="space-y-3.5">
             {[
               { icon: iconWhatsapp.url, title: "Atendimento e campanhas pelo WhatsApp Oficial", desc: "Envie mensagens, atenda clientes e acompanhe métricas pela API oficial." },
@@ -405,7 +405,7 @@ function DashboardMockup() {
             ))}
           </ul>
         </div>
-        <div className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
+        <div className="flex items-center justify-center rounded-xl border border-white/15 bg-white/10 backdrop-blur-2xl shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
           <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
         </div>
       </div>

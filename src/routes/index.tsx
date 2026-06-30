@@ -596,14 +596,17 @@ function Pricing() {
   return (
     <section id="planos" className="py-24 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-10">
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            Planos & Preços
-          </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Planos sem <span className="text-gradient-brand">burocracia</span> e sem fidelidade
-          </h2>
-          <p className="mt-3 text-muted-foreground">Cancele quando quiser. Sem taxa de adesão.</p>
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-10">
+          <div className="md:col-span-7">
+            <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              Mensal, sem multa, <br/>
+              <span className="text-gradient-brand italic">sem letra miúda.</span>
+            </h2>
+          </div>
+          <p className="md:col-span-4 md:col-start-9 text-muted-foreground leading-relaxed">
+            Cancele direto pelo painel quando quiser. Sem taxa de adesão, sem contrato anual.
+          </p>
         </div>
 
         <div className="flex justify-center mb-8">

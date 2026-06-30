@@ -674,9 +674,9 @@ function Pricing() {
   ];
 
   return (
-    <section id="planos" className="py-14 sm:py-24 px-5 sm:px-6">
+    <section id="planos" className="py-10 sm:py-24 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-end mb-8 sm:mb-10">
+        <div className="grid md:grid-cols-12 gap-4 sm:gap-8 items-end mb-6 sm:mb-10">
           <div className="md:col-span-7">
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
@@ -713,7 +713,7 @@ function Pricing() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border/60 bg-gradient-card shadow-card p-6 md:p-8">
+        <div className="rounded-2xl border border-border/60 bg-gradient-card shadow-card p-5 md:p-8">
           <div className="flex items-end justify-between mb-6">
             <div>
               <div className="text-xs text-muted-foreground">Escolha o tamanho do time</div>
@@ -726,11 +726,11 @@ function Pricing() {
             </a>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-3">
             {tableByTab[tab].map((p) => (
               <div
                 key={p.name}
-                className={`relative rounded-xl border p-5 ${
+                className={`relative rounded-xl border p-4 ${
                   p.tag
                     ? "border-orange/50 bg-background/60 ring-1 ring-orange/30"
                     : "border-border/60 bg-background/40"
@@ -747,7 +747,7 @@ function Pricing() {
                   <span className="text-3xl font-bold">{p.price}</span>
                   <span className="text-xs text-muted-foreground">/mês</span>
                 </div>
-                <ul className="mt-4 space-y-1.5 text-sm">
+                <ul className="mt-3 space-y-1 text-sm">
                   {p.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-2 text-muted-foreground">
                       <Check className="w-3.5 h-3.5 text-orange shrink-0" /> {b}

@@ -378,12 +378,9 @@ function StickyFeatures() {
           <p className="mt-5 text-muted-foreground">
             Construído pra times brasileiros que vendem por WhatsApp e cansaram de gambiarra.
           </p>
-          <a
-            href="#contato"
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-sm font-semibold px-5 py-3 shadow-glow hover:opacity-95 transition"
-          >
-            Começar agora <ArrowRight className="w-4 h-4" />
-          </a>
+          <div className="mt-7">
+            <PillButton href="#contato">Começar agora</PillButton>
+          </div>
         </div>
 
         <div className="space-y-5">
@@ -477,12 +474,7 @@ function Channels() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-sm font-semibold px-5 py-3 shadow-glow hover:opacity-95 transition"
-          >
-            Conectar agora <ArrowRight className="w-4 h-4" />
-          </a>
+          <PillButton href="#contato">Conectar agora</PillButton>
         </div>
       </div>
     </section>
@@ -648,24 +640,16 @@ function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contato"
-                  className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gradient-cta text-white text-xs font-semibold px-4 py-2.5 hover:opacity-95"
-                >
-                  Quero o {p.name}
-                </a>
+                <div className="mt-5">
+                  <PillButton href="#contato" size="sm" className="w-full justify-center">Quero o {p.name}</PillButton>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <div className="mt-8 flex justify-center">
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-sm font-semibold px-5 py-3 shadow-glow hover:opacity-95 transition"
-          >
-            Falar com vendas <ArrowRight className="w-4 h-4" />
-          </a>
+          <PillButton href="#contato">Falar com vendas</PillButton>
         </div>
       </div>
     </section>
@@ -769,12 +753,7 @@ function FinalCTA() {
           menos de 5 minutos.
         </p>
         <div className="mt-8 flex justify-center">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-base font-semibold px-7 py-4 shadow-glow hover:opacity-95 transition"
-          >
-            Comece agora <ArrowRight className="w-4 h-4" />
-          </a>
+          <PillButton href="#" size="lg">Comece agora</PillButton>
         </div>
         <div className="mt-4 flex items-center justify-center gap-6 text-xs text-muted-foreground">
           <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> Sem cartão</span>

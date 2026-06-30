@@ -23,6 +23,10 @@ import {
 } from "lucide-react";
 import dashboardHero from "@/assets/dashboard-hero.png";
 import logo from "@/assets/logo.png";
+import clientAmazon from "@/assets/client-amazon.png.asset.json";
+import clientGranfruto from "@/assets/client-granfruto.png.asset.json";
+import clientAltamed from "@/assets/client-altamed.jpg.asset.json";
+import clientEgua from "@/assets/client-egua.jpg.asset.json";
 
 /* ---------------- Shared CTA button ---------------- */
 function PillButton({

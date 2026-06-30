@@ -28,6 +28,11 @@ import clientAmazon from "@/assets/client-amazon.png.asset.json";
 import clientGranfruto from "@/assets/client-granfruto.png.asset.json";
 import clientAltamed from "@/assets/client-altamed.jpg.asset.json";
 import clientEgua from "@/assets/client-egua.jpg.asset.json";
+import metaPartner from "@/assets/meta-partner.webp.asset.json";
+import iconWhatsapp from "@/assets/icon-whatsapp.png.asset.json";
+import iconInstagram from "@/assets/icon-instagram.png.asset.json";
+import iconMessenger from "@/assets/icon-messenger.png.asset.json";
+import iconWebhook from "@/assets/icon-webhook.png.asset.json";
 
 /* ---------------- Shared CTA button ---------------- */
 function PillButton({
@@ -347,6 +352,31 @@ function DashboardMockup() {
           />
         </div>
 
+      </div>
+
+      {/* Floating: integrations (left) */}
+      <div className="hidden md:block absolute left-[-2.5rem] lg:left-[-4rem] top-1/2 -translate-y-1/2 z-10 w-[19rem] lg:w-[21rem] rounded-2xl border border-white/10 bg-white text-neutral-900 shadow-2xl p-5">
+        <ul className="space-y-4">
+          {[
+            { icon: iconWhatsapp.url, title: "Atendimento e campanhas pelo WhatsApp Oficial", desc: "Envie mensagens, atenda clientes e acompanhe métricas pela API oficial." },
+            { icon: iconInstagram.url, title: "Leads e conversas do Instagram no CRM", desc: "Centralize mensagens e transforme interações em oportunidades." },
+            { icon: iconMessenger.url, title: "Atendimento integrado pelo Messenger", desc: "Gerencie conversas do Facebook em um só painel." },
+            { icon: iconWebhook.url, title: "Conecte formulários e sistemas ao CRM", desc: "Receba leads automaticamente de sites e landing pages." },
+          ].map((it) => (
+            <li key={it.title} className="flex items-start gap-3">
+              <img src={it.icon} alt="" className="w-7 h-7 shrink-0 mt-0.5" />
+              <div className="min-w-0">
+                <p className="text-[0.82rem] font-semibold leading-snug">{it.title}</p>
+                <p className="text-[0.72rem] text-neutral-600 leading-snug mt-0.5">{it.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Floating: Meta Business Partner (right) */}
+      <div className="hidden md:flex absolute right-[-2rem] lg:right-[-3.5rem] bottom-[-1.5rem] z-10 items-center justify-center rounded-2xl bg-white shadow-2xl p-4 lg:p-5 w-[10rem] lg:w-[12rem]">
+        <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
       </div>
 
     </div>

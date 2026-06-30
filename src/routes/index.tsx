@@ -266,11 +266,11 @@ function Hero() {
             Sua operação
             <br className="md:hidden" /> omnichannel com{" "}
             <br className="md:hidden" />
-            <span className="text-[#25D366] italic font-bold">WhatsApp</span>,{" "}
-            <span className="text-gradient-brand italic font-bold">Instagram</span>,{" "}
+            <span className="text-[#25D366] font-bold">WhatsApp</span>,{" "}
+            <span className="text-gradient-brand font-bold">Instagram</span>,{" "}
             <br className="md:hidden" />
-            <span className="text-[#0084FF] italic font-bold">Messenger</span>{" "}
-            <span className="text-orange italic font-bold">e IA.</span>
+            <span className="text-[#0084FF] font-bold">Messenger</span>{" "}
+            <span className="text-orange font-bold">e IA.</span>
           </h1>
           <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
             Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />
@@ -448,7 +448,7 @@ function StickyFeatures() {
               <span className="eyebrow"><span className="text-orange">01 —</span> Por que a Bliv</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-[1.05]">
                 Menos abas abertas, <br />
-                <span className="text-gradient-brand italic">mais negócios fechados.</span>
+                <span className="text-gradient-brand">mais negócios fechados.</span>
               </h2>
             </SmokeTextReveal>
           </div>
@@ -586,7 +586,7 @@ function Channels() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-                Seu time <span className="text-gradient-brand italic">sempre conectado</span>
+                Seu time <span className="text-gradient-brand">sempre conectado</span>
               </h2>
             </SmokeTextReveal>
           </div>
@@ -694,7 +694,7 @@ function Testimonials() {
               <span className="eyebrow"><span className="text-orange">03 —</span> Quem já usa</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 A gente preferia que <br/>
-                <span className="text-gradient-brand italic">eles falassem por nós.</span>
+                <span className="text-gradient-brand">eles falassem por nós.</span>
               </h2>
             </SmokeTextReveal>
           </div>
@@ -739,7 +739,7 @@ function Pricing() {
               <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
                 Mensal, sem multa, <br/>
-                <span className="text-gradient-brand italic">sem letra miúda.</span>
+                <span className="text-gradient-brand">sem letra miúda.</span>
               </h2>
             </SmokeTextReveal>
           </div>
@@ -813,7 +813,7 @@ function Media() {
       <div className="mx-auto max-w-5xl text-center">
         <p className="text-sm text-muted-foreground">Bliv na mídia</p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-70">
-          <span className="text-xl font-serif italic">Brazil Journal</span>
+          <span className="text-xl font-serif">Brazil Journal</span>
           <span className="text-2xl font-serif font-bold tracking-tight">Valor</span>
           <span className="text-xl font-semibold">startups<span className="text-orange">.</span></span>
           <span className="text-lg font-semibold tracking-tight">NeoFeed</span>
@@ -855,7 +855,7 @@ function FAQ() {
           <SmokeTextReveal>
             <span className="eyebrow"><span className="text-orange">05 —</span> Dúvidas frequentes</span>
             <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-              Tudo que você <span className="text-gradient-brand italic">precisa saber</span>
+              Tudo que você <span className="text-gradient-brand">precisa saber</span>
             </h2>
             <p className="mt-5 text-muted-foreground text-sm leading-relaxed">
               Não achou sua resposta? Chama a gente no WhatsApp — gente de verdade responde em
@@ -923,7 +923,7 @@ function FinalCTA() {
     <section id="contato" className="py-10 sm:py-24 px-5 sm:px-6 bg-card/30 border-y border-border/40">
       <div className="mx-auto max-w-3xl text-center">
         <SmokeTextReveal>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight italic">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight">
             <span className="text-gradient-brand">bliv</span>, bliv!
           </h2>
           <p className="mt-5 text-muted-foreground max-w-xl mx-auto">

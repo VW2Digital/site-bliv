@@ -263,8 +263,8 @@ function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-display mt-4 sm:mt-7 text-[2.3125rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
-            WhatsApp Oficial,
-            <br className="md:hidden" /> Instagram,{" "}
+            <span style={{ color: '#28C840' }}>WhatsApp</span> Oficial,
+            <br className="md:hidden" /> <span style={{ color: '#FF5F57' }}>Instagram</span>,{" "}
             <br className="md:hidden" />
             <span className="text-[#0084FF] font-bold">Messenger</span>{" "}
             <span className="text-orange font-bold">e formulários&nbsp;</span>

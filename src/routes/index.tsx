@@ -130,8 +130,8 @@ function Hero() {
   return (
     <section id="inicio" className="relative pt-24 pb-20 overflow-hidden">
       <div className="absolute inset-0 hero-glow pointer-events-none" />
-      <div className="relative mx-auto max-w-6xl px-6">
-        <div className="max-w-3xl">
+      <div className="relative mx-auto max-w-6xl px-6 text-center">
+        <div className="max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange/60 opacity-75" />
@@ -143,18 +143,18 @@ function Hero() {
             O CRM com WhatsApp <br className="hidden md:block" />
             que <span className="text-gradient-brand italic font-bold">vende enquanto você dorme.</span>
           </h1>
-          <p className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed">
+          <p className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed mx-auto">
             Unifique WhatsApp, Instagram e Facebook num funil só. A Bliv qualifica, responde e
             agenda — seu time só entra na hora de fechar.
           </p>
-          <div className="mt-9 flex flex-wrap items-center gap-5">
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
             <PillButton href="#contato" size="lg">Começar grátis</PillButton>
             <a href="#planos" className="text-sm text-muted-foreground hover:text-foreground transition inline-flex items-center gap-2">
               Ver planos
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
             <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> 7 dias grátis</span>
             <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> Sem cartão</span>
             <span className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-orange" /> Setup em 5 min</span>

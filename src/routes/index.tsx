@@ -664,31 +664,10 @@ function Testimonials() {
 
 /* ---------------- PRICING ---------------- */
 function Pricing() {
-  const [tab, setTab] = useState<"start" | "team" | "scale">("team");
-
-  const tableByTab: Record<string, { name: string; price: string; bullets: string[]; tag?: string }[]> = {
-    start: [
-      { name: "Solo", price: "49", bullets: ["1 atendente", "1 número WhatsApp", "500 contatos", "Funil básico"] },
-      { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "1 número WhatsApp", "3k contatos", "Funil + tags"] },
-      { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "2 números", "10k contatos", "Webhooks"] },
-    ],
-    team: [
-      { name: "Growth", price: "490", bullets: ["10 atendentes (R$49/usuário)", "Funil avançado", "Bot de fluxo", "Integrações"] },
-      { name: "Growth +", price: "735", tag: "popular", bullets: ["15 atendentes (R$49/usuário)", "Agente de IA", "API pública", "Onboarding"] },
-      { name: "Pro", price: "1.225", bullets: ["25 atendentes (R$49/usuário)", "Multi-conta", "SLA garantido", "Relatórios avançados"] },
-    ],
-    scale: [
-      { name: "Scale", price: "2.450", bullets: ["50 atendentes (R$49/usuário)", "Multi-marca", "IA dedicada", "CSM dedicado"] },
-      { name: "Enterprise", price: "sob consulta", tag: "popular", bullets: ["Atendentes ilimitados", "SSO + auditoria", "SLA 99,9%", "Onboarding white-glove"] },
-      { name: "Custom", price: "sob consulta", bullets: ["Sob medida", "Infra dedicada", "Compliance", "Contrato anual"] },
-    ],
-  };
-
-
-  const tabs: { id: typeof tab; label: string }[] = [
-    { id: "start", label: "Começando" },
-    { id: "team", label: "Times de vendas" },
-    { id: "scale", label: "Escala" },
+  const plans = [
+    { name: "Solo", price: "49", bullets: ["1 atendente", "1 número WhatsApp", "500 contatos", "Funil básico"] },
+    { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "1 número WhatsApp", "3k contatos", "Funil + tags"] },
+    { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "2 números", "10k contatos", "Webhooks"] },
   ];
 
   return (
@@ -713,24 +692,6 @@ function Pricing() {
           </div>
         </div>
 
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-1 rounded-full border border-border/60 bg-card/60 p-1">
-            {tabs.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setTab(t.id)}
-                className={`text-xs sm:text-sm px-4 py-2 rounded-full transition ${
-                  tab === t.id
-                    ? "bg-gradient-cta text-white shadow-glow"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
         <div className="rounded-2xl border border-border/60 bg-gradient-card shadow-card p-5 md:p-8">
           <div className="flex items-end justify-between mb-6">
             <div>
@@ -745,7 +706,7 @@ function Pricing() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-3">
-            {tableByTab[tab].map((p) => (
+            {plans.map((p) => (
               <div
                 key={p.name}
                 className={`relative rounded-xl border p-4 ${
@@ -773,7 +734,7 @@ function Pricing() {
                   ))}
                 </ul>
                 <div className="mt-5">
-                  <PillButton href="#contato" size="sm" className="w-full justify-center">Falar com Consultor</PillButton>
+                  <PillButton href="#contato" className="w-full justify-center">Falar com Consultor</PillButton>
                 </div>
               </div>
             ))}

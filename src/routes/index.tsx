@@ -1122,10 +1122,26 @@ function Index() {
           },
           {
             "@type": "Question",
-            "name": "Preciso ter equipe técnica pra implantar?",
+            "name": "Quando começa o treinamento de integração?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. Em qualquer plano pago, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento."
+              "text": "O treinamento de integração começa no plano Start. Assim que você assina, o time da Bliv agenda uma sessão ao vivo para conectar seus canais, montar o primeiro funil e capacitar sua equipe a operar o CRM. No plano Start+, o treinamento é o mesmo e ainda inclui atualizações mensais de novas ferramentas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que vem no treinamento de integração?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sessão ao vivo de 1h com especialista Bliv: conexão do WhatsApp Oficial, Instagram e Messenger; configuração do primeiro funil de vendas; automação de respostas rápidas; e capacitação da equipe para gerenciar leads e fechar negócios pelo painel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funcionam as atualizações mensais no Start+?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No plano Start+, todo mês você recebe acesso antecipado a novos recursos e ferramentas lançadas na plataforma — como novos canais de integração, automações avançadas e melhorias no funil. Sem custo extra e sem precisar de equipe técnica."
             }
           },
           {

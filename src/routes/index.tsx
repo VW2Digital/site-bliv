@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   ArrowRight,
   Check,
-  Sparkles,
+  
   LayoutGrid,
   Headphones,
   MessageCircle,

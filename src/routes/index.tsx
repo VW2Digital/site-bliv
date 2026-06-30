@@ -218,9 +218,9 @@ function WhatsAppIcon({ className }: { className?: string }) {
 export function Nav() {
   return (
     <header className="sticky top-0 inset-x-0 z-50 border-b border-border/40 backdrop-blur-xl bg-background/70">
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
-          <img src={logo} alt="Bliv logo" className="h-[42px] w-auto" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3">
+        <a href="/" className="flex items-center gap-2 shrink-0">
+          <img src={logo} alt="Bliv logo" className="h-8 sm:h-[42px] w-auto" />
         </a>
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
           <a href="/#inicio" className="hover:text-foreground transition">Início</a>
@@ -229,11 +229,15 @@ export function Nav() {
           <a href="/#faq" className="hover:text-foreground transition">FAQ</a>
           <a href="/#contato" className="hover:text-foreground transition">Contato</a>
         </nav>
-        <div className="flex items-center gap-3">
-          <PillButton href="/#contato" size="sm">Falar com consultor</PillButton>
+        <div className="flex items-center gap-3 shrink-0">
+          <PillButton href="/#contato" size="sm">
+            <span className="hidden sm:inline">Falar com consultor</span>
+            <span className="sm:hidden">Falar</span>
+          </PillButton>
         </div>
       </div>
     </header>
+
   );
 }
 

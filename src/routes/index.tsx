@@ -22,6 +22,7 @@ import {
   Inbox,
 } from "lucide-react";
 import dashboardHero from "@/assets/dashboard-hero.png";
+import dashboardBliv from "@/assets/dashboard-bliv.png.asset.json";
 import logo from "@/assets/logo.png";
 import clientAmazon from "@/assets/client-amazon.png.asset.json";
 import clientGranfruto from "@/assets/client-granfruto.png.asset.json";

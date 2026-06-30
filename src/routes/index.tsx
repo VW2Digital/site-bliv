@@ -263,18 +263,17 @@ function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-display mt-4 sm:mt-7 text-[2.3125rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
-            Sua operação
-            <br className="md:hidden" /> omnichannel com{" "}
-            <br className="md:hidden" />
-            <span className="text-[#25D366] font-bold">WhatsApp</span>,{" "}
-            <span className="text-gradient-brand font-bold">Instagram</span>,{" "}
+            WhatsApp Oficial,
+            <br className="md:hidden" /> Instagram,{" "}
             <br className="md:hidden" />
             <span className="text-[#0084FF] font-bold">Messenger</span>{" "}
-            <span className="text-orange font-bold">e IA.</span>
+            <span className="text-orange font-bold">e formulários</span>
+            <br className="md:hidden" />
+            <span className="text-muted-foreground font-bold">num só CRM.</span>
           </h1>
           <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
-            Integre WhatsApp, Instagram e Messenger em um único painel, crie campanhas de disparo em massa, <br className="hidden md:block" />
-            monitore métricas, construa fluxos de bots e escale atendimentos com agentes de IA ilimitados.
+            Atenda pelo WhatsApp, capture leads do Instagram, gerencie Messenger e receba formulários em um único funil de vendas. <br className="hidden md:block" />
+            Tudo pela API oficial da Meta, com métricas reais e sem risco de banimento.
           </p>
           <div className="mt-5 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
             <PillButton href="#contato" size="lg">Falar com Consultor</PillButton>

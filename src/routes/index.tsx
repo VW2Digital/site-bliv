@@ -1028,7 +1028,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-12 pt-6 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} Bliv CRM. Todos os direitos reservados.</span>
+          <span>© {new Date().getFullYear()} Bliv CRM. Um produto VW2 Digital.</span>
           <span>Feito no Brasil 🇧🇷</span>
         </div>
       </div>

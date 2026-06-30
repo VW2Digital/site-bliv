@@ -266,7 +266,7 @@ function Hero() {
             <span className="hidden xs:inline">100% integrado às APIs oficiais da Meta</span>
             <span className="xs:hidden">APIs oficiais da Meta</span>
           </span>
-          <h1 className="font-display mt-4 sm:mt-7 text-[2.8125rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
+          <h1 className="font-display mt-4 sm:mt-7 text-[2.1875rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
             Sua operação omnichannel com{" "}
             <br className="hidden md:block" />
             <br className="md:hidden" />

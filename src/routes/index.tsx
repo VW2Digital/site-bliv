@@ -815,7 +815,7 @@ function FAQ() {
     },
     {
       q: "Preciso ter equipe técnica pra implantar?",
-      a: "Não. Em qualquer plano pago, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento.",
+      a: "Não. A partir do plano Start, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento de integração.",
     },
     {
       q: "Posso testar antes de assinar?",

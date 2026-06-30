@@ -387,7 +387,7 @@ function DashboardMockup() {
 
       {/* Mobile: stacked below mockup, same alignment, no overlap */}
       <div className="md:hidden mt-5 grid gap-4">
-        <div className="rounded-2xl border border-black/5 bg-white text-neutral-900 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-5 transition-all duration-300 ease-out active:scale-[0.99]">
+        <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-foreground shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-5 transition-all duration-300 ease-out active:scale-[0.99]">
           <ul className="space-y-3.5">
             {[
               { icon: iconWhatsapp.url, title: "Atendimento e campanhas pelo WhatsApp Oficial", desc: "Envie mensagens, atenda clientes e acompanhe métricas pela API oficial." },
@@ -399,13 +399,13 @@ function DashboardMockup() {
                 <img src={it.icon} alt="" className="w-6 h-6 shrink-0 mt-[2px]" />
                 <div className="min-w-0">
                   <p className="text-[0.8rem] font-semibold leading-[1.3] tracking-[-0.005em]">{it.title}</p>
-                  <p className="text-[0.72rem] text-neutral-600 leading-[1.4] mt-1">{it.desc}</p>
+                  <p className="text-[0.72rem] text-muted-foreground leading-[1.4] mt-1">{it.desc}</p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex items-center justify-center rounded-xl bg-white shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
+        <div className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
           <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
         </div>
       </div>

@@ -230,10 +230,7 @@ export function Nav() {
           <a href="/#contato" className="hover:text-foreground transition">Contato</a>
         </nav>
         <div className="flex items-center gap-3 shrink-0">
-          <PillButton href="/#contato" size="sm">
-            <span className="hidden sm:inline">Falar com consultor</span>
-            <span className="sm:hidden">Falar</span>
-          </PillButton>
+          <PillButton href="/#contato" size="sm">Falar com Consultor</PillButton>
         </div>
       </div>
     </header>

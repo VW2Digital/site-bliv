@@ -380,7 +380,7 @@ function DashboardMockup() {
       {/* Floating: Meta Business Partner (right) — desktop */}
       <div
         tabIndex={0}
-        className="hidden md:flex absolute right-[-1.5rem] lg:right-[-3rem] bottom-[-1.25rem] z-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 backdrop-blur-2xl shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-2 lg:p-2.5 w-[5rem] lg:w-[6rem] outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:ring-orange/60"
+        className="hidden md:flex absolute right-[-1.5rem] lg:right-[-3rem] bottom-[-1.25rem] z-10 items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] p-2 lg:p-2.5 w-[5rem] lg:w-[6rem] outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)] focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:ring-orange/60"
       >
         <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
       </div>
@@ -405,7 +405,7 @@ function DashboardMockup() {
             ))}
           </ul>
         </div>
-        <div className="flex items-center justify-center rounded-xl border border-white/15 bg-white/10 backdrop-blur-2xl shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
+        <div className="flex items-center justify-center rounded-xl border border-gray-200/40 bg-white shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] p-2 mx-auto w-[5rem] transition-all duration-300 ease-out active:scale-[0.99]">
           <img src={metaPartner.url} alt="Meta Business Partner" className="w-full h-auto" />
         </div>
       </div>

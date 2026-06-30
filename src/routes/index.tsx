@@ -19,7 +19,7 @@ import {
   Bell,
   Quote,
 } from "lucide-react";
-import dashboardHero from "@/assets/dashboard-hero-v2.png.asset.json";
+import dashboardHero from "@/assets/dashboard-hero.png.asset.json";
 
 /* ---------------- Shared CTA button ---------------- */
 function PillButton({

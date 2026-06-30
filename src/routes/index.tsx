@@ -1066,9 +1066,9 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-10 pt-5 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} Bliv CRM. Um produto VW2 Digital.</span>
-          <span>Genuinamente Paraense</span>
+        <div className="mt-10 pt-5 border-t border-border/40 flex flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-between gap-3 text-xs text-muted-foreground">
+          <span className="text-center sm:text-left">© {new Date().getFullYear()} Bliv CRM. Um produto VW2 Digital.</span>
+          <span className="text-center sm:text-right">Genuinamente Paraense</span>
         </div>
       </div>
     </footer>

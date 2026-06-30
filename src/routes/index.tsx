@@ -609,7 +609,7 @@ function Testimonials() {
       img: clientAltamed.url,
     },
     {
-      n: "Carla Lux",
+      n: "Carla Luz",
       r: "CEO · Égua do Celular",
       q: "Disparos de campanhas em massa e fluxos de bots integrados mudaram nosso jogo. Escalar o atendimento com a IA da Bliv foi a melhor decisão do ano.",
       img: clientEgua.url,

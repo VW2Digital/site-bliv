@@ -737,8 +737,8 @@ function Pricing() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-                Mensal, sem multa, <br/>
-                <span className="text-gradient-brand">sem letra miúda.</span>
+                Mensalidade única, <br/>
+                <span className="text-gradient-brand">sem limite de usuários.</span>
               </h2>
             </SmokeTextReveal>
           </div>

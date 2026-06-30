@@ -256,7 +256,7 @@ function Hero() {
       />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-display mt-4 sm:mt-7 text-[2.375rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
+          <h1 className="font-display mt-4 sm:mt-7 text-[2.3125rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7.5xl font-extrabold tracking-tight">
             Sua operação
             <br className="md:hidden" /> omnichannel com{" "}
             <br className="md:hidden" />

@@ -696,9 +696,37 @@ function Testimonials() {
 /* ---------------- PRICING ---------------- */
 function Pricing() {
   const plans = [
-    { name: "Solo", price: "49", bullets: ["1 atendente", "WhatsApp + Instagram + Messenger", "500 contatos", "Funil básico"] },
-    { name: "Start", price: "147", tag: "popular", bullets: ["3 atendentes (R$49/usuário)", "WhatsApp + Instagram + Messenger + Formulários", "3k contatos", "Funil + tags"] },
-    { name: "Start +", price: "245", bullets: ["5 atendentes (R$49/usuário)", "Todos os canais + Webhooks", "10k contatos", "API oficial da Meta"] },
+    {
+      name: "Solo",
+      price: "87",
+      bullets: [
+        "Sem limite de usuários",
+        "WhatsApp + Instagram + Messenger",
+        "Funil básico",
+        "Suporte por e-mail",
+      ],
+    },
+    {
+      name: "Start",
+      price: "147",
+      tag: "popular",
+      bullets: [
+        "Sem limite de usuários",
+        "WhatsApp + Instagram + Messenger + Formulários",
+        "Treinamento de integração",
+        "Suporte prioritário",
+      ],
+    },
+    {
+      name: "Start +",
+      price: "245",
+      bullets: [
+        "Sem limite de usuários",
+        "Todos os canais + Webhooks",
+        "Treinamento de integração",
+        "Atualizações mensais de novas ferramentas",
+      ],
+    },
   ];
 
   return (
@@ -709,8 +737,8 @@ function Pricing() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">04 —</span> Planos & Preços</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-                Mensal, sem multa, <br/>
-                <span className="text-gradient-brand">sem letra miúda.</span>
+                Mensalidade única, <br/>
+                <span className="text-gradient-brand">sem limite de usuários.</span>
               </h2>
             </SmokeTextReveal>
           </div>
@@ -726,9 +754,9 @@ function Pricing() {
         <div className="rounded-2xl border border-border/60 bg-gradient-card shadow-card p-5 md:p-8">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <div className="text-xs text-muted-foreground">Escolha o tamanho do time</div>
+              <div className="text-xs text-muted-foreground">Escolha a opção ideal</div>
               <div className="text-sm text-muted-foreground/80">
-                Todos os planos incluem WhatsApp Oficial, Instagram, Messenger, formulários e suporte humano.
+                Todos os planos incluem WhatsApp Oficial, Instagram, Messenger, formulários e suporte humano. Sem limite de usuários.
               </div>
             </div>
           </div>
@@ -787,7 +815,7 @@ function FAQ() {
     },
     {
       q: "Preciso ter equipe técnica pra implantar?",
-      a: "Não. Em qualquer plano pago, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento.",
+      a: "Não. A partir do plano Start, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento de integração.",
     },
     {
       q: "Posso testar antes de assinar?",
@@ -1037,7 +1065,7 @@ function Index() {
         "operatingSystem": "All",
         "offers": {
           "@type": "Offer",
-          "price": "197.00",
+          "price": "147.00",
           "priceCurrency": "BRL"
         }
       },

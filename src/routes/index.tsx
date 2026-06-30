@@ -44,17 +44,17 @@ function PillButton({
 
   const base =
     variant === "primary"
-      ? "border-foreground text-foreground hover:bg-foreground"
-      : "border-border/60 text-foreground hover:bg-foreground/5";
+      ? "border-orange/40 text-foreground hover:border-orange hover:bg-orange/10"
+      : "border-border text-foreground hover:border-foreground/40 hover:bg-foreground/5";
 
   return (
     <a
       href={href}
-      className={`group inline-flex items-center rounded-2xl border-2 bg-transparent font-medium active:scale-95 transition-[background-color,border-color,transform] duration-200 ${base} ${sizes.pad} ${sizes.text} ${className}`}
+      className={`group inline-flex items-center rounded-2xl border bg-transparent font-medium active:scale-95 transition-[background-color,border-color,transform] duration-200 ${base} ${sizes.pad} ${sizes.text} ${className}`}
     >
       <span className="transition-colors duration-200 group-hover:text-orange">{children}</span>
       <span
-        className={`flex items-center justify-center rounded-lg bg-orange text-background ${sizes.icon} transition-transform duration-300 group-hover:rotate-45`}
+        className={`flex items-center justify-center rounded-xl bg-orange text-background shadow-[0_6px_20px_-6px_var(--brand-orange)] ${sizes.icon} transition-transform duration-300 group-hover:rotate-45`}
       >
         <ArrowRight className={`${sizes.arrow} transition-transform duration-300 group-hover:-rotate-45`} />
       </span>

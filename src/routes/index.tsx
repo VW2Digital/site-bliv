@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   ArrowRight,
   Check,
-  Sparkles,
+  
   LayoutGrid,
   Headphones,
   MessageCircle,
@@ -68,22 +68,6 @@ export const Route = createFileRoute("/")({
 });
 
 /* ---------------- NAV ---------------- */
-function TopBar() {
-  return (
-    <div className="w-full bg-gradient-cta text-white text-xs">
-      <div className="mx-auto max-w-7xl px-6 h-9 flex items-center justify-center gap-3">
-        <span className="inline-flex items-center gap-2">
-          <Sparkles className="w-3.5 h-3.5" />
-          Aproveite o lote fundador — economize até 40% no primeiro ano
-        </span>
-        <a href="#planos" className="font-semibold underline underline-offset-2">
-          Ver planos
-        </a>
-      </div>
-    </div>
-  );
-}
-
 function Nav() {
   return (
     <header className="sticky top-0 inset-x-0 z-50 border-b border-border/40 backdrop-blur-xl bg-background/70">
@@ -760,7 +744,7 @@ function Footer() {
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <TopBar />
+      
       <Nav />
       <Hero />
       <TrustedBy />

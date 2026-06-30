@@ -704,6 +704,7 @@ function Pricing() {
         "WhatsApp + Instagram + Messenger",
         "Funil básico",
         "Suporte por e-mail",
+        "Sem treinamento de integração",
       ],
     },
     {
@@ -713,8 +714,15 @@ function Pricing() {
       bullets: [
         "Sem limite de usuários",
         "WhatsApp + Instagram + Messenger + Formulários",
-        "Treinamento de integração",
+        "Treinamento de integração ao vivo",
         "Suporte prioritário",
+      ],
+      details: [
+        "Sessão de 1h com especialista Bliv",
+        "Conexão de canais (WhatsApp, Instagram, Messenger)",
+        "Montagem do primeiro funil de vendas",
+        "Automação de respostas rápidas",
+        "Capacitação da equipe no painel",
       ],
     },
     {
@@ -723,8 +731,15 @@ function Pricing() {
       bullets: [
         "Sem limite de usuários",
         "Todos os canais + Webhooks",
-        "Treinamento de integração",
+        "Treinamento de integração ao vivo",
         "Atualizações mensais de novas ferramentas",
+      ],
+      details: [
+        "Tudo do plano Start",
+        "Acesso antecipado a novos recursos todo mês",
+        "Novos canais de integração liberados automaticamente",
+        "Automações avançadas sem custo extra",
+        "Melhorias contínuas no funil de vendas",
       ],
     },
   ];
@@ -798,6 +813,11 @@ function Pricing() {
                       <Check className="w-3.5 h-3.5 text-orange shrink-0 mt-0.5" /> {b}
                     </li>
                   ))}
+                  {p.details?.map((d) => (
+                    <li key={d} className="flex items-start gap-2 text-muted-foreground/70 pl-1">
+                      <span className="w-1 h-1 rounded-full bg-orange/60 shrink-0 mt-2" /> {d}
+                    </li>
+                  ))}
                 </ul>
 
                 <div className="mt-6">
@@ -825,8 +845,16 @@ function FAQ() {
       a: "Sim. Conectamos seu número diretamente na API Oficial da Meta (Cloud API). Você envia mensagens, atende clientes e acompanha métricas com entrega garantida e zero risco de banimento.",
     },
     {
-      q: "Preciso ter equipe técnica pra implantar?",
-      a: "Não. A partir do plano Start, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento de integração.",
+      q: "Quando começa o treinamento de integração?",
+      a: "O treinamento de integração começa no plano Start. Assim que você assina, o time da Bliv agenda uma sessão ao vivo para conectar seus canais, montar o primeiro funil e capacitar sua equipe a operar o CRM. No plano Start+, o treinamento é o mesmo e ainda inclui atualizações mensais de novas ferramentas.",
+    },
+    {
+      q: "O que vem no treinamento de integração?",
+      a: "Sessão ao vivo de 1h com especialista Bliv: conexão do WhatsApp Oficial, Instagram e Messenger; configuração do primeiro funil de vendas; automação de respostas rápidas; e capacitação da equipe para gerenciar leads e fechar negócios pelo painel.",
+    },
+    {
+      q: "Como funcionam as atualizações mensais no Start+?",
+      a: "No plano Start+, todo mês você recebe acesso antecipado a novos recursos e ferramentas lançadas na plataforma — como novos canais de integração, automações avançadas e melhorias no funil. Sem custo extra e sem precisar de equipe técnica.",
     },
     {
       q: "Posso testar antes de assinar?",
@@ -1094,10 +1122,26 @@ function Index() {
           },
           {
             "@type": "Question",
-            "name": "Preciso ter equipe técnica pra implantar?",
+            "name": "Quando começa o treinamento de integração?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. Em qualquer plano pago, o time da Bliv faz o onboarding completo: conexão, primeiro funil e treinamento."
+              "text": "O treinamento de integração começa no plano Start. Assim que você assina, o time da Bliv agenda uma sessão ao vivo para conectar seus canais, montar o primeiro funil e capacitar sua equipe a operar o CRM. No plano Start+, o treinamento é o mesmo e ainda inclui atualizações mensais de novas ferramentas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que vem no treinamento de integração?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sessão ao vivo de 1h com especialista Bliv: conexão do WhatsApp Oficial, Instagram e Messenger; configuração do primeiro funil de vendas; automação de respostas rápidas; e capacitação da equipe para gerenciar leads e fechar negócios pelo painel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funcionam as atualizações mensais no Start+?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No plano Start+, todo mês você recebe acesso antecipado a novos recursos e ferramentas lançadas na plataforma — como novos canais de integração, automações avançadas e melhorias no funil. Sem custo extra e sem precisar de equipe técnica."
             }
           },
           {

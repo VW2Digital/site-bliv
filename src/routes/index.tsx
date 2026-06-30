@@ -395,11 +395,11 @@ function DashboardMockup() {
               { icon: iconMessenger.url, title: "Atendimento integrado pelo Messenger", desc: "Gerencie conversas do Facebook em um só painel." },
               { icon: iconWebhook.url, title: "Conecte formulários e sistemas ao CRM", desc: "Receba leads automaticamente de sites e landing pages." },
             ].map((it) => (
-              <li key={it.title} className="flex items-start gap-2.5">
+              <li key={it.title} className="flex items-start gap-2.5 text-left">
                 <img src={it.icon} alt="" className="w-5 h-5 shrink-0 mt-[2px]" />
                 <div className="min-w-0">
-                  <p className="text-[0.78rem] font-semibold leading-[1.3] tracking-[-0.005em]">{it.title}</p>
-                  <p className="text-[0.7rem] text-muted-foreground leading-[1.4] mt-0.5">{it.desc}</p>
+                  <p className="text-left text-[0.78rem] font-semibold leading-[1.3] tracking-[-0.005em]">{it.title}</p>
+                  <p className="text-left text-[0.7rem] text-muted-foreground leading-[1.4] mt-0.5">{it.desc}</p>
                 </div>
               </li>
             ))}
@@ -556,15 +556,15 @@ function StickyFeatures() {
                   fio da conversa.
                 </p>
               </div>
-              <div className="flex md:flex-col gap-3">
+              <div className="grid grid-cols-3 md:flex md:flex-col gap-2 sm:gap-3 md:w-auto">
                 {[
                   { i: WhatsAppIcon, l: "WhatsApp", c: "text-emerald-400" },
                   { i: Instagram, l: "Instagram", c: "text-pink" },
                   { i: Facebook, l: "Messenger", c: "text-orange" },
                 ].map((ch) => (
-                  <div key={ch.l} className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/40 px-3 py-2">
-                    <ch.i className={`w-4 h-4 ${ch.c}`} />
-                    <span className="text-xs">{ch.l}</span>
+                  <div key={ch.l} className="flex items-center justify-center md:justify-start gap-1.5 sm:gap-2 rounded-xl border border-border/60 bg-background/40 px-2 py-2 min-w-0">
+                    <ch.i className={`w-4 h-4 shrink-0 ${ch.c}`} />
+                    <span className="text-[0.7rem] sm:text-xs truncate">{ch.l}</span>
                   </div>
                 ))}
               </div>

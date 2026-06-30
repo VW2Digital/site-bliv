@@ -107,7 +107,10 @@
 }
 @utility font-display {
   font-family: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 768px) {
+  .font-display { letter-spacing: -0.035em; }
 }
 @utility eyebrow {
   display: inline-flex;

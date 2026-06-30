@@ -110,12 +110,7 @@ function Nav() {
           <a href="#" className="text-sm text-muted-foreground hover:text-foreground hidden sm:block">
             Entrar
           </a>
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-sm font-semibold px-4 py-2 shadow-glow hover:opacity-95 transition"
-          >
-            Comece agora
-          </a>
+          <PillButton href="#contato" size="sm">Comece agora</PillButton>
         </div>
       </div>
     </header>
@@ -138,12 +133,7 @@ function Hero() {
           enquanto seu time foca no que importa.
         </p>
         <div className="mt-8 flex justify-center">
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-cta text-white text-base font-semibold px-7 py-4 shadow-glow hover:opacity-95 transition"
-          >
-            Comece agora <ArrowRight className="w-4 h-4" />
-          </a>
+          <PillButton href="#contato" size="lg">Comece agora</PillButton>
         </div>
         <DashboardMockup />
       </div>

@@ -3,6 +3,16 @@ import { Nav, Footer } from "./index";
 import { useEffect } from "react";
 
 export const Route = createFileRoute("/termos-de-uso")({
+  head: () => ({
+    meta: [
+      { title: "Termos de Uso — Bliv CRM" },
+      { name: "description", content: "Condições de uso da plataforma Bliv CRM: responsabilidades, propriedade intelectual e limitações." },
+      { property: "og:title", content: "Termos de Uso — Bliv CRM" },
+      { property: "og:description", content: "Regras e condições para usar a plataforma Bliv CRM." },
+      { property: "og:url", content: "https://pixel-perfect-clone-99477.lovable.app/termos-de-uso" },
+    ],
+    links: [{ rel: "canonical", href: "https://pixel-perfect-clone-99477.lovable.app/termos-de-uso" }],
+  }),
   component: TermosUso,
 });
 

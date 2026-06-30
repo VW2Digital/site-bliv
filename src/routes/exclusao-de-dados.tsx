@@ -4,6 +4,16 @@ import { useEffect, useState } from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const Route = createFileRoute("/exclusao-de-dados")({
+  head: () => ({
+    meta: [
+      { title: "Exclusão de Dados — Bliv CRM" },
+      { name: "description", content: "Solicite a exclusão definitiva dos seus dados na Bliv CRM em conformidade com a LGPD e as políticas da Meta." },
+      { property: "og:title", content: "Exclusão de Dados — Bliv CRM" },
+      { property: "og:description", content: "Solicite a remoção dos seus dados da plataforma Bliv CRM." },
+      { property: "og:url", content: "https://pixel-perfect-clone-99477.lovable.app/exclusao-de-dados" },
+    ],
+    links: [{ rel: "canonical", href: "https://pixel-perfect-clone-99477.lovable.app/exclusao-de-dados" }],
+  }),
   component: ExclusaoDados,
 });
 

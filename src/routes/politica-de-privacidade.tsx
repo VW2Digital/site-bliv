@@ -3,6 +3,16 @@ import { Nav, Footer } from "./index";
 import { useEffect } from "react";
 
 export const Route = createFileRoute("/politica-de-privacidade")({
+  head: () => ({
+    meta: [
+      { title: "Política de Privacidade — Bliv CRM" },
+      { name: "description", content: "Como a Bliv CRM coleta, usa e protege seus dados sob a LGPD e as políticas oficiais da Meta." },
+      { property: "og:title", content: "Política de Privacidade — Bliv CRM" },
+      { property: "og:description", content: "Como tratamos seus dados na Bliv CRM em conformidade com a LGPD." },
+      { property: "og:url", content: "https://pixel-perfect-clone-99477.lovable.app/politica-de-privacidade" },
+    ],
+    links: [{ rel: "canonical", href: "https://pixel-perfect-clone-99477.lovable.app/politica-de-privacidade" }],
+  }),
   component: PoliticaPrivacidade,
 });
 

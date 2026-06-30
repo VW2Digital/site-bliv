@@ -691,9 +691,6 @@ function Pricing() {
                 Todos os planos incluem WhatsApp Cloud API oficial, funil de vendas e suporte humano.
               </div>
             </div>
-            <a href="#contato" className="hidden sm:inline text-xs text-orange hover:underline">
-              Ver comparativo completo →
-            </a>
           </div>
 
           <div className="grid md:grid-cols-3 gap-3">

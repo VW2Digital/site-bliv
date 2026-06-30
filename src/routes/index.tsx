@@ -761,35 +761,46 @@ function Pricing() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-3">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-5 items-stretch">
             {plans.map((p) => (
               <div
                 key={p.name}
-                className={`relative rounded-xl border p-4 ${
+                className={`h-full flex flex-col rounded-xl border p-5 sm:p-6 ${
                   p.tag
                     ? "border-orange/50 bg-background/60 ring-1 ring-orange/30"
                     : "border-border/60 bg-background/40"
                 }`}
               >
                 {p.tag && (
-                  <span className="absolute -top-2 right-4 bg-gradient-cta text-white text-[10px] font-semibold rounded-full px-2 py-0.5">
+                  <span className="self-end -mt-7 -mr-1 mb-2 bg-gradient-cta text-white text-[10px] font-semibold rounded-full px-2.5 py-0.5 shadow-sm">
                     mais popular
                   </span>
                 )}
+
+                {/* Destaque principal */}
+                <div className="mb-4 inline-flex items-center gap-2 rounded-lg bg-orange/10 border border-orange/20 px-3 py-1.5 text-xs font-semibold text-orange">
+                  <Users className="w-3.5 h-3.5" />
+                  Sem limite de usuários
+                </div>
+
                 <div className="text-sm text-muted-foreground">{p.name}</div>
-                <div className="mt-2 flex items-baseline gap-1">
+                <div className="mt-1 flex items-baseline gap-1">
                   <span className="text-xs text-muted-foreground">R$</span>
-                  <span className="text-3xl font-bold">{p.price}</span>
+                  <span className="text-3xl sm:text-4xl font-bold">{p.price}</span>
                   <span className="text-xs text-muted-foreground">/mês</span>
                 </div>
-                <ul className="mt-3 space-y-1 text-sm">
-                  {p.bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-muted-foreground">
-                      <Check className="w-3.5 h-3.5 text-orange shrink-0" /> {b}
+
+                <div className="my-4 h-px bg-border/40" />
+
+                <ul className="flex-1 space-y-2.5 text-sm">
+                  {p.bullets.slice(1).map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-muted-foreground">
+                      <Check className="w-3.5 h-3.5 text-orange shrink-0 mt-0.5" /> {b}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-5">
+
+                <div className="mt-6">
                   <PillButton href="#contato" className="w-full justify-center">Falar com Consultor</PillButton>
                 </div>
               </div>

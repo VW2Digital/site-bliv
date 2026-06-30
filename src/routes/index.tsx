@@ -27,27 +27,37 @@ function PillButton({
   children,
   href = "#",
   size = "md",
+  variant = "primary",
   className = "",
 }: {
   children: React.ReactNode;
   href?: string;
   size?: "sm" | "md" | "lg";
+  variant?: "primary" | "ghost";
   className?: string;
 }) {
   const sizes = {
-    sm: { pad: "pl-1.5 pr-4 py-1.5", text: "text-xs", icon: "w-6 h-6", arrow: "w-3 h-3" },
-    md: { pad: "pl-2 pr-5 py-2", text: "text-sm", icon: "w-7 h-7", arrow: "w-3.5 h-3.5" },
-    lg: { pad: "pl-2 pr-6 py-2.5", text: "text-base", icon: "w-9 h-9", arrow: "w-4 h-4" },
+    sm: { pad: "pl-4 pr-1.5 py-1.5 gap-3", text: "text-xs", icon: "p-1.5", arrow: "w-3.5 h-3.5" },
+    md: { pad: "pl-5 pr-2 py-2 gap-4", text: "text-sm", icon: "p-2", arrow: "w-4 h-4" },
+    lg: { pad: "pl-6 pr-2 py-2 gap-5", text: "text-base", icon: "p-2.5", arrow: "w-5 h-5" },
   }[size];
+
+  const base =
+    variant === "primary"
+      ? "border-foreground text-foreground hover:bg-foreground"
+      : "border-border/60 text-foreground hover:bg-foreground/5";
+
   return (
     <a
       href={href}
-      className={`group inline-flex items-center gap-3 rounded-full bg-[oklch(0.18_0.02_295)] text-foreground border border-border/60 ${sizes.pad} ${sizes.text} font-semibold shadow-card hover:bg-[oklch(0.22_0.02_295)] transition ${className}`}
+      className={`group inline-flex items-center rounded-2xl border-2 bg-transparent font-medium active:scale-95 transition-[background-color,border-color,transform] duration-200 ${base} ${sizes.pad} ${sizes.text} ${className}`}
     >
-      <span className={`${sizes.icon} rounded-full bg-[oklch(0.32_0.02_295)] text-foreground flex items-center justify-center group-hover:bg-[oklch(0.4_0.02_295)] transition`}>
-        <ArrowRight className={sizes.arrow} />
+      <span className="transition-colors duration-200 group-hover:text-orange">{children}</span>
+      <span
+        className={`flex items-center justify-center rounded-lg bg-orange text-background ${sizes.icon} transition-transform duration-300 group-hover:rotate-45`}
+      >
+        <ArrowRight className={`${sizes.arrow} transition-transform duration-300 group-hover:-rotate-45`} />
       </span>
-      {children}
     </a>
   );
 }

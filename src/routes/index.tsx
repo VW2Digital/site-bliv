@@ -267,7 +267,7 @@ function Hero() {
             <br className="md:hidden" /> <span style={{ color: '#FF5F57' }}>Instagram</span>,{" "}
             <br className="md:hidden" />
             <span className="text-[#0084FF] font-bold">Messenger</span>{" "}
-            <span className="text-orange font-bold">e formulários&nbsp;</span>
+            <span className="text-white font-bold">e </span><span className="text-orange font-bold">formulários&nbsp;</span>
             <br className="md:hidden" />
             <span className="text-muted-foreground font-bold">num só CRM.</span>
           </h1>

@@ -813,6 +813,11 @@ function Pricing() {
                       <Check className="w-3.5 h-3.5 text-orange shrink-0 mt-0.5" /> {b}
                     </li>
                   ))}
+                  {p.details?.map((d) => (
+                    <li key={d} className="flex items-start gap-2 text-muted-foreground/70 pl-1">
+                      <span className="w-1 h-1 rounded-full bg-orange/60 shrink-0 mt-2" /> {d}
+                    </li>
+                  ))}
                 </ul>
 
                 <div className="mt-6">

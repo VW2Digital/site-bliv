@@ -139,11 +139,11 @@ function Hero() {
 
 function DashboardMockup() {
   return (
-    <div className="relative mt-14 mx-auto max-w-6xl overflow-hidden rounded-3xl border border-border/60 shadow-card">
+    <div className="relative mt-14 mx-auto max-w-6xl">
       <img
         src={dashboardHero.url}
         alt="Painel da Bliv CRM mostrando métricas de campanhas, taxa de entrega e omnichannel"
-        className="w-full h-auto select-none scroll-zoom-image"
+        className="w-full h-auto select-none"
         draggable={false}
       />
     </div>

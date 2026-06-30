@@ -425,15 +425,16 @@ function Channels() {
   return (
     <section className="py-24 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
-            Canais & API
-          </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Times <span className="text-gradient-brand">sempre conectados</span>
-          </h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Conecte WhatsApp Cloud API oficial ou número virtual via integração. Sua operação não para.
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-12">
+          <div className="md:col-span-7">
+            <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
+            <h2 className="font-display mt-4 text-4xl md:text-5xl font-extrabold leading-[1]">
+              Seu time <span className="text-gradient-brand italic">sempre conectado</span>
+            </h2>
+          </div>
+          <p className="md:col-span-4 md:col-start-9 text-muted-foreground leading-relaxed">
+            WhatsApp Cloud API oficial da Meta, número virtual ou as duas coisas. Sua operação
+            não cai porque um canal cair.
           </p>
         </div>
 

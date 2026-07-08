@@ -357,9 +357,7 @@ function DashboardMockup() {
         <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5 lg:space-y-3">
           {[
             { icon: iconWhatsapp.url, title: "Atendimento e campanhas pelo WhatsApp Oficial", desc: "Envie mensagens, atenda clientes e acompanhe métricas pela API oficial." },
-            { icon: iconInstagram.url, title: "Leads e conversas do Instagram no CRM", desc: "Centralize mensagens e transforme interações em oportunidades." },
-            { icon: iconMessenger.url, title: "Atendimento integrado pelo Messenger", desc: "Gerencie conversas do Facebook em um só painel." },
-            { icon: iconWebhook.url, title: "Conecte formulários e sistemas ao CRM", desc: "Receba leads automaticamente de sites e landing pages." },
+            { icon: iconWebhook.url, title: "Entrada e saída de dados via Webhook", desc: "Conecte formulários, sites e sistemas com automações em tempo real." },
           ].map((it) => (
             <li key={it.title} className="flex items-start gap-1.5 sm:gap-2 md:gap-2.5">
               <img src={it.icon} alt="" className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 shrink-0 mt-[2px]" />

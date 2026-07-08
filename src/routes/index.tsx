@@ -11,8 +11,6 @@ import {
   Webhook,
   Plus,
   Minus,
-  Instagram,
-  Facebook,
   Linkedin,
   BarChart3,
   Users,
@@ -30,8 +28,6 @@ import clientAltamed from "@/assets/client-altamed.jpg.asset.json";
 import clientEgua from "@/assets/client-egua.jpg.asset.json";
 import metaPartner from "@/assets/meta-partner.webp.asset.json";
 import iconWhatsapp from "@/assets/icon-whatsapp.png.asset.json";
-import iconInstagram from "@/assets/icon-instagram.png.asset.json";
-import iconMessenger from "@/assets/icon-messenger.png.asset.json";
 import iconWebhook from "@/assets/icon-webhook.png.asset.json";
 
 /* ---------------- Shared CTA button ---------------- */
@@ -193,17 +189,17 @@ function SmokeTextReveal({ children, className = "" }: { children: React.ReactNo
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bliv CRM — WhatsApp, Instagram, Messenger e formulários num só CRM" },
+      { title: "Bliv CRM — WhatsApp Oficial e Webhooks num só CRM" },
       {
         name: "description",
         content:
-          "Bliv CRM unifica WhatsApp Oficial, Instagram, Messenger e formulários em um único painel. Atenda, converta e escale com a API oficial da Meta.",
+          "Bliv CRM unifica WhatsApp Oficial e integrações via webhook em um único painel. Atenda, converta e escale com a API oficial da Meta.",
       },
-      { property: "og:title", content: "Bliv CRM — WhatsApp, Instagram, Messenger e formulários num só CRM" },
+      { property: "og:title", content: "Bliv CRM — WhatsApp Oficial e Webhooks num só CRM" },
       {
         property: "og:description",
         content:
-          "Atendimento e campanhas pelo WhatsApp Oficial, leads do Instagram, Messenger integrado e formulários no CRM. Comece grátis por 7 dias.",
+          "Atendimento e campanhas pelo WhatsApp Oficial e entrada/saída de dados via webhook no CRM. Comece grátis por 7 dias.",
       },
       { property: "og:url", content: "https://pixel-perfect-clone-99477.lovable.app/" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8eb7cf1-1d54-4867-806f-07514de8d143/id-preview-2c743c09--8824d971-1cfb-4b0a-ace2-6dffd98bf840.lovable.app-1782792827332.png" },
@@ -263,12 +259,11 @@ function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-display mt-4 sm:mt-7 text-[28px] leading-[1.1] md:text-6xl lg:text-7.5xl font-extrabold tracking-tight text-white">
-            <span className="block">WhatsApp Oficial, Instagram,</span>
-            <span className="block">Messenger e formulários</span>
+            <span className="block">WhatsApp Oficial e Webhooks</span>
             <span className="block">num só CRM.</span>
           </h1>
           <p className="mt-4 sm:mt-7 text-sm sm:text-lg text-muted-foreground max-w-4xl leading-relaxed mx-auto">
-            Atenda pelo WhatsApp, capture leads do Instagram, gerencie Messenger e receba formulários em um único funil de vendas. <br className="hidden md:block" />
+            Atenda pelo WhatsApp Oficial e receba dados via webhook em um único funil de vendas. <br className="hidden md:block" />
             Tudo pela API oficial da Meta, com métricas reais e sem risco de banimento.
           </p>
           <div className="mt-5 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
@@ -424,7 +419,7 @@ function StickyFeatures() {
           <div className="md:col-span-4 md:col-start-9">
             <SmokeTextReveal>
               <p className="text-muted-foreground leading-relaxed">
-                A Bliv unifica WhatsApp Oficial, Instagram Direct, Messenger e formulários do site em um CRM completo. Sem planilhas, sem bots piratas e sem assinaturas duplicadas.
+                A Bliv unifica WhatsApp Oficial e integrações via webhook em um CRM completo. Sem planilhas, sem bots piratas e sem assinaturas duplicadas.
               </p>
             </SmokeTextReveal>
           </div>
@@ -517,17 +512,16 @@ function StickyFeatures() {
                   <span className="eyebrow">Omnichannel de verdade</span>
                 </div>
                 <h3 className="font-display mt-5 text-2xl font-bold">
-                  WhatsApp, Instagram, Messenger e formulários num só inbox.
+                  WhatsApp Oficial e Webhooks num só inbox.
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground max-w-md">
                   Todo lead entra no mesmo funil, independente do canal. Seu time atende e converte sem perder o contexto de nenhuma conversa.
                 </p>
               </div>
-              <div className="grid grid-cols-3 md:flex md:flex-col gap-2 sm:gap-3 md:w-auto">
+              <div className="grid grid-cols-2 md:flex md:flex-col gap-2 sm:gap-3 md:w-auto">
                 {[
                   { i: WhatsAppIcon, l: "WhatsApp", c: "text-emerald-400" },
-                  { i: Instagram, l: "Instagram", c: "text-pink" },
-                  { i: Facebook, l: "Messenger", c: "text-orange" },
+                  { i: Webhook, l: "Webhook", c: "text-orange" },
                 ].map((ch) => (
                   <div key={ch.l} className="flex items-center justify-center md:justify-start gap-1.5 sm:gap-2 rounded-xl border border-border/60 bg-background/40 px-2 py-2 min-w-0">
                     <ch.i className={`w-4 h-4 shrink-0 ${ch.c}`} />
@@ -553,14 +547,14 @@ function Channels() {
             <SmokeTextReveal>
               <span className="eyebrow"><span className="text-orange">02 —</span> Canais & API</span>
               <h2 className="font-display mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.05]">
-                Os 4 canais que <span className="text-gradient-brand">trazem resultado</span>
+                Os canais que <span className="text-gradient-brand">trazem resultado</span>
               </h2>
             </SmokeTextReveal>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <SmokeTextReveal>
               <p className="text-muted-foreground leading-relaxed">
-                WhatsApp Oficial, Instagram Direct, Messenger e formulários via webhook. Tudo integrado num CRM único, com API oficial da Meta e zero risco de banimento.
+                WhatsApp Oficial e webhooks para entrada e saída de dados. Tudo integrado num CRM único, com API oficial da Meta e zero risco de banimento.
               </p>
             </SmokeTextReveal>
           </div>
@@ -580,16 +574,16 @@ function Channels() {
               </div>
               <div className="rounded-lg border border-border/60 bg-background/40 p-3 text-center">
                 <Webhook className="w-5 h-5 mx-auto text-orange" />
-                <div className="text-xs font-semibold mt-2">Formulários</div>
-                <div className="text-[10px] text-muted-foreground">Webhook / Sites</div>
+                <div className="text-xs font-semibold mt-2">Webhook</div>
+                <div className="text-[10px] text-muted-foreground">Entrada / Saída</div>
               </div>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border/60 bg-gradient-card p-5 sm:p-7 shadow-card">
-            <h3 className="text-lg sm:text-xl font-bold">Leads e conversas do Instagram no CRM</h3>
+            <h3 className="text-lg sm:text-xl font-bold">Entrada e saída de dados via Webhook</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Centralize mensagens do Instagram Direct e transforme interações em oportunidades de venda no mesmo funil.
+              Conecte formulários, sites e sistemas externos ao CRM em tempo real. Envie e receba dados sem depender de integrações complexas.
             </p>
             <div className="mt-6 rounded-lg border border-border/60 bg-background/40 p-3">
               <div className="flex items-center justify-between text-[10px] text-muted-foreground mb-2">
@@ -628,25 +622,25 @@ function Testimonials() {
     {
       n: "Diogo",
       r: "Diretor de Operações · Amazon Polpas",
-      q: "Trocamos três ferramentas pela Bliv e centralizamos WhatsApp, Instagram e formulários em um só CRM. Em duas semanas o time já estava no funil novo — sem treinamento longo, sem dor.",
+      q: "Trocamos três ferramentas pela Bliv e centralizamos WhatsApp Oficial e integrações via webhook em um só CRM. Em duas semanas o time já estava no funil novo — sem treinamento longo, sem dor.",
       img: clientAmazon.url,
     },
     {
       n: "Adriane",
       r: "Fundador · Granfruto",
-      q: "Qualificamos leads do Instagram e WhatsApp automaticamente antes de chegarem ao time comercial. Nosso tempo médio de resposta despencou de 6h para menos de 4 minutos.",
+      q: "Qualificamos leads do WhatsApp automaticamente antes de chegarem ao time comercial. Nosso tempo médio de resposta despencou de 6h para menos de 4 minutos.",
       img: clientGranfruto.url,
     },
     {
       n: "Bruno Guimarães",
       r: "Gestora de Atendimento · Altamed",
-      q: "WhatsApp Oficial, Instagram e Messenger funcionando perfeitamente num painel só. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
+      q: "WhatsApp Oficial e webhooks funcionando perfeitamente num painel só. Conseguimos centralizar o atendimento de todas as unidades sem instabilidade.",
       img: clientAltamed.url,
     },
     {
       n: "Carla Luz",
       r: "CEO · Égua do Celular",
-      q: "Campanhas pelo WhatsApp Oficial e leads do Instagram caindo direto no funil mudaram nosso jogo. Escalar os 4 canais num só CRM foi a melhor decisão do ano.",
+      q: "Campanhas pelo WhatsApp Oficial e dados chegando via webhook direto no funil mudaram nosso jogo. Escalar o atendimento num só CRM foi a melhor decisão do ano.",
       img: clientEgua.url,
     },
   ];
@@ -695,7 +689,7 @@ function Pricing() {
       price: "87",
       bullets: [
         "Sem limite de usuários",
-        "WhatsApp + Instagram + Messenger",
+        "WhatsApp Oficial + Webhook",
         "Funil básico",
         "Suporte por e-mail",
         "Sem treinamento de integração",
@@ -707,13 +701,13 @@ function Pricing() {
       tag: "popular",
       bullets: [
         "Sem limite de usuários",
-        "WhatsApp + Instagram + Messenger + Formulários",
+        "WhatsApp Oficial + Webhook",
         "Treinamento de integração ao vivo",
         "Suporte prioritário",
       ],
       details: [
         "Sessão de 1h com especialista Bliv",
-        "Conexão de canais (WhatsApp, Instagram, Messenger)",
+        "Conexão de canais (WhatsApp Oficial, Webhook)",
         "Montagem do primeiro funil de vendas",
         "Automação de respostas rápidas",
         "Capacitação da equipe no painel",
@@ -765,7 +759,7 @@ function Pricing() {
             <div>
               <div className="text-xs text-muted-foreground">Escolha a opção ideal</div>
               <div className="text-sm text-muted-foreground/80">
-                Todos os planos incluem WhatsApp Oficial, Instagram, Messenger, formulários e suporte humano. Sem limite de usuários.
+                Todos os planos incluem WhatsApp Oficial, webhooks e suporte humano. Sem limite de usuários.
               </div>
             </div>
           </div>
@@ -844,7 +838,7 @@ function FAQ() {
     },
     {
       q: "O que vem no treinamento de integração?",
-      a: "Sessão ao vivo de 1h com especialista Bliv: conexão do WhatsApp Oficial, Instagram e Messenger; configuração do primeiro funil de vendas; automação de respostas rápidas; e capacitação da equipe para gerenciar leads e fechar negócios pelo painel.",
+      a: "Sessão ao vivo de 1h com especialista Bliv: conexão do WhatsApp Oficial e webhooks; configuração do primeiro funil de vendas; automação de respostas rápidas; e capacitação da equipe para gerenciar leads e fechar negócios pelo painel.",
     },
     {
       q: "Como funcionam as atualizações mensais no Start+?",
@@ -859,8 +853,8 @@ function FAQ() {
       a: "Zero. É mensal e você cancela direto pelo painel quando quiser.",
     },
     {
-      q: "Funciona com Instagram, Messenger e formulários?",
-      a: "Sim. A Bliv é omnichannel: WhatsApp Oficial, Instagram Direct, Messenger e formulários via webhook num só inbox e funil de vendas.",
+      q: "Funciona com webhooks e formulários?",
+      a: "Sim. A Bliv recebe e envia dados via webhook, integrando formulários, sites e sistemas externos ao mesmo inbox e funil de vendas do WhatsApp Oficial.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -1043,11 +1037,9 @@ export function Footer() {
 
             <img src={logo} alt="Bliv logo" className="h-[42px] w-auto mb-4" />
             <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-              WhatsApp Oficial, Instagram, Messenger e formulários num só CRM.
+              WhatsApp Oficial e Webhooks num só CRM.
             </p>
             <div className="mt-5 flex items-center gap-3 text-muted-foreground">
-            <a href="#" aria-label="Siga a Bliv CRM no Instagram" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>
-            <a href="#" aria-label="Siga a Bliv CRM no Facebook" className="hover:text-foreground"><Facebook className="w-4 h-4" /></a>
             <a href="#" aria-label="Siga a Bliv CRM no LinkedIn" className="hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
             </div>
           </div>
@@ -1085,8 +1077,6 @@ function Index() {
         "url": "https://bliv.com.br",
         "logo": "https://bliv.com.br/assets/logo.png",
         "sameAs": [
-          "https://www.instagram.com",
-          "https://www.facebook.com",
           "https://www.linkedin.com"
         ]
       },
@@ -1127,7 +1117,7 @@ function Index() {
             "name": "O que vem no treinamento de integração?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sessão ao vivo de 1h com especialista Bliv: conexão do WhatsApp Oficial, Instagram e Messenger; configuração do primeiro funil de vendas; automação de respostas rápidas; e capacitação da equipe para gerenciar leads e fechar negócios pelo painel."
+              "text": "Sessão ao vivo de 1h com especialista Bliv: conexão do WhatsApp Oficial e webhooks; configuração do primeiro funil de vendas; automação de respostas rápidas; e capacitação da equipe para gerenciar leads e fechar negócios pelo painel."
             }
           },
           {
@@ -1156,10 +1146,10 @@ function Index() {
           },
           {
             "@type": "Question",
-            "name": "Funciona com Instagram e Facebook também?",
+            "name": "Funciona com webhooks e formulários?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim. Bliv é omnichannel: WhatsApp, Instagram Direct, Messenger e formulário do site num só inbox."
+              "text": "Sim. A Bliv recebe e envia dados via webhook, integrando formulários, sites e sistemas externos ao inbox do WhatsApp Oficial."
             }
           }
         ]

@@ -11,8 +11,6 @@ import {
   Webhook,
   Plus,
   Minus,
-  Instagram,
-  Facebook,
   Linkedin,
   BarChart3,
   Users,
